@@ -1,10 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { JSDOM } from 'jsdom';
-import DOMPurify from 'dompurify';
 
-// Initialize DOMPurify for server-side use
-const window = new JSDOM('').window;
-const purify = DOMPurify(window as any);
+// Simple HTML sanitization for plain text fields
+function sanitizeText(text: string): string {
+  return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -39,10 +43,10 @@ export async function POST(request: NextRequest) {
     }
 
     // Sanitize inputs to prevent XSS
-    const cleanFirstName = purify.sanitize(firstName.trim());
-    const cleanLastName = purify.sanitize(lastName.trim());
-    const cleanPhone = purify.sanitize(phone.trim());
-    const cleanEmail = purify.sanitize(email.trim());
+    const cleanFirstName = sanitizeText(firstName.trim());
+    const cleanLastName = sanitizeText(lastName.trim());
+    const cleanPhone = sanitizeText(phone.trim());
+    const cleanEmail = sanitizeText(email.trim());
 
     // Check if Resend API key is configured
     const resendApiKey = process.env.RESEND_API_KEY;
