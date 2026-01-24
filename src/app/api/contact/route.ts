@@ -1,5 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
-import DOMPurify from 'isomorphic-dompurify';
+import { JSDOM } from 'jsdom';
+import DOMPurify from 'dompurify';
+
+// Initialize DOMPurify for server-side use
+const window = new JSDOM('').window;
+const purify = DOMPurify(window as any);
 
 export async function POST(request: NextRequest) {
   try {
@@ -34,10 +39,10 @@ export async function POST(request: NextRequest) {
     }
 
     // Sanitize inputs to prevent XSS
-    const cleanFirstName = DOMPurify.sanitize(firstName.trim());
-    const cleanLastName = DOMPurify.sanitize(lastName.trim());
-    const cleanPhone = DOMPurify.sanitize(phone.trim());
-    const cleanEmail = DOMPurify.sanitize(email.trim());
+    const cleanFirstName = purify.sanitize(firstName.trim());
+    const cleanLastName = purify.sanitize(lastName.trim());
+    const cleanPhone = purify.sanitize(phone.trim());
+    const cleanEmail = purify.sanitize(email.trim());
 
     // Check if Resend API key is configured
     const resendApiKey = process.env.RESEND_API_KEY;
