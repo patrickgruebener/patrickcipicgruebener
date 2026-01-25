@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   description: "Ich bringe Struktur in Chaos, klare Prioritäten in überfüllte Backlogs und Fokus in euer Produktmanagement. Damit Ideen endlich Wirkung zeigen.",
   keywords: ["Product Management", "Product Strategy", "UX", "Scrum", "Product Owner", "Beratung", "Consultant"],
   authors: [{ name: "Patrick Cipic Grübener" }],
+  icons: {
+    icon: "/images/favicon.png",
+  },
   openGraph: {
     title: "Patrick Cipic Grübener | Product Strategy Consultant",
     description: "Ich bringe Struktur in Chaos, klare Prioritäten in überfüllte Backlogs und Fokus in euer Produktmanagement.",

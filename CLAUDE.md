@@ -140,6 +140,33 @@ dig +short test.patrickcipicgruebener.com A
 
 ---
 
+## Shell Aliase
+
+Für schnellen Zugriff auf das Projekt sind folgende Aliase in `~/.bash_profile` konfiguriert:
+
+```bash
+# Projekt-Shortcuts
+devpatrick       # Wechselt ins Projekt und startet npm run dev
+buildpatrick     # Wechselt ins Projekt und führt npm run build aus
+cdpatrick        # Wechselt nur ins Projektverzeichnis
+
+# Allgemeine Shortcuts
+projects         # Wechselt ins Freelance-Hauptverzeichnis
+```
+
+**Verwendung:**
+```bash
+# Von überall im Terminal einfach eingeben:
+devpatrick
+
+# Oder zum Bauen:
+buildpatrick
+```
+
+**Hinweis:** Nach Änderungen an `.bash_profile` mit `source ~/.bash_profile` neu laden oder neues Terminal öffnen.
+
+---
+
 ## Design-Referenz
 - Figma-Design vorhanden (noch zu teilen)
 - Aktuelle Live-Seite: https://www.patrickcipicgruebener.com (Figma Make)

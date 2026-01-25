@@ -8,19 +8,21 @@ export async function HeroSection() {
 
   return (
     <section className="relative py-20 px-6 overflow-hidden">
-      {/* Background Image with Overlay - mirrored horizontally */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: 'url(/images/chaos.png)',
-          backgroundPosition: 'center right',
-          transform: 'scaleX(-1)',
-        }}
-      />
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/office-overload-chaos.png"
+          alt=""
+          fill
+          priority
+          aria-hidden="true"
+          className="object-cover object-right scale-105 blur-[1px] brightness-75 saturate-75"
+        />
+      </div>
 
       {/* Multi-layered Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-l from-gray-900/85 via-gray-900/70 to-gray-100/95" />
-      <div className="absolute inset-0 bg-gradient-to-l from-transparent via-gray-100/60 to-gray-100" />
+      <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/75 to-slate-900/60" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/35 via-transparent to-slate-900/35" />
 
       {/* Subtle noise/texture overlay for depth */}
       <div

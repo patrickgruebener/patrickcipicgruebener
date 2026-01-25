@@ -4,14 +4,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useLanguage } from '@/hooks/useLanguage';
 import { Button } from '@/components/ui/Button';
-import { Language, languages } from '@/lib/i18n';
+import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
 
 interface HeaderProps {
   currentPage?: 'home' | 'impressum' | 'beratungstermin';
 }
 
 export function Header({ currentPage = 'home' }: HeaderProps) {
-  const { language, setLanguage, t } = useLanguage();
+  const { t } = useLanguage();
 
   const scrollToSection = (sectionId: string) => {
     if (currentPage !== 'home') {
@@ -28,7 +28,7 @@ export function Header({ currentPage = 'home' }: HeaderProps) {
   return (
     <header className="sticky top-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-40">
       <div className="max-w-6xl mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center">
           {/* Logo/Name */}
           <Link
             href="/"
@@ -54,7 +54,7 @@ export function Header({ currentPage = 'home' }: HeaderProps) {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-6 ml-12">
             <Link
               href="/"
               className={`text-gray-600 hover:text-gray-900 transition-colors ${
@@ -81,24 +81,12 @@ export function Header({ currentPage = 'home' }: HeaderProps) {
             >
               {t('header.process')}
             </button>
+          </nav>
 
+          {/* Right Side: Language Switcher & Consultation Button */}
+          <div className="hidden md:flex items-center gap-6 ml-auto">
             {/* Language Switcher */}
-            <div className="flex gap-1">
-              {languages.map((lang) => (
-                <button
-                  key={lang.code}
-                  onClick={() => setLanguage(lang.code as Language)}
-                  className={`px-2 py-1 text-xs rounded transition-colors ${
-                    language === lang.code
-                      ? 'bg-gray-900 text-white'
-                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                  }`}
-                >
-                  <span>{lang.flag}</span>
-                  <span className="ml-1 hidden lg:inline">{lang.code.toUpperCase()}</span>
-                </button>
-              ))}
-            </div>
+            <LanguageSwitcher />
 
             {/* Consultation Button */}
             <div className="flex flex-col items-center">
@@ -111,22 +99,12 @@ export function Header({ currentPage = 'home' }: HeaderProps) {
                 {t('header.consultationMicro')}
               </span>
             </div>
-          </nav>
+          </div>
 
           {/* Mobile Navigation */}
           <div className="md:hidden flex items-center gap-2">
             {/* Mobile Language Switcher */}
-            <button
-              onClick={() => {
-                const currentIndex = languages.findIndex(l => l.code === language);
-                const nextIndex = (currentIndex + 1) % languages.length;
-                setLanguage(languages[nextIndex].code as Language);
-              }}
-              className="px-2 py-1 text-sm bg-gray-100 rounded hover:bg-gray-200 transition-colors"
-              title="Switch language"
-            >
-              {languages.find(l => l.code === language)?.flag}
-            </button>
+            <LanguageSwitcher />
 
             <Link href="/beratungstermin">
               <Button size="sm">
