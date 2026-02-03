@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -12,31 +13,43 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Patrick Cipic Grübener | Product Strategy Consultant",
-  description: "Ich bringe Struktur in Chaos, klare Prioritäten in überfüllte Backlogs und Fokus in euer Produktmanagement. Damit Ideen endlich Wirkung zeigen.",
-  keywords: ["Product Management", "Product Strategy", "UX", "Scrum", "Product Owner", "Beratung", "Consultant"],
-  authors: [{ name: "Patrick Cipic Grübener" }],
-  icons: {
-    icon: "/images/favicon.png",
-  },
-  openGraph: {
+export async function generateMetadata(): Promise<Metadata> {
+  const headersList = await headers();
+  const indexableHosts = new Set([
+    "patrickcipicgruebener.com",
+    "www.patrickcipicgruebener.com",
+  ]);
+  const forwardedHost = headersList.get("x-forwarded-host") || "";
+  const host = forwardedHost || headersList.get("host") || "";
+  const domain = host.split(",")[0]?.trim().split(":")[0]?.toLowerCase() || "";
+  const isIndexable = indexableHosts.has(domain);
+
+  return {
     title: "Patrick Cipic Grübener | Product Strategy Consultant",
-    description: "Ich bringe Struktur in Chaos, klare Prioritäten in überfüllte Backlogs und Fokus in euer Produktmanagement.",
-    type: "website",
-    locale: "de_DE",
-    siteName: "Patrick Cipic Grübener",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Patrick Cipic Grübener | Product Strategy Consultant",
-    description: "Ich bringe Struktur in Chaos, klare Prioritäten in überfüllte Backlogs und Fokus in euer Produktmanagement.",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+    description: "Ich bringe Struktur in Chaos, klare Prioritäten in überfüllte Backlogs und Fokus in euer Produktmanagement. Damit Ideen endlich Wirkung zeigen.",
+    keywords: ["Product Management", "Product Strategy", "UX", "Scrum", "Product Owner", "Beratung", "Consultant"],
+    authors: [{ name: "Patrick Cipic Grübener" }],
+    icons: {
+      icon: "/images/favicon.png",
+    },
+    openGraph: {
+      title: "Patrick Cipic Grübener | Product Strategy Consultant",
+      description: "Ich bringe Struktur in Chaos, klare Prioritäten in überfüllte Backlogs und Fokus in euer Produktmanagement.",
+      type: "website",
+      locale: "de_DE",
+      siteName: "Patrick Cipic Grübener",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Patrick Cipic Grübener | Product Strategy Consultant",
+      description: "Ich bringe Struktur in Chaos, klare Prioritäten in überfüllte Backlogs und Fokus in euer Produktmanagement.",
+    },
+    robots: {
+      index: isIndexable,
+      follow: isIndexable,
+    },
+  };
+}
 
 export default function RootLayout({
   children,
