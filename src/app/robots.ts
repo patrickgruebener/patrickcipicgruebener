@@ -8,8 +8,8 @@ const INDEXABLE_HOSTS = new Set([
 
 export const dynamic = "force-dynamic";
 
-export default function robots(): MetadataRoute.Robots {
-  const headersList = headers();
+export default async function robots(): Promise<MetadataRoute.Robots> {
+  const headersList = await headers();
   const forwardedHost = headersList.get("x-forwarded-host") || "";
   const host = forwardedHost || headersList.get("host") || "";
   const domain = host.split(",")[0]?.trim().split(":")[0]?.toLowerCase() || "";
