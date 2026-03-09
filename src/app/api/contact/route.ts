@@ -10,15 +10,43 @@ function sanitizeText(text: string): string {
     .replace(/'/g, '&#039;');
 }
 
+// Server-side rate limiting: max 3 submissions per IP per hour
+const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = rateLimitMap.get(ip);
+
+  if (!entry || now > entry.resetAt) {
+    rateLimitMap.set(ip, { count: 1, resetAt: now + 60 * 60 * 1000 });
+    return false;
+  }
+
+  if (entry.count >= 3) return true;
+
+  entry.count += 1;
+  return false;
+}
+
 export async function POST(request: NextRequest) {
   try {
+    const ip =
+      request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown';
+
+    if (isRateLimited(ip)) {
+      return NextResponse.json(
+        { error: 'Zu viele Anfragen. Bitte warte eine Stunde.' },
+        { status: 429 }
+      );
+    }
+
     const body = await request.json();
     const { firstName, lastName, phone, email, website } = body;
 
     // SPAM PROTECTION: Honeypot check
     if (website) {
       // Bot detected - pretend success to avoid revealing detection
-      console.warn('Honeypot triggered:', { email, timestamp: new Date().toISOString() });
+      console.warn('Honeypot triggered');
       return NextResponse.json(
         { success: true, message: 'Anfrage erfolgreich gesendet' },
         { status: 200 }
@@ -29,6 +57,19 @@ export async function POST(request: NextRequest) {
     if (!firstName || !lastName || !phone || !email) {
       return NextResponse.json(
         { error: 'Alle Felder sind erforderlich' },
+        { status: 400 }
+      );
+    }
+
+    // Validate field lengths
+    if (
+      String(firstName).length > 100 ||
+      String(lastName).length > 100 ||
+      String(phone).length > 20 ||
+      String(email).length > 254
+    ) {
+      return NextResponse.json(
+        { error: 'Eingabe zu lang' },
         { status: 400 }
       );
     }
@@ -52,17 +93,8 @@ export async function POST(request: NextRequest) {
     const resendApiKey = process.env.RESEND_API_KEY;
 
     if (!resendApiKey) {
-      // If no API key, log the submission and return success
-      // This allows testing without the API key
-      console.log('Contact form submission (no RESEND_API_KEY configured):');
-      console.log({
-        firstName: cleanFirstName,
-        lastName: cleanLastName,
-        phone: cleanPhone,
-        email: cleanEmail,
-        timestamp: new Date().toISOString()
-      });
-
+      // Demo mode: do not log PII
+      console.log('Contact form submission received (demo mode - RESEND_API_KEY not configured)');
       return NextResponse.json(
         { success: true, message: 'Anfrage erfolgreich (Demo-Modus)' },
         { status: 200 }
