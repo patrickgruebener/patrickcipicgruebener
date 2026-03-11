@@ -11,18 +11,18 @@ export async function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/office-overload-chaos.png"
+          src="/images/hero-ai-workspace.webp"
           alt=""
           fill
           priority
           aria-hidden="true"
-          className="object-cover object-right scale-105 blur-[1px] brightness-75 saturate-75"
+          className="object-cover object-center scale-105 brightness-90 saturate-75"
         />
       </div>
 
       {/* Multi-layered Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/75 to-slate-900/60" />
-      <div className="absolute inset-0 bg-gradient-to-b from-white/35 via-transparent to-slate-900/35" />
+      <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/70 via-40% to-black/20" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-black/30" />
 
       {/* Subtle noise/texture overlay for depth */}
       <div
@@ -62,15 +62,8 @@ export async function HeroSection() {
             </div>
           </div>
 
-          {/* Right side - subtle chaos visualization */}
-          <div className="hidden md:block">
-            <div className="space-y-3 opacity-40">
-              <div className="h-2 bg-red-500/30 rounded-full w-3/4 ml-auto" />
-              <div className="h-2 bg-orange-500/30 rounded-full w-2/3 ml-auto" />
-              <div className="h-2 bg-yellow-500/30 rounded-full w-4/5 ml-auto" />
-              <h2 className="h-2 bg-red-500/30 rounded-full w-1/2 ml-auto" />
-            </div>
-          </div>
+          {/* Right side - image shows through */}
+          <div className="hidden md:block" />
         </div>
       </div>
     </section>

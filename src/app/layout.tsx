@@ -25,24 +25,24 @@ export async function generateMetadata(): Promise<Metadata> {
   const isIndexable = indexableHosts.has(domain);
 
   return {
-    title: "Patrick Cipic Grübener | Product Strategy Consultant",
-    description: "Ich bringe Struktur in Chaos, klare Prioritäten in überfüllte Backlogs und Fokus in euer Produktmanagement. Damit Ideen endlich Wirkung zeigen.",
-    keywords: ["Product Management", "Product Strategy", "UX", "Scrum", "Product Owner", "Beratung", "Consultant"],
+    title: "Patrick Cipic Grübener | AI-Produktstratege & Builder",
+    description: "Ich helfe Unternehmen, AI sinnvoll einzusetzen: für schlanke Prozesse, bessere Produkte und echte Wettbewerbsvorteile. Pragmatisch, messbar, sofort umsetzbar.",
+    keywords: ["AI", "Prozessautomation", "Digitalisierung", "AI-Strategie", "KMU", "DACH", "AI-Produktstratege", "Builder"],
     authors: [{ name: "Patrick Cipic Grübener" }],
     icons: {
       icon: "/images/favicon.png",
     },
     openGraph: {
-      title: "Patrick Cipic Grübener | Product Strategy Consultant",
-      description: "Ich bringe Struktur in Chaos, klare Prioritäten in überfüllte Backlogs und Fokus in euer Produktmanagement.",
+      title: "Patrick Cipic Grübener | AI-Produktstratege & Builder",
+      description: "Ich helfe Unternehmen, AI sinnvoll einzusetzen: für schlanke Prozesse, bessere Produkte und echte Wettbewerbsvorteile. Pragmatisch, messbar, sofort umsetzbar.",
       type: "website",
       locale: "de_DE",
       siteName: "Patrick Cipic Grübener",
     },
     twitter: {
       card: "summary_large_image",
-      title: "Patrick Cipic Grübener | Product Strategy Consultant",
-      description: "Ich bringe Struktur in Chaos, klare Prioritäten in überfüllte Backlogs und Fokus in euer Produktmanagement.",
+      title: "Patrick Cipic Grübener | AI-Produktstratege & Builder",
+      description: "Ich helfe Unternehmen, AI sinnvoll einzusetzen: für schlanke Prozesse, bessere Produkte und echte Wettbewerbsvorteile. Pragmatisch, messbar, sofort umsetzbar.",
     },
     robots: {
       index: isIndexable,

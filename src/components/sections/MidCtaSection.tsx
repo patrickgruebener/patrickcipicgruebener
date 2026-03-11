@@ -24,7 +24,7 @@ export async function MidCtaSection() {
             {t('home.midCta.headline.part3')}
           </span>
         </h2>
-        <p className="text-gray-600 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-gray-600 text-lg md:text-xl mb-10 max-w-xl mx-auto leading-relaxed [text-wrap:balance]">
           {t('home.midCta.description')}
         </p>
 

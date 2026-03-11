@@ -64,6 +64,7 @@ export const hr = {
   'home.about.approach.description': 'Empatičan. Strukturiran. Orijentiran na rezultate. Povezujem strategiju i izvršenje tako da timovi ponovno uživaju u postizanju mjerljivih rezultata.',
   'home.about.highlights.title': 'Što me izdvaja:',
   'home.about.highlights.description': 'Preko 15 godina iskustva u razvoju proizvoda, UX-u i digitalnoj strategiji, Rad s korporacijama, startupovima i međufunkcionalnim timovima, Duboko tehničko razumijevanje i AI kompetencija, Praktičan mentalitet i jasna komunikacija na svim razinama.',
+  'home.about.credentials.title': 'Dokazane kvalifikacije',
   'home.about.cta': 'Rezerviraj konzultaciju',
   'home.about.microcopy': '15+ godina iskustva · UX & Product Strategy · AI-potpomognuti razvoj proizvoda',
 

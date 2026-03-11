@@ -3,27 +3,29 @@ import { getTranslations } from '@/lib/i18n.server';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 
-function FolderKanbanIcon({ className }: { className?: string }) {
+function CrosshairIcon({ className }: { className?: string }) {
   return (
     <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+      <circle cx="12" cy="12" r="10" strokeWidth={2} />
+      <circle cx="12" cy="12" r="3" strokeWidth={2} />
+      <path strokeLinecap="round" strokeWidth={2} d="M12 2v4M12 18v4M2 12h4M18 12h4" />
     </svg>
   );
 }
 
-function ZapIcon({ className }: { className?: string }) {
+function LightbulbIcon({ className }: { className?: string }) {
   return (
     <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 21h6m-3-18a6 6 0 00-4 10.5V17h8v-3.5A6 6 0 0012 3z" />
     </svg>
   );
 }
 
-function TelescopeIcon({ className }: { className?: string }) {
+function CogIcon({ className }: { className?: string }) {
   return (
     <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
     </svg>
   );
 }
@@ -40,9 +42,9 @@ export async function TurningPointSection() {
   const { t } = await getTranslations();
 
   const benefits = [
-    { key: '1', Icon: FolderKanbanIcon, iconBg: 'from-blue-100 to-teal-100', iconColor: 'text-blue-600' },
-    { key: '2', Icon: ZapIcon, iconBg: 'from-teal-100 to-green-100', iconColor: 'text-teal-600' },
-    { key: '3', Icon: TelescopeIcon, iconBg: 'from-green-100 to-blue-100', iconColor: 'text-green-600' },
+    { key: '1', Icon: CrosshairIcon, iconBg: 'from-blue-100 to-teal-100', iconColor: 'text-blue-600' },
+    { key: '2', Icon: LightbulbIcon, iconBg: 'from-teal-100 to-green-100', iconColor: 'text-teal-600' },
+    { key: '3', Icon: CogIcon, iconBg: 'from-green-100 to-blue-100', iconColor: 'text-green-600' },
   ];
 
   return (

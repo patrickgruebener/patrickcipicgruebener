@@ -64,6 +64,7 @@ export const en = {
   'home.about.approach.description': 'Empathetic. Structured. Results-oriented. I connect strategy and execution so that teams once again find joy in achieving measurable impact.',
   'home.about.highlights.title': 'What sets me apart:',
   'home.about.highlights.description': 'Over 15 years of experience in product development, UX, and digital strategy, Work with corporates, startups, and cross-functional teams, Deep technical understanding and AI competence, Hands-on mentality and clear communication at all levels.',
+  'home.about.credentials.title': 'Proven Credentials',
   'home.about.cta': 'Book a Consultation',
   'home.about.microcopy': '15+ years of experience · UX & Product Strategy · AI-powered product development',
 

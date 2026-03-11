@@ -38,17 +38,16 @@ export function Header({ currentPage = 'home' }: HeaderProps) {
               src="/images/logo.svg"
               alt="Patrick Cipic Grübener"
               width={200}
-              height={24}
-              className="h-6 w-auto hidden sm:block"
+              height={32}
+              className="h-8 w-auto hidden sm:block"
               priority
             />
             <Image
               src="/images/logo.svg"
               alt="Patrick Cipic Grübener"
-              width={40}
-              height={40}
-              className="h-8 w-8 sm:hidden object-contain object-left"
-              style={{ clipPath: 'inset(0 88% 0 0)' }}
+              width={160}
+              height={24}
+              className="h-6 w-auto sm:hidden"
               priority
             />
           </Link>
