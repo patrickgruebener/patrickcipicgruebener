@@ -120,6 +120,8 @@ export const de = {
   'consultation.form.firstName': 'Name',
   'consultation.form.lastName': 'Nachname',
   'consultation.form.phone': 'Mobiltelefon',
+  'consultation.form.message': 'Deine Nachricht',
+  'consultation.form.messagePlaceholder': 'Beschreib kurz, was du besprechen möchtest...',
   'consultation.form.email': 'E-Mail',
   'consultation.form.privacy': 'Mit dem Absenden des Formulars erkläre ich mich einverstanden mit der',
   'consultation.form.privacyLink': 'Datenschutzerklärung',

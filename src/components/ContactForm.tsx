@@ -34,6 +34,7 @@ export function ContactForm({ language }: ContactFormProps) {
     firstName: '',
     lastName: '',
     phone: '',
+    message: '',
     email: '',
     privacy: false,
     website: '', // Honeypot field - bots will fill this
@@ -42,7 +43,6 @@ export function ContactForm({ language }: ContactFormProps) {
   const [errors, setErrors] = useState({
     firstName: '',
     lastName: '',
-    phone: '',
     email: '',
     privacy: '',
   });
@@ -71,24 +71,19 @@ export function ContactForm({ language }: ContactFormProps) {
     const newErrors = {
       firstName: '',
       lastName: '',
-      phone: '',
       email: '',
       privacy: '',
     };
 
     let hasErrors = false;
 
-    // Validate all fields
+    // Validate required fields
     if (!formData.firstName.trim()) {
       newErrors.firstName = t('consultation.form.required');
       hasErrors = true;
     }
     if (!formData.lastName.trim()) {
       newErrors.lastName = t('consultation.form.required');
-      hasErrors = true;
-    }
-    if (!formData.phone.trim()) {
-      newErrors.phone = t('consultation.form.required');
       hasErrors = true;
     }
     if (!formData.email.trim()) {
@@ -117,7 +112,8 @@ export function ContactForm({ language }: ContactFormProps) {
           body: JSON.stringify({
             firstName: formData.firstName,
             lastName: formData.lastName,
-            phone: `${countryCode} ${formData.phone}`,
+            phone: formData.phone ? `${countryCode} ${formData.phone}` : '',
+            message: formData.message,
             email: formData.email,
             website: formData.website, // Honeypot field
           }),
@@ -200,10 +196,10 @@ export function ContactForm({ language }: ContactFormProps) {
           error={errors.lastName}
         />
 
-        {/* Phone */}
+        {/* Phone (optional) */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            {t('consultation.form.phone')} *
+            {t('consultation.form.phone')}
           </label>
           <div className="flex gap-2">
             <select
@@ -222,10 +218,23 @@ export function ContactForm({ language }: ContactFormProps) {
               value={formData.phone}
               onChange={(e) => handleInputChange('phone', e.target.value)}
               placeholder="123456789"
-              error={errors.phone}
               className="flex-1"
             />
           </div>
+        </div>
+
+        {/* Message */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            {t('consultation.form.message')}
+          </label>
+          <textarea
+            value={formData.message}
+            onChange={(e) => handleInputChange('message', e.target.value)}
+            placeholder={t('consultation.form.messagePlaceholder')}
+            rows={4}
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+          />
         </div>
 
         {/* Email */}

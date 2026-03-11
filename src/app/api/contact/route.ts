@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    const { firstName, lastName, phone, email, website } = body;
+    const { firstName, lastName, phone, message, email, website } = body;
 
     // SPAM PROTECTION: Honeypot check
     if (website) {
@@ -54,7 +54,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate required fields
-    if (!firstName || !lastName || !phone || !email) {
+    if (!firstName || !lastName || !email) {
       return NextResponse.json(
         { error: 'Alle Felder sind erforderlich' },
         { status: 400 }
@@ -65,7 +65,8 @@ export async function POST(request: NextRequest) {
     if (
       String(firstName).length > 100 ||
       String(lastName).length > 100 ||
-      String(phone).length > 20 ||
+      (phone && String(phone).length > 20) ||
+      (message && String(message).length > 2000) ||
       String(email).length > 254
     ) {
       return NextResponse.json(
@@ -86,7 +87,8 @@ export async function POST(request: NextRequest) {
     // Sanitize inputs to prevent XSS
     const cleanFirstName = sanitizeText(firstName.trim());
     const cleanLastName = sanitizeText(lastName.trim());
-    const cleanPhone = sanitizeText(phone.trim());
+    const cleanPhone = phone ? sanitizeText(String(phone).trim()) : '';
+    const cleanMessage = message ? sanitizeText(String(message).trim()) : '';
     const cleanEmail = sanitizeText(email.trim());
 
     // Check if Resend API key is configured
@@ -116,7 +118,8 @@ export async function POST(request: NextRequest) {
           <h2>Neue Beratungsanfrage</h2>
           <p><strong>Name:</strong> ${cleanFirstName} ${cleanLastName}</p>
           <p><strong>E-Mail:</strong> ${cleanEmail}</p>
-          <p><strong>Telefon:</strong> ${cleanPhone}</p>
+          ${cleanPhone ? `<p><strong>Telefon:</strong> ${cleanPhone}</p>` : ''}
+          ${cleanMessage ? `<p><strong>Nachricht:</strong><br>${cleanMessage}</p>` : ''}
           <p><strong>Zeitpunkt:</strong> ${new Date().toLocaleString('de-DE')}</p>
         `,
       }),

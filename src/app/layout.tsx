@@ -13,6 +13,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const PRODUCTION_URL = "https://patrickcipicgruebener.com";
+const OG_IMAGE = `${PRODUCTION_URL}/images/patrickcipicgruebener_portrait.webp`;
+
 export async function generateMetadata(): Promise<Metadata> {
   const headersList = await headers();
   const indexableHosts = new Set([
@@ -32,17 +35,22 @@ export async function generateMetadata(): Promise<Metadata> {
     icons: {
       icon: "/images/favicon.png",
     },
+    alternates: {
+      canonical: PRODUCTION_URL,
+    },
     openGraph: {
       title: "Patrick Cipic Grübener | AI-Produktstratege & Builder",
       description: "Ich helfe Unternehmen, AI sinnvoll einzusetzen: für schlanke Prozesse, bessere Produkte und echte Wettbewerbsvorteile. Pragmatisch, messbar, sofort umsetzbar.",
       type: "website",
       locale: "de_DE",
       siteName: "Patrick Cipic Grübener",
+      images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "Patrick Cipic Grübener" }],
     },
     twitter: {
       card: "summary_large_image",
       title: "Patrick Cipic Grübener | AI-Produktstratege & Builder",
       description: "Ich helfe Unternehmen, AI sinnvoll einzusetzen: für schlanke Prozesse, bessere Produkte und echte Wettbewerbsvorteile. Pragmatisch, messbar, sofort umsetzbar.",
+      images: [OG_IMAGE],
     },
     robots: {
       index: isIndexable,
