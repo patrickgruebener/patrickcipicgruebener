@@ -27,7 +27,7 @@ Alle Texte leben in Translation-Files (`de.ts`, `en.ts`, `hr.ts` mit je 164 Keys
 
 | Task | Name | Prioritaet | Status | Abhaengigkeiten |
 |---|---|---|---|---|
-| [001](001-content-rewrite-de.md) | Deutsches Content Rewrite (de.ts) | Critical | Draft | - |
+| [001](done/001-content-rewrite-de.md) | Deutsches Content Rewrite (de.ts) | Critical | Done | - |
 | [002](002-meta-seo-update.md) | Meta/SEO und Layout Updates | High | Draft | - |
 | [003](003-pain-point-icons.md) | Pain Point Icons Update | Medium | Draft | 001 |
 | [004](004-content-translation-en.md) | English Translation (en.ts) | High | Draft | 001, 002 |

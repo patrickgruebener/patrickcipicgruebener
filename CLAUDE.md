@@ -1,9 +1,9 @@
 # Patrick Cipic Grübener - Portfolio Website
 
 ## Projekt-Übersicht
-Persönliche Portfolio-Website für Patrick Cipic Grübener (Strategic Product Manager & UX-Driven Certified Scrum Product Owner).
+Persönliche Portfolio-Website für Patrick Cipic Grübener (AI-Produktstratege & Builder).
 
-**Status**: Infrastruktur fertig, Website-Entwicklung als nächstes
+**Status**: Website live. Epic 013 (Messaging Relaunch): Tasks 001 (DE Content) + 002 (Meta/SEO) abgeschlossen. Offen: 003 (Icons), 004 (EN), 005 (Staging QA).
 
 ---
 
