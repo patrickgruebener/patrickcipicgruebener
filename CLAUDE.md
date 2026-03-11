@@ -3,7 +3,7 @@
 ## Projekt-Übersicht
 Persönliche Portfolio-Website für Patrick Cipic Grübener (AI-Produktstratege & Builder).
 
-**Status**: Website live. Epic 013 (Messaging Relaunch): Tasks 001-005 alle abgeschlossen. Nächster Schritt: Produktions-Domain umstellen (DNS bei IONOS).
+**Status**: Website vollständig live auf patrickcipicgruebener.com. Epic 013 (Messaging Relaunch) abgeschlossen.
 
 ---
 
@@ -30,14 +30,13 @@ Persönliche Portfolio-Website für Patrick Cipic Grübener (AI-Produktstratege 
 ### Domains
 | Domain | Zweck | Status |
 |--------|-------|--------|
-| `test.patrickcipicgruebener.com` | Test/Staging | ✅ Aktiv |
-| `patrickcipicgruebener.com` | Produktion | Noch bei Figma Make |
-| `www.patrickcipicgruebener.com` | Produktion | DNS noch nicht umgestellt |
+| `patrickcipicgruebener.com` | Produktion | ✅ Live |
+| `www.patrickcipicgruebener.com` | Produktion | ✅ Live |
+| `test.patrickcipicgruebener.com` | Staging | ✅ Aktiv |
 
 ### DNS (bei IONOS)
 - Domain-Registrar: IONOS
-- A-Record `test` → `76.13.11.84` (TTL: 300)
-- Weitere Records für Produktion noch ausstehend
+- A-Records `@` + `www` + `test` → `76.13.11.84`
 
 ---
 
