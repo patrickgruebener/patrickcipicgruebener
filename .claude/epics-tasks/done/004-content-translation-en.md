@@ -1,6 +1,6 @@
 # Task 004: English Translation (en.ts)
 
-## Status: Draft
+## Status: Done
 
 ## Background
 
@@ -8,12 +8,12 @@ Alle in Task 001 und 002 geaenderten deutschen Texte muessen ins Englische ueber
 
 ## Acceptance Criteria
 
-- [ ] Alle geaenderten Home-Page Keys in en.ts spiegeln den neuen DE-Content
-- [ ] Footer role auf Englisch aktualisiert
-- [ ] Impressum role auf Englisch aktualisiert
-- [ ] Natuerliches Englisch, keine woertliche Uebersetzung
-- [ ] `npm run build` laeuft durch
-- [ ] Language Switcher zeigt korrekte EN-Version
+- [x] Alle geaenderten Home-Page Keys in en.ts spiegeln den neuen DE-Content
+- [x] Footer role auf Englisch aktualisiert
+- [x] Impressum role auf Englisch aktualisiert
+- [x] Natuerliches Englisch, keine woertliche Uebersetzung
+- [x] `npm run build` laeuft durch
+- [ ] Language Switcher zeigt korrekte EN-Version (manuell prüfen)
 
 ## Non-Goals
 

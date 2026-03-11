@@ -1,6 +1,6 @@
 # Task 003: Pain Point Icons Update
 
-## Status: Draft
+## Status: Done
 
 ## Background
 
@@ -8,10 +8,10 @@ Die aktuellen Icons in PainPointsSection (RouteIcon, ListXIcon, CompassIcon, Col
 
 ## Acceptance Criteria
 
-- [ ] 5 neue SVG-Icons passend zu den neuen Pain Points
-- [ ] Icons sind visuell konsistent (gleicher Stroke-Stil, gleiche Groesse)
-- [ ] Farbschema bleibt (red-600 auf red-50/orange-50 Hintergrund)
-- [ ] `npm run build` laeuft durch
+- [x] 5 neue SVG-Icons passend zu den neuen Pain Points
+- [x] Icons sind visuell konsistent (gleicher Stroke-Stil, gleiche Groesse)
+- [x] Farbschema bleibt (red-600 auf red-50/orange-50 Hintergrund)
+- [x] `npm run build` laeuft durch
 
 ## Non-Goals
 
