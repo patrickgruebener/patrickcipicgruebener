@@ -1,7 +1,7 @@
 # Epic: Website Messaging Relaunch (Task 013)
 
 **Epic:** 013 (Ref: AI OS Task 013, EPIC-006-015)
-**Status:** In Progress
+**Status:** Done
 **Erstellt:** 2026-03-11
 **Prioritaet:** Medium
 
@@ -28,10 +28,10 @@ Alle Texte leben in Translation-Files (`de.ts`, `en.ts`, `hr.ts` mit je 164 Keys
 | Task | Name | Prioritaet | Status | Abhaengigkeiten |
 |---|---|---|---|---|
 | [001](done/001-content-rewrite-de.md) | Deutsches Content Rewrite (de.ts) | Critical | Done | - |
-| [002](002-meta-seo-update.md) | Meta/SEO und Layout Updates | High | Draft | - |
+| [002](done/002-meta-seo-update.md) | Meta/SEO und Layout Updates | High | Done | - |
 | [003](done/003-pain-point-icons.md) | Pain Point Icons Update | Medium | Done | 001 |
 | [004](done/004-content-translation-en.md) | English Translation (en.ts) | High | Done | 001, 002 |
-| [005](005-staging-qa.md) | Staging Deploy und QA | High | Draft | 001-004 |
+| [005](done/005-staging-qa.md) | Staging Deploy und QA | High | Done | 001-004 |
 
 ### Dependency Graph
 
@@ -58,10 +58,10 @@ Alle Texte leben in Translation-Files (`de.ts`, `en.ts`, `hr.ts` mit je 164 Keys
 
 ## Abnahmekriterien
 
-- [ ] Hero spiegelt neue Positionierung als AI-Produktstratege & Builder
-- [ ] Pain Points sind KMU-relevant (nicht Tech-Team-relevant)
-- [ ] About-Text auf Writing Style Profile
-- [ ] DE + EN Uebersetzungen aktuell
-- [ ] Meta-Tags und OG-Data aktualisiert
-- [ ] Staging deployed und getestet
-- [ ] 10-Sekunden-Test: Nicht-Techie versteht sofort was Patrick anbietet
+- [x] Hero spiegelt neue Positionierung als AI-Produktstratege & Builder
+- [x] Pain Points sind KMU-relevant (nicht Tech-Team-relevant)
+- [x] About-Text auf Writing Style Profile
+- [x] DE + EN Uebersetzungen aktuell
+- [x] Meta-Tags und OG-Data aktualisiert
+- [x] Staging deployed und getestet
+- [x] 10-Sekunden-Test: Nicht-Techie versteht sofort was Patrick anbietet

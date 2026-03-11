@@ -3,7 +3,7 @@
 ## Projekt-Übersicht
 Persönliche Portfolio-Website für Patrick Cipic Grübener (AI-Produktstratege & Builder).
 
-**Status**: Website live. Epic 013 (Messaging Relaunch): Tasks 001 (DE Content) + 002 (Meta/SEO) + 003 (Icons) + 004 (EN Translation) abgeschlossen. Offen: 005 (Staging QA).
+**Status**: Website live. Epic 013 (Messaging Relaunch): Tasks 001-005 alle abgeschlossen. Nächster Schritt: Produktions-Domain umstellen (DNS bei IONOS).
 
 ---
 
