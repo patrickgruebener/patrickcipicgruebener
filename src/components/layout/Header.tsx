@@ -63,14 +63,6 @@ export function Header({ currentPage = 'home' }: HeaderProps) {
               {t('header.home')}
             </Link>
             <Link
-              href="/angebote"
-              className={`text-gray-600 hover:text-gray-900 transition-colors ${
-                currentPage === 'angebote' ? 'text-gray-900 font-medium' : ''
-              }`}
-            >
-              {t('header.angebote')}
-            </Link>
-            <Link
               href="/aios"
               className={`text-gray-600 hover:text-gray-900 transition-colors ${
                 currentPage === 'aios' ? 'text-gray-900 font-medium' : ''
@@ -79,22 +71,10 @@ export function Header({ currentPage = 'home' }: HeaderProps) {
               {t('header.aios')}
             </Link>
             <button
-              onClick={() => scrollToSection('testimonials')}
-              className="text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              {t('header.testimonials')}
-            </button>
-            <button
               onClick={() => scrollToSection('about')}
               className="text-gray-600 hover:text-gray-900 transition-colors"
             >
               {t('header.about')}
-            </button>
-            <button
-              onClick={() => scrollToSection('process')}
-              className="text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              {t('header.process')}
             </button>
           </nav>
 
@@ -140,14 +120,6 @@ export function Header({ currentPage = 'home' }: HeaderProps) {
             {t('header.home')}
           </Link>
           <Link
-            href="/angebote"
-            className={`text-sm text-gray-600 hover:text-gray-900 transition-colors ${
-              currentPage === 'angebote' ? 'text-gray-900 font-medium' : ''
-            }`}
-          >
-            {t('header.angebote')}
-          </Link>
-          <Link
             href="/aios"
             className={`text-sm text-gray-600 hover:text-gray-900 transition-colors ${
               currentPage === 'aios' ? 'text-gray-900 font-medium' : ''
@@ -156,22 +128,10 @@ export function Header({ currentPage = 'home' }: HeaderProps) {
             {t('header.aios')}
           </Link>
           <button
-            onClick={() => scrollToSection('testimonials')}
-            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-          >
-            {t('header.testimonials')}
-          </button>
-          <button
             onClick={() => scrollToSection('about')}
             className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
           >
             {t('header.about')}
-          </button>
-          <button
-            onClick={() => scrollToSection('process')}
-            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-          >
-            {t('header.process')}
           </button>
         </nav>
       </div>
