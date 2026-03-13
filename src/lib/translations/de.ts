@@ -161,6 +161,196 @@ export const de = {
   'impressum.copyright.text1': 'Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.',
   'impressum.copyright.text2': 'Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis.',
   'impressum.backToHome': '← Zurück zur Startseite',
+
+  // Header - Angebote
+  'header.angebote': 'Angebote',
+
+  // Header - AIOS
+  'header.aios': 'AI OS Blueprint',
+
+  // Angebote Page
+  'angebote.meta.title': 'Angebote | Patrick Cipic Grübener',
+  'angebote.meta.description': 'AI-Pakete für Geschäftsführer und Entscheider. Von der Potenzialanalyse bis zum fertigen AI-System. Klare Preise, konkrete Ergebnisse.',
+
+  'angebote.hero.headline': 'AI sinnvoll einsetzen.',
+  'angebote.hero.headlineHighlight': 'Mit einem klaren Plan.',
+  'angebote.hero.description': 'Drei Pakete, die aufeinander aufbauen. Vom ersten Überblick bis zum laufenden System. Du entscheidest nach jedem Schritt, ob und wie es weitergeht.',
+
+  // Trust Pyramid / Upsell Path
+  'angebote.trustPath.title': 'Dein Weg zu AI im Unternehmen',
+  'angebote.trustPath.subtitle': 'Jedes Paket baut auf dem vorherigen auf. Du gehst kein Risiko ein, weil du nach jedem Schritt entscheidest.',
+  'angebote.trustPath.step1': 'Klarheit gewinnen',
+  'angebote.trustPath.step2': 'Team mitnehmen',
+  'angebote.trustPath.step3': 'System bauen',
+  'angebote.trustPath.step4': 'Kontinuierlich wachsen',
+
+  // Package 1: AI Klarheit
+  'angebote.pkg1.name': 'AI Klarheit',
+  'angebote.pkg1.price': '€1.800',
+  'angebote.pkg1.priceNote': 'Festpreis',
+  'angebote.pkg1.promise': 'Du weißt genau, wo AI in deinem Unternehmen den größten Hebel hat.',
+  'angebote.pkg1.duration': '1–2 Wochen · Remote',
+  'angebote.pkg1.for': 'Für GF und Entscheider, die spüren, dass AI relevant ist, aber nicht wissen wo anfangen.',
+  'angebote.pkg1.deliverables.title': 'Was du bekommst',
+  'angebote.pkg1.deliverables.1': 'Vorbereitungs-Fragebogen für strukturierte Bestandsaufnahme',
+  'angebote.pkg1.deliverables.2': 'Vorab-Analyse mit Branchenrecherche und ersten AI-Potenzialen',
+  'angebote.pkg1.deliverables.3': 'Deep-Dive Session (90 Min) mit dir als GF',
+  'angebote.pkg1.deliverables.4': 'Schriftliche AI-Potenzialanalyse, priorisiert',
+  'angebote.pkg1.deliverables.5': 'AI-Roadmap mit ROI-Schätzung pro Maßnahme',
+  'angebote.pkg1.deliverables.6': 'Ergebnis-Präsentation (60 Min) als Entscheidungsvorlage',
+  'angebote.pkg1.bonus.title': 'Zusätzlich inklusive',
+  'angebote.pkg1.bonus.1': 'AI Quick-Wins Checkliste: 5 Dinge, die sofort umsetzbar sind',
+  'angebote.pkg1.bonus.2': 'Follow-up Call (30 Min) nach 2 Wochen',
+  'angebote.pkg1.cta': 'Beratungstermin vereinbaren',
+
+  // Package 2: AI Startschuss
+  'angebote.pkg2.name': 'AI Startschuss',
+  'angebote.pkg2.price': '€2.700',
+  'angebote.pkg2.priceNote': 'Festpreis',
+  'angebote.pkg2.promise': 'Dein Team ist bereit, dein Plan steht, du kannst entscheiden.',
+  'angebote.pkg2.duration': '2–3 Wochen · Remote',
+  'angebote.pkg2.for': 'Für Unternehmen, die nach AI Klarheit den nächsten Schritt gehen wollen.',
+  'angebote.pkg2.deliverables.title': 'Was du bekommst',
+  'angebote.pkg2.deliverables.1': 'Maßgeschneidertes Konzept auf Basis der AI Klarheit Ergebnisse',
+  'angebote.pkg2.deliverables.2': 'Kern-Sessions: Team-Training, Prozess-Deep-Dives oder Stakeholder-Workshop',
+  'angebote.pkg2.deliverables.3': 'Teilnehmer-Materialien: Cheat Sheets, Slides, Prompt-Vorlagen',
+  'angebote.pkg2.deliverables.4': 'Schriftlicher Umsetzungsplan mit Scope und Kostenschätzung',
+  'angebote.pkg2.bonus.title': 'Zusätzlich inklusive',
+  'angebote.pkg2.bonus.1': 'Session-Aufzeichnung für abwesende Teilnehmer',
+  'angebote.pkg2.bonus.2': '30-Tage Async-Support per E-Mail und Chat',
+  'angebote.pkg2.cta': 'Beratungstermin vereinbaren',
+
+  // Package 3: AI System
+  'angebote.pkg3.name': 'AI System',
+  'angebote.pkg3.price': 'Individuell',
+  'angebote.pkg3.priceNote': 'Festpreis nach Analyse',
+  'angebote.pkg3.promise': 'Es läuft. Gebaut, integriert, dein Team kann es nutzen.',
+  'angebote.pkg3.duration': '2–8 Wochen · Remote',
+  'angebote.pkg3.for': 'Für Unternehmen, die nach AI Startschuss bereit für die Umsetzung sind.',
+  'angebote.pkg3.deliverables.title': 'Was du bekommst',
+  'angebote.pkg3.deliverables.1': 'Technische Umsetzung des definierten AI-Systems',
+  'angebote.pkg3.deliverables.2': 'Iterative Abstimmung mit regelmäßigen Check-ins',
+  'angebote.pkg3.deliverables.3': 'Team-Training auf dem fertigen System',
+  'angebote.pkg3.deliverables.4': 'Technische Dokumentation und Nutzungsanleitung',
+  'angebote.pkg3.deliverables.5': 'Wissenstransfer für Eigenständigkeit',
+  'angebote.pkg3.deliverables.6': 'Go-Live Begleitung',
+  'angebote.pkg3.bonus.title': 'Zusätzlich inklusive',
+  'angebote.pkg3.bonus.1': '30-Tage Support nach Go-Live',
+  'angebote.pkg3.cta': 'Beratungstermin vereinbaren',
+
+  // Retainer
+  'angebote.retainer.title': 'Retainer',
+  'angebote.retainer.subtitle': 'Optional: Dein AI-System wächst mit.',
+  'angebote.retainer.description': 'Nach dem Go-Live begleite ich dich weiter. Optimierung bestehender Systeme, neue Use Cases, Team-Coaching und Updates. Format und Umfang besprechen wir individuell.',
+  'angebote.retainer.cta': 'Im Beratungsgespräch besprechen',
+
+  // Price Anchor Section
+  'angebote.priceAnchor.title': 'Was kostet das Problem?',
+  'angebote.priceAnchor.arg1': 'Was kostet es, wenn du noch 6 Monate ohne AI-Strategie weiterarbeitest?',
+  'angebote.priceAnchor.arg2': 'Was kostet ein falsch gewähltes Tool, das keiner nutzt?',
+  'angebote.priceAnchor.arg3': 'Was kostet eine Fehlentscheidung bei einem €50.000 Software-Projekt?',
+  'angebote.priceAnchor.conclusion': 'Dagegen ist Klarheit ein Rundungsfehler.',
+
+  // Final CTA
+  'angebote.finalCta.title': 'Bereit für den ersten Schritt?',
+  'angebote.finalCta.description': 'In 20 Minuten klären wir, wo du stehst und welches Paket zu deiner Situation passt. Kein Verkaufsgespräch, nur ein ehrlicher Austausch.',
+  'angebote.finalCta.button': 'Jetzt Beratungstermin buchen',
+  'angebote.finalCta.microcopy': 'Kostenlos und unverbindlich',
+
+  // AIOS Page - Meta
+  'aios.meta.title': 'AI Operating System Blueprint | Patrick Cipic Grübener',
+  'aios.meta.description': 'Dein Claude Code vergisst alles. Dieses System nicht. Persistentes Gedächtnis, automatische Session-Persistenz und erweiterbare Skills für Claude Code.',
+
+  // AIOS - Hero Section
+  'aios.hero.headline': 'Dein Claude Code vergisst alles.',
+  'aios.hero.headlineHighlight': 'Dieses System nicht.',
+  'aios.hero.subheadline': 'Die meisten Claude Code Nutzer verlieren 100% ihrer Session-Erkenntnisse. Jede neue Konversation startet bei Null. Mit dem AI Operating System Blueprint verlierst du 0%.',
+  'aios.hero.text1': 'Du nutzt Claude Code jeden Tag. Und jeden Tag erklärst du von vorne, wer du bist, was du machst, welche Entscheidungen du letzte Woche getroffen hast. Dein AI-Assistent hat Alzheimer.',
+  'aios.hero.text2': 'Das AI Operating System Blueprint ändert das. Du klonst ein Repo, läufst ein Setup, und ab der ersten Session baut sich ein wachsendes Gedächtnis auf. Jede Erkenntnis, jede Entscheidung, jeder Kontakt bleibt erhalten. Je länger du es nutzt, desto wertvoller wird es.',
+  'aios.hero.text3': 'Kein SaaS. Keine monatliche Gebühr. Dein System, deine Daten, dein Repo.',
+  'aios.hero.cta': 'Blueprint anfragen',
+
+  // AIOS - Features Section
+  'aios.features.title': 'Was du bekommst',
+  'aios.features.core.title': 'Core Package',
+  'aios.features.core.subtitle': 'Keine externen Dependencies',
+  'aios.features.core.intro': 'Alles im Core funktioniert ausschließlich mit Claude Code und deinem Dateisystem. Kein MCP Server, keine APIs, kein Node.js.',
+  'aios.features.core.memory.title': 'Memory System mit 3-Layer-Architektur',
+  'aios.features.core.memory.description': 'Core Facts für schnellen Zugriff, Detail-Dokumente für Tiefe, strukturierte Entities mit Schema-Validierung. Dein Claude weiß wer du bist, was deine Ziele sind und welche Entscheidungen du getroffen hast.',
+  'aios.features.core.sessionend.title': 'SessionEnd Hook',
+  'aios.features.core.sessionend.description': 'Automatische Session-Persistenz. Jede Session wird analysiert und als strukturiertes Log gespeichert. Du musst nichts tun. Claude vergisst nie wieder.',
+  'aios.features.core.skills.title': '7 Core Skills',
+  'aios.features.core.skills.description': '/setup für Onboarding, /task-spec für Task-Planung, /adr für Entscheidungsdokumentation, /ende für Session-Abschluss, /health für System-Diagnostik, /capabilities für Skill-Übersicht, /recap für Änderungs-Zusammenfassungen.',
+  'aios.features.core.entities.title': 'Entity Schema + Validierung',
+  'aios.features.core.entities.description': '5 Kategorien (Clients, People, Projects, Decisions, Tools) mit einheitlicher Frontmatter-Struktur und Validierungsskript. Dein Wissen ist nicht nur gespeichert, sondern strukturiert und prüfbar.',
+  'aios.features.core.tasks.title': 'Task System',
+  'aios.features.core.tasks.description': 'Epics, Tasks, Templates und Konventionen. Arbeitet nahtlos mit /task-spec zusammen.',
+  'aios.features.core.claude.title': '3-Ebenen CLAUDE.md Template',
+  'aios.features.core.claude.description': 'Globale Identität, Hub-Konfiguration, Skill-Registry. Personalisiert durch /setup in 10-15 Minuten.',
+
+  // AIOS - Features: Modules
+  'aios.features.modules.title': 'Module',
+  'aios.features.modules.subtitle': 'Optional, erweitert den Core',
+  'aios.features.modules.intro': 'Jedes Modul ist unabhängig. Installiere was du brauchst, lösch was du nicht brauchst. Kein Modul bricht den Core.',
+  'aios.features.modules.google.title': 'Google Workspace',
+  'aios.features.modules.google.description': 'Kalender, Gmail, Drive, Kontakte. Fügt /inbox, /meetingprep, /morningbrief und /pulse hinzu.',
+  'aios.features.modules.memory.title': 'MCP Memory Server',
+  'aios.features.modules.memory.description': 'Semantische Suche über dein Memory. Statt Keyword-Grep: KI-gestützte Suche die Bedeutung versteht, nicht nur Wörter.',
+  'aios.features.modules.telegram.title': 'Telegram Bot',
+  'aios.features.modules.telegram.description': 'Persönlicher AI-Assistent via Telegram. Liest und schreibt in dieselbe Memory-Struktur.',
+
+  // AIOS - Process Section
+  'aios.process.title': 'Wie es funktioniert',
+  'aios.process.step1.title': 'Clone',
+  'aios.process.step1.code': 'git clone <repo-url> ~/ai-os\ncd ~/ai-os',
+  'aios.process.step2.title': 'Setup',
+  'aios.process.step2.code': '/setup',
+  'aios.process.step2.description': 'Ein geführtes Interview. Name, Rolle, Ziele, Tools. 10-15 Minuten. Danach ist dein System personalisiert.',
+  'aios.process.step3.title': 'Arbeiten',
+  'aios.process.step3.description': 'Ab jetzt wächst dein System mit jeder Session. Kontakte werden gespeichert, Entscheidungen dokumentiert, Erkenntnisse persistiert. Automatisch.',
+
+  // AIOS - Audience Section
+  'aios.audience.title': 'Für wen ist das',
+  'aios.audience.freelancer.title': 'Freelancer und Consultants',
+  'aios.audience.freelancer.description': 'Du wechselst zwischen Kunden und Projekten. Jeder hat eigenen Kontext, eigene Ansprechpartner, eigene Entscheidungshistorie. Ohne System verlierst du den Überblick. Mit System weiß Claude: „Bei Kunde X hattest du letzte Woche entschieden, die API-Architektur umzubauen. Hier ist der ADR dazu."',
+  'aios.audience.pm.title': 'Product Manager und Strategen',
+  'aios.audience.pm.description': 'Du brauchst einen Sparringspartner der deine Ziele, deine Positionierung und deine offenen Entscheidungen kennt. Nicht einen der bei jeder Session fragt „Was machst du nochmal?"',
+  'aios.audience.developer.title': 'Developer die ihre Workflows systematisieren wollen',
+  'aios.audience.developer.description': 'Du hast Patterns die du immer wieder nutzt. Code Reviews, Deployment Checks, Architektur-Dokumentation. Mit Skills definierst du sie einmal und nutzt sie per Slash Command.',
+  'aios.audience.everyone.title': 'Jeder der sich fragt: „Warum weiß Claude das nicht mehr?"',
+  'aios.audience.everyone.description': 'Wenn du diesen Satz schon mal gedacht hast, ist dieses System für dich.',
+
+  // AIOS - FAQ Section
+  'aios.faq.title': 'Häufige Fragen',
+  'aios.faq.1.question': 'Brauche ich technisches Wissen?',
+  'aios.faq.1.answer': 'Du solltest mit Claude Code arbeiten können. Das Setup ist ein geführtes Interview. Keine Konfigurationsdateien manuell editieren.',
+  'aios.faq.2.question': 'Funktioniert das ohne MCP Server?',
+  'aios.faq.2.answer': 'Ja. Der Core braucht null externe Dependencies. Nur Claude Code und dein Dateisystem. MCP Module sind optional und fügen Features hinzu.',
+  'aios.faq.3.question': 'Sind meine Daten sicher?',
+  'aios.faq.3.answer': 'Alles liegt lokal in deinem Git-Repo. Keine Cloud, kein externer Service, kein Tracking. Deine Daten verlassen nie dein System (außer du pushst das Repo bewusst).',
+  'aios.faq.4.question': 'Kann ich eigene Skills bauen?',
+  'aios.faq.4.answer': 'Ja. Der Blueprint empfiehlt das Skill Creator Plugin von Anthropic. Damit erstellst, testest und optimierst du eigene Skills direkt in Claude Code.',
+  'aios.faq.5.question': 'Was ist der Unterschied zu einem Custom GPT?',
+  'aios.faq.5.answer': 'Ein Custom GPT hat einen statischen System Prompt. Dieses System hat ein wachsendes Gedächtnis, strukturierte Entitäten, automatische Session-Persistenz und erweiterbare Skills. Es wird besser, je länger du es nutzt.',
+  'aios.faq.6.question': 'Wie halte ich das System aktuell?',
+  'aios.faq.6.answer': 'Du kannst Updates pullen wenn neue Versionen erscheinen. Deine persönlichen Daten (Memory, Entities, Tasks) bleiben unberührt.',
+  'aios.faq.7.question': 'Funktioniert das auf Windows?',
+  'aios.faq.7.answer': 'Ja, mit einer Einschränkung: Symlinks brauchen den Developer Mode. Die Dokumentation beschreibt einen Workaround mit direkten Pfaden.',
+
+  // AIOS - Social Proof Section
+  'aios.social.title': 'Built by a Power User',
+  'aios.social.text1': 'Dieses System ist kein theoretisches Konzept. Es ist das Ergebnis von 8+ Stunden täglicher Arbeit mit Claude Code. Jeder Skill, jedes Schema, jede Architekturentscheidung kommt aus echter Nutzung.',
+  'aios.social.text2': 'Was als persönliches Setup angefangen hat, ist ein vollständiges AI Operating System geworden. Die Frage war: Kann ich das reproduzierbar machen, ohne dass es nur für mich funktioniert? Die Antwort ist dieses Blueprint.',
+  'aios.social.testimonial1': '„Ich habe zwei Stunden damit verbracht, Claude meinen Projektkontext zu erklären. Jetzt muss ich das nie wieder tun."',
+  'aios.social.testimonial2': '„Der SessionEnd Hook allein hat das System bezahlt gemacht. Ich verliere keine Erkenntnisse mehr."',
+  'aios.social.testimonial3': '„Ich dachte, Claude Code ist schon produktiv. Mit Memory System ist es eine andere Welt."',
+  'aios.social.note': 'Framework für echte Testimonials. Wird mit den ersten Nutzern gefüllt.',
+
+  // AIOS - CTA Section
+  'aios.cta.headline': 'Zero Context Loss.',
+  'aios.cta.subline': 'Ab der ersten Session.',
+  'aios.cta.button': 'Blueprint anfragen',
+  'aios.cta.microcopy': 'Formular ausfüllen, ich melde mich bei dir.',
 } as const;
 
 export type TranslationKey = keyof typeof de;

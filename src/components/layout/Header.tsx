@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/Button';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
 
 interface HeaderProps {
-  currentPage?: 'home' | 'impressum' | 'beratungstermin';
+  currentPage?: 'home' | 'impressum' | 'beratungstermin' | 'angebote' | 'aios';
 }
 
 export function Header({ currentPage = 'home' }: HeaderProps) {
@@ -61,6 +61,22 @@ export function Header({ currentPage = 'home' }: HeaderProps) {
               }`}
             >
               {t('header.home')}
+            </Link>
+            <Link
+              href="/angebote"
+              className={`text-gray-600 hover:text-gray-900 transition-colors ${
+                currentPage === 'angebote' ? 'text-gray-900 font-medium' : ''
+              }`}
+            >
+              {t('header.angebote')}
+            </Link>
+            <Link
+              href="/aios"
+              className={`text-gray-600 hover:text-gray-900 transition-colors ${
+                currentPage === 'aios' ? 'text-gray-900 font-medium' : ''
+              }`}
+            >
+              {t('header.aios')}
             </Link>
             <button
               onClick={() => scrollToSection('testimonials')}
@@ -122,6 +138,22 @@ export function Header({ currentPage = 'home' }: HeaderProps) {
             }`}
           >
             {t('header.home')}
+          </Link>
+          <Link
+            href="/angebote"
+            className={`text-sm text-gray-600 hover:text-gray-900 transition-colors ${
+              currentPage === 'angebote' ? 'text-gray-900 font-medium' : ''
+            }`}
+          >
+            {t('header.angebote')}
+          </Link>
+          <Link
+            href="/aios"
+            className={`text-sm text-gray-600 hover:text-gray-900 transition-colors ${
+              currentPage === 'aios' ? 'text-gray-900 font-medium' : ''
+            }`}
+          >
+            {t('header.aios')}
           </Link>
           <button
             onClick={() => scrollToSection('testimonials')}
