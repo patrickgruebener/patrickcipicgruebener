@@ -17,7 +17,7 @@ export async function WorkshopTrainerSection() {
           <div className="shrink-0">
             <div className="w-48 h-48 rounded-2xl overflow-hidden shadow-lg ring-4 ring-gray-100">
               <Image
-                src="/images/patrick.webp"
+                src="/images/patrickcipicgruebener_portrait.webp"
                 alt={t('workshop.trainer.name')}
                 width={192}
                 height={192}
