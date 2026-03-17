@@ -168,6 +168,9 @@ export const en = {
   // Header - AIOS
   'header.aios': 'AI OS Blueprint',
 
+  // Header - KI Workshop
+  'header.kiWorkshop': 'AI Workshop',
+
   // Angebote Page
   'angebote.meta.title': 'Services | Patrick Cipic Grübener',
   'angebote.meta.description': 'AI packages for executives and decision-makers. From potential analysis to a running AI system. Clear pricing, concrete results.',
@@ -351,4 +354,105 @@ export const en = {
   'aios.cta.subline': 'From the first session.',
   'aios.cta.button': 'Request Blueprint',
   'aios.cta.microcopy': 'Fill out the form, I\'ll get back to you.',
+
+  // KI Workshop Page - Meta
+  'workshop.meta.title': 'AI Workshop: Fundamentals for Teams | Patrick Cipic Grübener',
+  'workshop.meta.description': 'In 2 hours from "Let me try ChatGPT" to structured AI usage. Prompt Engineering, Context Engineering, and practical application for your team.',
+
+  // KI Workshop - Hero Section
+  'workshop.hero.headline': 'Your team uses AI.',
+  'workshop.hero.headlineHighlight': 'But are they using it right?',
+  'workshop.hero.subheadline': 'In 2 hours from "Let me try ChatGPT" to structured, repeatable AI usage. Remote. Interactive. Immediately applicable.',
+  'workshop.hero.cta': 'Request Workshop',
+
+  // KI Workshop - Pain Section
+  'workshop.pain.title': 'Sound familiar?',
+  'workshop.pain.1.title': 'AI outputs are generic',
+  'workshop.pain.1.description': 'Your team types a sentence into ChatGPT and gets text that sounds like everything. Just not like you. Quality fluctuates, trust drops.',
+  'workshop.pain.2.title': 'Everyone prompts differently',
+  'workshop.pain.2.description': 'No standards, no shared language. One writes novels, another a single word. The results are accordingly unpredictable.',
+  'workshop.pain.3.title': 'AI forgets your rules',
+  'workshop.pain.3.description': 'You built Custom GPTs or set up instructions. But after three messages, AI ignores everything again. Frustrating.',
+  'workshop.pain.4.title': 'Too many tools, no common thread',
+  'workshop.pain.4.description': 'ChatGPT, Claude, Gemini, Copilot. A new tool every week. But nobody knows which works best when. So it stays trial and error.',
+
+  // KI Workshop - Content Section
+  'workshop.content.title': 'What your team will learn',
+  'workshop.content.intro': 'Three building blocks that build on each other. From fundamentals to immediate application in daily work.',
+  'workshop.content.1.title': 'Prompt Engineering',
+  'workshop.content.1.subtitle': 'The formula for reliable results',
+  'workshop.content.1.bullet1': 'The 5 building blocks of a good prompt: Role, Context, Task, Format, Constraints',
+  'workshop.content.1.bullet2': '4 prompting strategies: Zero-Shot, Few-Shot, Chain of Thought, Iterative',
+  'workshop.content.1.bullet3': 'The game changer: Flipped Interaction ("Before you answer, ask me everything")',
+  'workshop.content.1.bullet4': 'The 10 most common mistakes and how to fix them immediately',
+  'workshop.content.2.title': 'Context Engineering',
+  'workshop.content.2.subtitle': 'Why context matters more than the perfect prompt',
+  'workshop.content.2.bullet1': 'The paradigm shift: "What do I say?" becomes "What does AI already know?"',
+  'workshop.content.2.bullet2': 'The context hierarchy: System Prompt, Project Knowledge, Conversation, User Prompt',
+  'workshop.content.2.bullet3': 'Why AI forgets your rules and 4 concrete solutions',
+  'workshop.content.2.bullet4': '6 principles for reliable AI configuration',
+  'workshop.content.3.title': 'From Head to Prompt',
+  'workshop.content.3.subtitle': 'The bridge from theory to daily practice',
+  'workshop.content.3.bullet1': 'The 3-question compass: Where am I? What does AI know? What\'s missing?',
+  'workshop.content.3.bullet2': 'Practical examples: content production, research, cross-tool workflows',
+  'workshop.content.3.bullet3': 'Live demos with real work examples',
+
+  // KI Workshop - Format Section
+  'workshop.format.title': 'How the workshop works',
+  'workshop.format.step1.title': 'Pre-call',
+  'workshop.format.step1.duration': '15 min, free',
+  'workshop.format.step1.description': 'We clarify where your team stands, which tools you use, and what the biggest frustrations are. So I can tailor the workshop to you.',
+  'workshop.format.step2.title': 'Workshop',
+  'workshop.format.step2.duration': '2 hours, remote',
+  'workshop.format.step2.description': 'Theory, live demos, and Q&A. No lecture format, but interactive. Your team works along and asks questions about their own use cases.',
+  'workshop.format.step3.title': 'Follow-up',
+  'workshop.format.step3.duration': 'Included',
+  'workshop.format.step3.description': 'Prompt cheat sheet, workshop recording, and a follow-up check-in after 2 weeks. So what\'s learned actually sticks in daily work.',
+  'workshop.format.details.title': 'Format at a glance',
+  'workshop.format.details.remote': 'Remote via Zoom or Teams',
+  'workshop.format.details.participants': 'Up to 15 participants',
+  'workshop.format.details.interactive': 'Interactive with live demos',
+  'workshop.format.details.materials': 'Materials and recording included',
+
+  // KI Workshop - Audience Section
+  'workshop.audience.title': 'Who is this workshop for',
+  'workshop.audience.marketing.title': 'Marketing Teams',
+  'workshop.audience.marketing.description': 'Content production, social media, newsletters. Your daily work is full of tasks where AI makes the difference. When the quality is right. That\'s exactly what you learn here.',
+  'workshop.audience.product.title': 'Product Teams and Project Management',
+  'workshop.audience.product.description': 'Research, documentation, stakeholder communication. AI can take the time-consuming tasks off your plate. Structured, not with copy-paste.',
+  'workshop.audience.leadership.title': 'Executives and Leadership',
+  'workshop.audience.leadership.description': 'You don\'t need to operate AI yourself. But you need to understand what\'s possible, where the limits are, and how to steer your team effectively.',
+  'workshop.audience.everyone.title': 'Any team that uses AI daily',
+  'workshop.audience.everyone.description': 'HR, sales, customer service, administration. Wherever text, data, or communication is involved, structured AI usage delivers immediate results.',
+
+  // KI Workshop - Trainer Section
+  'workshop.trainer.title': 'Your Trainer',
+  'workshop.trainer.name': 'Patrick Cipic Grübener',
+  'workshop.trainer.role': 'AI Product Strategist & Builder',
+  'workshop.trainer.bio1': 'Over 15 years of experience in product strategy, UX, and digital transformation. Working daily with AI systems, from prompt engineering to automation to complete AI operating systems.',
+  'workshop.trainer.bio2': 'I don\'t just show slides. I build the systems myself, use them every day, and know exactly where the stumbling blocks are. Practice, not theory.',
+  'workshop.trainer.credential1': '15+ years digital, product and strategy',
+  'workshop.trainer.credential2': 'Active in the AI field daily',
+  'workshop.trainer.credential3': 'Hands-on: analysis to implementation',
+
+  // KI Workshop - FAQ Section
+  'workshop.faq.title': 'Frequently Asked Questions',
+  'workshop.faq.1.question': 'Do we need prior knowledge?',
+  'workshop.faq.1.answer': 'No. The workshop starts with the basics. If some participants are already ahead, they benefit from the Context Engineering block and advanced patterns.',
+  'workshop.faq.2.question': 'How much does the workshop cost?',
+  'workshop.faq.2.answer': 'The price depends on team size and customization. In the free pre-call we clarify the scope and I give you a transparent offer.',
+  'workshop.faq.3.question': 'Do we need to prepare anything?',
+  'workshop.faq.3.answer': 'Just a computer with internet access. Optional: access to ChatGPT or Claude to follow along. I provide everything else.',
+  'workshop.faq.4.question': 'Is there a recording?',
+  'workshop.faq.4.answer': 'Yes. Every participant gets the recording, the prompt cheat sheet, and all materials afterwards.',
+  'workshop.faq.5.question': 'Which tools are used?',
+  'workshop.faq.5.answer': 'The workshop is tool-agnostic. The principles work with ChatGPT, Claude, Gemini, and any other LLM. I show which tool works best when.',
+  'workshop.faq.6.question': 'Is there follow-up after the workshop?',
+  'workshop.faq.6.answer': 'Yes. A check-in call after 2 weeks is included. If your team wants to go deeper after that, we can discuss advanced formats.',
+
+  // KI Workshop - CTA Section
+  'workshop.cta.headline': 'Ready for the next step?',
+  'workshop.cta.subline': 'AI-ready in 2 hours.',
+  'workshop.cta.button': 'Request without obligation',
+  'workshop.cta.microcopy': 'Free pre-call. 15 minutes.',
 } as const;

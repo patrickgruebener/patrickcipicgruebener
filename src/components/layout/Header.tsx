@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/Button';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
 
 interface HeaderProps {
-  currentPage?: 'home' | 'impressum' | 'beratungstermin' | 'angebote' | 'aios';
+  currentPage?: 'home' | 'impressum' | 'beratungstermin' | 'angebote' | 'aios' | 'ki-workshop';
 }
 
 export function Header({ currentPage = 'home' }: HeaderProps) {
@@ -70,6 +70,14 @@ export function Header({ currentPage = 'home' }: HeaderProps) {
             >
               {t('header.aios')}
             </Link>
+            <Link
+              href="/ki-workshop"
+              className={`text-gray-600 hover:text-gray-900 transition-colors ${
+                currentPage === 'ki-workshop' ? 'text-gray-900 font-medium' : ''
+              }`}
+            >
+              {t('header.kiWorkshop')}
+            </Link>
             <button
               onClick={() => scrollToSection('about')}
               className="text-gray-600 hover:text-gray-900 transition-colors"
@@ -126,6 +134,14 @@ export function Header({ currentPage = 'home' }: HeaderProps) {
             }`}
           >
             {t('header.aios')}
+          </Link>
+          <Link
+            href="/ki-workshop"
+            className={`text-sm text-gray-600 hover:text-gray-900 transition-colors ${
+              currentPage === 'ki-workshop' ? 'text-gray-900 font-medium' : ''
+            }`}
+          >
+            {t('header.kiWorkshop')}
           </Link>
           <button
             onClick={() => scrollToSection('about')}
