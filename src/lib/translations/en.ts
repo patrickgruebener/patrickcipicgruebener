@@ -356,13 +356,15 @@ export const en = {
   'aios.cta.microcopy': 'Fill out the form, I\'ll get back to you.',
 
   // KI Workshop Page - Meta
-  'workshop.meta.title': 'AI Workshop: Fundamentals for Teams | Patrick Cipic Grübener',
+  'workshop.meta.title': 'AI Workshop for Teams | €299 flat rate | 2 Hours',
   'workshop.meta.description': 'In 2 hours from "Let me try ChatGPT" to structured AI usage. Prompt Engineering, Context Engineering, and practical application for your team.',
 
   // KI Workshop - Hero Section
   'workshop.hero.headline': 'Your team uses AI.',
   'workshop.hero.headlineHighlight': 'But are they using it right?',
   'workshop.hero.subheadline': 'In 2 hours from "Let me try ChatGPT" to structured, repeatable AI usage. Remote. Interactive. Immediately applicable.',
+  'workshop.hero.priceBadge': '€299',
+  'workshop.hero.priceNote': 'flat rate · all inclusive',
   'workshop.hero.cta': 'Request Workshop',
 
   // KI Workshop - Pain Section
@@ -382,8 +384,8 @@ export const en = {
   'workshop.content.1.title': 'Prompt Engineering',
   'workshop.content.1.subtitle': 'The formula for reliable results',
   'workshop.content.1.bullet1': 'The 5 building blocks of a good prompt: Role, Context, Task, Format, Constraints',
-  'workshop.content.1.bullet2': '4 prompting strategies: Zero-Shot, Few-Shot, Chain of Thought, Iterative',
-  'workshop.content.1.bullet3': 'The game changer: Flipped Interaction ("Before you answer, ask me everything")',
+  'workshop.content.1.bullet2': 'Understand and apply prompting strategies effectively',
+  'workshop.content.1.bullet3': 'The game changer: Flipped Interaction',
   'workshop.content.1.bullet4': 'The 10 most common mistakes and how to fix them immediately',
   'workshop.content.2.title': 'Context Engineering',
   'workshop.content.2.subtitle': 'Why context matters more than the perfect prompt',
@@ -440,7 +442,7 @@ export const en = {
   'workshop.faq.1.question': 'Do we need prior knowledge?',
   'workshop.faq.1.answer': 'No. The workshop starts with the basics. If some participants are already ahead, they benefit from the Context Engineering block and advanced patterns.',
   'workshop.faq.2.question': 'How much does the workshop cost?',
-  'workshop.faq.2.answer': 'The price depends on team size and customization. In the free pre-call we clarify the scope and I give you a transparent offer.',
+  'workshop.faq.2.answer': '€299 flat rate. For your entire team, up to 15 participants. Including all materials, recording, and follow-up check-in. No hidden costs.',
   'workshop.faq.3.question': 'Do we need to prepare anything?',
   'workshop.faq.3.answer': 'Just a computer with internet access. Optional: access to ChatGPT or Claude to follow along. I provide everything else.',
   'workshop.faq.4.question': 'Is there a recording?',
@@ -451,8 +453,22 @@ export const en = {
   'workshop.faq.6.answer': 'Yes. A check-in call after 2 weeks is included. If your team wants to go deeper after that, we can discuss advanced formats.',
 
   // KI Workshop - CTA Section
-  'workshop.cta.headline': 'Ready for the next step?',
-  'workshop.cta.subline': 'AI-ready in 2 hours.',
-  'workshop.cta.button': 'Request without obligation',
-  'workshop.cta.microcopy': 'Free pre-call. 15 minutes.',
+  // KI Workshop - Pricing Section
+  'workshop.pricing.label': 'Workshop Price',
+  'workshop.pricing.price': '€299',
+  'workshop.pricing.suffix': 'flat rate',
+  'workshop.pricing.description': 'For your entire team. No hidden costs.',
+  'workshop.pricing.includes.1': '2-hour workshop for up to 15 participants',
+  'workshop.pricing.includes.2': 'Individual pre-call for customization',
+  'workshop.pricing.includes.3': 'Prompt cheat sheet and all materials',
+  'workshop.pricing.includes.4': 'Workshop recording',
+  'workshop.pricing.includes.5': 'Follow-up check-in after 2 weeks',
+  'workshop.pricing.cta': 'Request Workshop',
+
+  // KI Workshop - CTA Section
+  'workshop.cta.headline': '2 hours. €299. AI-ready.',
+  'workshop.cta.subline': 'The easiest way to bring your team up to speed.',
+  'workshop.cta.button': 'Request Workshop Now',
+  'workshop.cta.microcopy': 'Free pre-call. 15 minutes. No obligation.',
+  'workshop.cta.upsell': 'After the workshop, you know what\'s possible. If you want to go deeper, I\'ll guide your company from strategy to a running AI system.',
 } as const;

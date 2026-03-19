@@ -1,4 +1,6 @@
+import Link from 'next/link';
 import { getTranslations } from '@/lib/i18n.server';
+import { Button } from '@/components/ui/Button';
 
 const steps = [
   { key: 'step1', gradient: 'from-blue-500 to-cyan-500' },
@@ -7,6 +9,8 @@ const steps = [
 ] as const;
 
 const details = ['remote', 'participants', 'interactive', 'materials'] as const;
+
+const pricingIncludes = ['1', '2', '3', '4', '5'] as const;
 
 export async function WorkshopFormatSection() {
   const { t } = await getTranslations();
@@ -39,7 +43,7 @@ export async function WorkshopFormatSection() {
           ))}
         </div>
 
-        <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+        <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100 mb-12">
           <h3 className="text-lg font-semibold text-gray-900 mb-4">
             {t('workshop.format.details.title')}
           </h3>
@@ -51,6 +55,37 @@ export async function WorkshopFormatSection() {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Pricing Card */}
+        <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 md:p-12 text-center">
+          <p className="text-gray-400 text-sm font-medium uppercase tracking-wider mb-3">
+            {t('workshop.pricing.label')}
+          </p>
+          <div className="flex items-baseline justify-center gap-3 mb-2">
+            <span className="text-5xl md:text-6xl font-bold text-white">
+              {t('workshop.pricing.price')}
+            </span>
+            <span className="text-gray-400 text-xl">
+              {t('workshop.pricing.suffix')}
+            </span>
+          </div>
+          <p className="text-gray-300 mb-8">
+            {t('workshop.pricing.description')}
+          </p>
+          <ul className="space-y-3 max-w-md mx-auto mb-10 text-left">
+            {pricingIncludes.map((key) => (
+              <li key={key} className="flex gap-3 text-gray-300">
+                <span className="text-green-400 mt-0.5 shrink-0">&#10003;</span>
+                {t(`workshop.pricing.includes.${key}` as any)}
+              </li>
+            ))}
+          </ul>
+          <Link href="/beratungstermin">
+            <Button size="lg">
+              {t('workshop.pricing.cta')}
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

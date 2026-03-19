@@ -15,15 +15,22 @@ export async function WorkshopHeroSection() {
           </span>
         </h1>
 
-        <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
           {t('workshop.hero.subheadline')}
         </p>
 
-        <Link href="/beratungstermin">
-          <Button size="lg">
-            {t('workshop.hero.cta')}
-          </Button>
-        </Link>
+        <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 mb-10">
+          <span className="text-2xl md:text-3xl font-bold text-white">{t('workshop.hero.priceBadge')}</span>
+          <span className="text-gray-300">{t('workshop.hero.priceNote')}</span>
+        </div>
+
+        <div className="block">
+          <Link href="/beratungstermin">
+            <Button size="lg">
+              {t('workshop.hero.cta')}
+            </Button>
+          </Link>
+        </div>
       </div>
     </section>
   );

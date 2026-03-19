@@ -356,13 +356,15 @@ export const de = {
   'aios.cta.microcopy': 'Formular ausfüllen, ich melde mich bei dir.',
 
   // KI Workshop Page - Meta
-  'workshop.meta.title': 'KI Workshop: Grundlagen für Teams | Patrick Cipic Grübener',
-  'workshop.meta.description': 'In 2 Stunden von "Ich probier mal ChatGPT" zu strukturierter KI-Nutzung. Prompt Engineering, Context Engineering und praktische Anwendung für dein Team.',
+  'workshop.meta.title': 'KI Workshop für Teams | 299 € pauschal | 2 Stunden',
+  'workshop.meta.description': 'In 2 Stunden von „Ich probier mal ChatGPT" zu strukturierter KI-Nutzung. Prompt Engineering, Context Engineering und praktische Anwendung für dein Team.',
 
   // KI Workshop - Hero Section
   'workshop.hero.headline': 'Dein Team nutzt KI.',
   'workshop.hero.headlineHighlight': 'Aber nutzt es KI richtig?',
-  'workshop.hero.subheadline': 'In 2 Stunden von "Ich probier mal ChatGPT" zu strukturierter, wiederholbarer KI-Nutzung. Remote. Interaktiv. Sofort anwendbar.',
+  'workshop.hero.subheadline': 'In 2 Stunden von „Ich probier mal ChatGPT" zu strukturierter, wiederholbarer KI-Nutzung. Remote. Interaktiv. Sofort anwendbar.',
+  'workshop.hero.priceBadge': '299 €',
+  'workshop.hero.priceNote': 'pauschal · alles inklusive',
   'workshop.hero.cta': 'Workshop anfragen',
 
   // KI Workshop - Pain Section
@@ -382,12 +384,12 @@ export const de = {
   'workshop.content.1.title': 'Prompt Engineering',
   'workshop.content.1.subtitle': 'Die Formel für verlässliche Ergebnisse',
   'workshop.content.1.bullet1': 'Die 5 Bausteine eines guten Prompts: Rolle, Kontext, Aufgabe, Format, Constraints',
-  'workshop.content.1.bullet2': '4 Prompting-Strategien: Zero-Shot, Few-Shot, Chain of Thought, Iterativ',
-  'workshop.content.1.bullet3': 'Der Gamechanger: Flipped Interaction ("Bevor du antwortest, frag mich alles")',
+  'workshop.content.1.bullet2': 'Prompting-Strategien verstehen und gezielt einsetzen',
+  'workshop.content.1.bullet3': 'Der Gamechanger: Flipped Interaction',
   'workshop.content.1.bullet4': 'Die 10 häufigsten Fehler und wie man sie sofort behebt',
   'workshop.content.2.title': 'Context Engineering',
   'workshop.content.2.subtitle': 'Warum Kontext wichtiger ist als der perfekte Prompt',
-  'workshop.content.2.bullet1': 'Der Paradigmenwechsel: "Was sage ich?" wird zu "Was weiß die KI schon?"',
+  'workshop.content.2.bullet1': 'Der Paradigmenwechsel: „Was sage ich?" wird zu „Was weiß die KI schon?"',
   'workshop.content.2.bullet2': 'Die Kontext-Hierarchie: System Prompt, Projekt-Wissen, Konversation, User Prompt',
   'workshop.content.2.bullet3': 'Warum KI eure Regeln vergisst und 4 konkrete Lösungen',
   'workshop.content.2.bullet4': '6 Prinzipien für zuverlässige KI-Konfiguration',
@@ -440,7 +442,7 @@ export const de = {
   'workshop.faq.1.question': 'Brauchen wir Vorkenntnisse?',
   'workshop.faq.1.answer': 'Nein. Der Workshop startet bei den Grundlagen. Wenn einzelne Teilnehmer schon weiter sind, profitieren sie vom Context Engineering Block und den fortgeschrittenen Patterns.',
   'workshop.faq.2.question': 'Wie viel kostet der Workshop?',
-  'workshop.faq.2.answer': 'Der Preis hängt von Teamgröße und individueller Anpassung ab. Im kostenlosen Vorgespräch klären wir den Scope und ich mache dir ein transparentes Angebot.',
+  'workshop.faq.2.answer': '299 € pauschal. Für dein ganzes Team, bis zu 15 Teilnehmer. Inklusive aller Materialien, Aufzeichnung und Follow-up Check-in. Keine versteckten Kosten.',
   'workshop.faq.3.question': 'Müssen wir etwas vorbereiten?',
   'workshop.faq.3.answer': 'Nur einen Rechner mit Internetzugang. Optional: Zugang zu ChatGPT oder Claude, um direkt mitmachen zu können. Alles andere liefere ich.',
   'workshop.faq.4.question': 'Gibt es eine Aufzeichnung?',
@@ -450,11 +452,24 @@ export const de = {
   'workshop.faq.6.question': 'Gibt es Follow-up nach dem Workshop?',
   'workshop.faq.6.answer': 'Ja. Ein Check-in Call nach 2 Wochen ist inklusive. Wenn dein Team danach tiefer einsteigen will, können wir über weiterführende Formate sprechen.',
 
+  // KI Workshop - Pricing Section
+  'workshop.pricing.label': 'Workshop-Preis',
+  'workshop.pricing.price': '299 €',
+  'workshop.pricing.suffix': 'pauschal',
+  'workshop.pricing.description': 'Für dein ganzes Team. Keine versteckten Kosten.',
+  'workshop.pricing.includes.1': '2 Stunden Workshop für bis zu 15 Teilnehmer',
+  'workshop.pricing.includes.2': 'Individuelles Vorgespräch zur Abstimmung',
+  'workshop.pricing.includes.3': 'Prompt Cheat Sheet und alle Materialien',
+  'workshop.pricing.includes.4': 'Workshop-Aufzeichnung',
+  'workshop.pricing.includes.5': 'Follow-up Check-in nach 2 Wochen',
+  'workshop.pricing.cta': 'Workshop anfragen',
+
   // KI Workshop - CTA Section
-  'workshop.cta.headline': 'Bereit für den nächsten Schritt?',
-  'workshop.cta.subline': 'In 2 Stunden KI-fit.',
-  'workshop.cta.button': 'Unverbindlich anfragen',
-  'workshop.cta.microcopy': 'Kostenloses Vorgespräch. 15 Minuten.',
+  'workshop.cta.headline': '2 Stunden. 299 €. KI-fit.',
+  'workshop.cta.subline': 'Der einfachste Weg, dein Team auf den neuesten Stand zu bringen.',
+  'workshop.cta.button': 'Jetzt Workshop anfragen',
+  'workshop.cta.microcopy': 'Kostenloses Vorgespräch. 15 Minuten. Unverbindlich.',
+  'workshop.cta.upsell': 'Nach dem Workshop weißt du, was möglich ist. Wenn du tiefer einsteigen willst, begleite ich dein Unternehmen von der Strategie bis zum laufenden AI-System.',
 } as const;
 
 export type TranslationKey = keyof typeof de;

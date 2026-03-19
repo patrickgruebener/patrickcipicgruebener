@@ -9,13 +9,13 @@ export async function WorkshopCtaSection() {
     <section className="py-24 px-6 bg-gradient-to-r from-[#0426CB] to-[#65C87A]">
       <div className="max-w-4xl mx-auto">
         <div className="bg-white rounded-3xl p-12 md:p-16 shadow-2xl text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3">
             {t('workshop.cta.headline')}
           </h2>
-          <p className="text-xl md:text-2xl text-gray-600 mb-10">
+          <p className="text-lg md:text-xl text-gray-600 mb-10">
             {t('workshop.cta.subline')}
           </p>
-          <div className="flex flex-col items-center gap-3">
+          <div className="flex flex-col items-center gap-3 mb-8">
             <Link href="/beratungstermin">
               <Button size="lg">
                 {t('workshop.cta.button')}
@@ -25,6 +25,9 @@ export async function WorkshopCtaSection() {
               {t('workshop.cta.microcopy')}
             </p>
           </div>
+          <p className="text-sm text-gray-400 max-w-lg mx-auto leading-relaxed border-t border-gray-100 pt-6">
+            {t('workshop.cta.upsell')}
+          </p>
         </div>
       </div>
     </section>
