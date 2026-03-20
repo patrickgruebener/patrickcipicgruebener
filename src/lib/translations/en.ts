@@ -437,6 +437,18 @@ export const en = {
   'workshop.trainer.credential2': 'Active in the AI field daily',
   'workshop.trainer.credential3': 'Hands-on: analysis to implementation',
 
+  // KI Workshop - Testimonials Section
+  'workshop.testimonials.title': 'What Participants Say',
+  'workshop.testimonials.1.text': 'I found the two hours super structured and well prepared. There was something for everyone. Great that you included the cheat sheets right away. The demos were really helpful too, they illustrated everything well.',
+  'workshop.testimonials.1.name': 'Susanne Metzger',
+  'workshop.testimonials.1.role': 'Head of Marketing, W.A.F. Institut',
+  'workshop.testimonials.2.text': 'Exactly what we were missing. Everyone felt overwhelmed with all the tools. But what I needed was structure. The workshop gives it all a framework. Great format, worked perfectly remote.',
+  'workshop.testimonials.2.name': 'Franziska Elsner',
+  'workshop.testimonials.2.role': 'Marketing, W.A.F. Institut',
+  'workshop.testimonials.3.text': 'Informative, even though I already knew a lot. It helped me restructure my knowledge. I\'ll be fine-tuning a few things in my daily business.',
+  'workshop.testimonials.3.name': 'Christin Schubert',
+  'workshop.testimonials.3.role': 'Performance Marketing, W.A.F. Institut',
+
   // KI Workshop - FAQ Section
   'workshop.faq.title': 'Frequently Asked Questions',
   'workshop.faq.1.question': 'Do we need prior knowledge?',

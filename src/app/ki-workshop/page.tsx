@@ -8,6 +8,7 @@ import { WorkshopContentSection } from '@/components/sections/workshop/WorkshopC
 import { WorkshopFormatSection } from '@/components/sections/workshop/WorkshopFormatSection';
 import { WorkshopAudienceSection } from '@/components/sections/workshop/WorkshopAudienceSection';
 import { WorkshopTrainerSection } from '@/components/sections/workshop/WorkshopTrainerSection';
+import { WorkshopTestimonialsSection } from '@/components/sections/workshop/WorkshopTestimonialsSection';
 import { WorkshopFaqSection } from '@/components/sections/workshop/WorkshopFaqSection';
 import { WorkshopCtaSection } from '@/components/sections/workshop/WorkshopCtaSection';
 
@@ -35,6 +36,7 @@ export default function KiWorkshopPage() {
         <WorkshopFormatSection />
         <WorkshopAudienceSection />
         <WorkshopTrainerSection />
+        <WorkshopTestimonialsSection />
         <WorkshopFaqSection />
         <WorkshopCtaSection />
       </main>

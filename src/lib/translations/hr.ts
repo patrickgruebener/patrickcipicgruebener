@@ -424,6 +424,18 @@ export const hr = {
   'workshop.trainer.credential1': '15+ Jahre Digital, Produkt und Strategie',
   'workshop.trainer.credential2': 'Täglich aktiv im KI-Feld',
   'workshop.trainer.credential3': 'Hands-on: Analyse bis Umsetzung',
+  // KI Workshop - Testimonials Section
+  'workshop.testimonials.title': 'Was Teilnehmer sagen',
+  'workshop.testimonials.1.text': 'Ich fand die zwei Stunden super strukturiert und toll vorbereitet. Es war für jeden was dabei. Sehr gut, dass du gleich die Spickzettel dazu gepackt hast. Hilfreich fand ich auch die Demos, das hat das Ganze gut veranschaulicht.',
+  'workshop.testimonials.1.name': 'Susanne Metzger',
+  'workshop.testimonials.1.role': 'Bereichsleitung Marketing, W.A.F. Institut',
+  'workshop.testimonials.2.text': 'Genau das, was uns gefehlt hat. Jeder hat sich überfordert gefühlt mit den ganzen Tools. Aber mir fehlt einfach die Struktur. Der Workshop gibt dem Ganzen einen Rahmen. Super gestaltet, remote voll gut geklappt.',
+  'workshop.testimonials.2.name': 'Franziska Elsner',
+  'workshop.testimonials.2.role': 'Marketing, W.A.F. Institut',
+  'workshop.testimonials.3.text': 'Informativ, auch wenn ich vieles schon kannte. Hat mir geholfen, mein Wissen neu zu strukturieren. Ich werde an einigen Ecken nochmal nachjustieren im Daily Business.',
+  'workshop.testimonials.3.name': 'Christin Schubert',
+  'workshop.testimonials.3.role': 'Performance Marketing, W.A.F. Institut',
+
   'workshop.faq.title': 'Häufige Fragen',
   'workshop.faq.1.question': 'Brauchen wir Vorkenntnisse?',
   'workshop.faq.1.answer': 'Nein. Der Workshop startet bei den Grundlagen. Wenn einzelne Teilnehmer schon weiter sind, profitieren sie vom Context Engineering Block und den fortgeschrittenen Patterns.',
