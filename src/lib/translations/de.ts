@@ -102,7 +102,7 @@ export const de = {
   'home.testimonials.4.role': 'Head of Product, blackned GmbH',
   'home.testimonials.4.company': 'blackned GmbH',
   'home.testimonials.4.url': 'https://blackned.de',
-  'home.testimonials.5.text': 'Mir hat alles gefallen. Ich fand die zwei Stunden super strukturiert und toll vorbereitet. Es war für jeden was dabei. Für Profis und die, die es werden wollen. Sehr gut, dass du gleich die Spickzettel dazu gepackt hast. Jetzt gibt es keine Ausreden mehr. Hilfreich fand ich auch die Demos, das hat das Ganze gut veranschaulicht.',
+  'home.testimonials.5.text': 'Der KI-Workshop war genau das, was wir gebraucht haben. Mir hat alles gefallen. Ich fand die zwei Stunden super strukturiert und toll vorbereitet. Es war für jeden was dabei, für Profis und die, die es werden wollen. Sehr gut, dass du gleich die Spickzettel dazu gepackt hast. Jetzt gibt es keine Ausreden mehr. Hilfreich fand ich auch die Demos, das hat das Ganze gut veranschaulicht.',
   'home.testimonials.5.name': 'Susanne Metzger',
   'home.testimonials.5.role': 'Bereichsleitung Backoffice, W.A.F. Institut für Betriebsräte-Fortbildung',
   'home.testimonials.5.company': 'W.A.F. Institut für Betriebsräte-Fortbildung',
