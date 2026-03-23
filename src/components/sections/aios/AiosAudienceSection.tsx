@@ -1,10 +1,10 @@
 import { getTranslations } from '@/lib/i18n.server';
 
 const personas = [
-  { key: 'freelancer', gradient: 'from-blue-500 to-cyan-500' },
-  { key: 'pm', gradient: 'from-cyan-500 to-teal-500' },
-  { key: 'developer', gradient: 'from-teal-500 to-emerald-500' },
-  { key: 'everyone', gradient: 'from-emerald-500 to-green-500' },
+  { key: 'gf', gradient: 'from-blue-500 to-cyan-500' },
+  { key: 'teamleiter', gradient: 'from-cyan-500 to-teal-500' },
+  { key: 'handwerk', gradient: 'from-teal-500 to-emerald-500' },
+  { key: 'dienstleister', gradient: 'from-emerald-500 to-green-500' },
 ] as const;
 
 export async function AiosAudienceSection() {

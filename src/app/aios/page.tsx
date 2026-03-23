@@ -3,6 +3,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { getTranslations } from '@/lib/i18n.server';
 import { AiosHeroSection } from '@/components/sections/aios/AiosHeroSection';
+import { AiosMemorySection } from '@/components/sections/aios/AiosMemorySection';
 import { AiosFeaturesSection } from '@/components/sections/aios/AiosFeaturesSection';
 import { AiosProcessSection } from '@/components/sections/aios/AiosProcessSection';
 import { AiosAudienceSection } from '@/components/sections/aios/AiosAudienceSection';
@@ -29,6 +30,7 @@ export default function AiosPage() {
       <Header currentPage="aios" />
       <main>
         <AiosHeroSection />
+        <AiosMemorySection />
         <AiosFeaturesSection />
         <AiosProcessSection />
         <AiosAudienceSection />
