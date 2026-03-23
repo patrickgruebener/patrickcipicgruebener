@@ -320,12 +320,12 @@ export const hr = {
 
   // AIOS - Memory Section
   'aios.memory.title': 'Razlika: Tvoj sustav ima pamćenje',
-  'aios.memory.intro': 'Najveći problem s AI alatima poput ChatGPT-a: Sve zaborave. Svaki razgovor počinje od nule. Uvijek iznova objašnjavaš tko si, čime se tvoje poduzeće bavi, koje su odluke donesene prošli tjedan. Kao da svaki dan uhodiš novog pripravnika.',
+  'aios.memory.intro': 'Alati poput ChatGPT-a mogu slijediti pravila unutar projekta. Ali kontekst je ograničen, upute se zaboravljaju u dugim razgovorima, a stvarno učenje tijekom vremena se ne događa. A kada više zaposlenika koristi isti alat, svatko ima svoj izolirani kontekst. Zajedničko znanje tvrtke? Ne postoji.',
   'aios.memory.without.title': 'Bez pamćenja',
-  'aios.memory.without.item1': 'Svaki razgovor počinje od nule',
-  'aios.memory.without.item2': 'Uvijek iznova objašnjavaš isto',
-  'aios.memory.without.item3': 'Generički odgovori bez veze s tobom',
-  'aios.memory.without.item4': 'Znanje se gubi nakon svake sesije',
+  'aios.memory.without.item1': 'Ograničen kontekst koji se gubi u dugim razgovorima',
+  'aios.memory.without.item2': 'Upute i pravila se ignoriraju ili zaboravljaju',
+  'aios.memory.without.item3': 'Svaki zaposlenik ima svoj izolirani kontekst',
+  'aios.memory.without.item4': 'Nema zajedničkog, rastućeg znanja tvrtke',
   'aios.memory.with.title': 'S pamćenjem',
   'aios.memory.with.item1': 'Sustav poznaje tvoje poduzeće',
   'aios.memory.with.item2': 'Pamti klijente, projekte, odluke',
@@ -391,7 +391,7 @@ export const hr = {
 
   // AIOS - Social Proof Section
   'aios.social.title': 'Rezultati koji govore sami za sebe',
-  'aios.social.story': 'U W.A.F. Institut AG-u izgradio sam AI sustave s 12-članim marketing timom. Od procjene stanja preko obuke tima do tekućih automatizacija radnih procesa. Rezultat: Tim danas samostalno radi s AI-jem i postiže znatno bolje rezultate nego prije.',
+  'aios.social.story': 'U W.A.F. Institutu za obrazovanje radničkih vijeća izgradio sam AI sustave s 12-članim marketing timom. Od procjene stanja preko obuke tima do tekućih automatizacija radnih procesa. Rezultat: Tim danas samostalno radi s AI-jem i postiže znatno bolje rezultate nego prije.',
   'aios.social.testimonial1.quote': '„Super strukturirano i odlično pripremljeno. Za svakoga je bilo nešto. Za profesionalce i one koji to žele postati. Super što si odmah dodao šalabahter. Sad više nema izgovora."',
   'aios.social.testimonial1.name': 'Susanne Metzger',
   'aios.social.testimonial1.role': 'Voditeljica Back Officea, W.A.F. Institut',

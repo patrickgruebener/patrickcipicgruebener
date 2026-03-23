@@ -320,12 +320,12 @@ export const en = {
 
   // AIOS - Memory Section
   'aios.memory.title': 'The difference: Your system has a memory',
-  'aios.memory.intro': 'The biggest problem with AI tools like ChatGPT: They forget everything. Every conversation starts from zero. You explain over and over who you are, what your company does, which decisions were made last week. It\'s like training a new intern every single day.',
+  'aios.memory.intro': 'Tools like ChatGPT can follow rules within a project. But context is limited, instructions get forgotten in long conversations, and real learning over time doesn\'t happen. And when multiple employees use the same tool, everyone has their own isolated context. Shared company knowledge? Nonexistent.',
   'aios.memory.without.title': 'Without memory',
-  'aios.memory.without.item1': 'Every conversation starts from zero',
-  'aios.memory.without.item2': 'You explain the same things over and over',
-  'aios.memory.without.item3': 'Generic answers with no relation to you',
-  'aios.memory.without.item4': 'Knowledge is lost after every session',
+  'aios.memory.without.item1': 'Limited context that gets lost in long conversations',
+  'aios.memory.without.item2': 'Instructions and rules get ignored or forgotten',
+  'aios.memory.without.item3': 'Every employee has their own isolated context',
+  'aios.memory.without.item4': 'No shared, growing company knowledge',
   'aios.memory.with.title': 'With memory',
   'aios.memory.with.item1': 'The system knows your business',
   'aios.memory.with.item2': 'It remembers clients, projects, decisions',
@@ -391,7 +391,7 @@ export const en = {
 
   // AIOS - Social Proof Section
   'aios.social.title': 'Results that speak for themselves',
-  'aios.social.story': 'At the W.A.F. Institut AG, I built AI systems with a 12-person marketing team. From assessment through team training to running workflow automations. The result: The team now works independently with AI and achieves significantly better results than before.',
+  'aios.social.story': 'At the W.A.F. Institut for Works Council Training, I built AI systems with a 12-person marketing team. From assessment through team training to running workflow automations. The result: The team now works independently with AI and achieves significantly better results than before.',
   'aios.social.testimonial1.quote': '"Super structured and well prepared. There was something for everyone. For pros and those who want to become one. Great that you included the cheat sheets right away. No more excuses now."',
   'aios.social.testimonial1.name': 'Susanne Metzger',
   'aios.social.testimonial1.role': 'Head of Back Office, W.A.F. Institut',

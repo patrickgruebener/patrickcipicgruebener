@@ -22,7 +22,7 @@ export async function AiosHeroSection() {
         </p>
 
         {/* Body Text */}
-        <div className="text-left max-w-2xl mx-auto space-y-4 mb-12">
+        <div className="text-center max-w-2xl mx-auto space-y-4 mb-12">
           <p className="text-gray-400 leading-relaxed">
             {t('aios.hero.text1')}
           </p>
