@@ -8,7 +8,7 @@ export const hr = {
   'header.consultationMicro': 'Besplatno + bez obveze',
 
   // Home - Header Section
-  'home.tagline': 'Builder. Ne konzultant.',
+  'home.tagline': 'Fokus. Oduševljenje. Empatija.',
   'home.headline.part1': 'AI projekti ne propadaju zbog tehnologije.',
   'home.headline.part2': 'Propadaju zbog nedostatka konteksta.',
   'home.description': 'Gradim AI sustave koji poznaju tvoje poduzeće, napreduju s každom interakcijom i rade od prvog dana. Nikakav konzultant koji dostavlja prezentacije i nestaje. Gradim, pokazujem, vi nastavljate.',

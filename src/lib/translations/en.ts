@@ -8,7 +8,7 @@ export const en = {
   'header.consultationMicro': 'Free + non-binding',
 
   // Home - Header Section
-  'home.tagline': 'Builder. Not a Consultant.',
+  'home.tagline': 'Focus. Passion. Empathy.',
   'home.headline.part1': "AI projects don't fail because of the technology.",
   'home.headline.part2': 'They fail because of missing context.',
   'home.description': 'I build AI systems that know your business, get better with every interaction, and work from day one. No consultant who delivers slides and disappears. I build, I show, you keep going.',

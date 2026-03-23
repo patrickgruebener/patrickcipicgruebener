@@ -8,7 +8,7 @@ export const de = {
   'header.consultationMicro': 'Kostenlos + unverbindlich',
 
   // Home - Header Section
-  'home.tagline': 'Builder. Kein Berater.',
+  'home.tagline': 'Fokus. Begeisterung. Empathie.',
   'home.headline.part1': 'KI-Projekte scheitern nicht an der Technologie.',
   'home.headline.part2': 'Sie scheitern am fehlenden Kontext.',
   'home.description': 'Ich baue KI-Systeme, die dein Unternehmen kennen, mit jeder Interaktion besser werden und ab Tag 1 arbeiten. Kein Berater, der Slides liefert und verschwindet. Ich baue, ich zeige, ihr macht weiter.',
