@@ -4,11 +4,11 @@ import { hr } from './translations/hr';
 
 export type Language = 'de' | 'en' | 'hr';
 
-export const translations = {
+export const translations: { de: typeof de } & Record<string, Record<string, string>> = {
   de,
-  en,
-  hr,
-} as const;
+  en: en as Record<string, string>,
+  hr: hr as Record<string, string>,
+};
 
 export const defaultLanguage: Language = 'de';
 
@@ -20,7 +20,7 @@ export const languages: { code: Language; name: string; flag: string }[] = [
 
 // Client-side translation lookup (for when you have the language already)
 export function translate(lang: Language, key: TranslationKey): string {
-  return translations[lang][key] || translations[defaultLanguage][key] || key;
+  return translations[lang][key] || translations.de[key] || key;
 }
 
 // Get all translations for a language (useful for passing to client components)

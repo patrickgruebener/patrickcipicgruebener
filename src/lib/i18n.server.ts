@@ -14,7 +14,7 @@ export async function getTranslations() {
   const lang = await getLanguage();
   return {
     t: (key: TranslationKey): string => {
-      return translations[lang][key] || translations[defaultLanguage][key] || key;
+      return translations[lang][key] || translations.de[key] || key;
     },
     language: lang,
   };

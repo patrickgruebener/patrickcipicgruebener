@@ -27,6 +27,10 @@ const testimonials = [
     key: '4',
     image: '/images/testimonials/martin.avif',
   },
+  {
+    key: '5',
+    image: '/images/testimonials/susanne.avif',
+  },
 ];
 
 export async function TestimonialsSection() {
@@ -41,7 +45,9 @@ export async function TestimonialsSection() {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {testimonials.map(({ key, image }) => {
+          {testimonials.map(({ key, image }, index) => {
+            const isLast = index === testimonials.length - 1;
+            const isOddTotal = testimonials.length % 2 === 1;
             const name = t(`home.testimonials.${key}.name` as any);
             const role = t(`home.testimonials.${key}.role` as any);
             const text = t(`home.testimonials.${key}.text` as any);
@@ -54,7 +60,7 @@ export async function TestimonialsSection() {
             const companyName = roleParts.slice(1).join(', ');
 
             return (
-              <Card key={key} className="p-8 text-left">
+              <Card key={key} className={`p-8 text-left ${isLast && isOddTotal ? 'md:col-span-2 md:max-w-[calc(50%-1rem)] md:mx-auto' : ''}`}>
                 <CardContent className="p-0">
                   <div className="flex gap-1 mb-6">
                     {[...Array(5)].map((_, i) => (

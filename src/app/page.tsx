@@ -3,7 +3,9 @@ import { Footer } from '@/components/layout/Footer';
 import { HeroSection } from '@/components/sections/HeroSection';
 import { PainPointsSection } from '@/components/sections/PainPointsSection';
 import { MidCtaSection } from '@/components/sections/MidCtaSection';
-import { TurningPointSection } from '@/components/sections/TurningPointSection';
+import { SystemInActionSection } from '@/components/sections/SystemInActionSection';
+import { CaseStudySection } from '@/components/sections/CaseStudySection';
+import { PackagesSection } from '@/components/sections/PackagesSection';
 import { TestimonialsSection } from '@/components/sections/TestimonialsSection';
 import { AboutSection } from '@/components/sections/AboutSection';
 import { ProcessSection } from '@/components/sections/ProcessSection';
@@ -17,7 +19,9 @@ export default function Home() {
         <HeroSection />
         <PainPointsSection />
         <MidCtaSection />
-        <TurningPointSection />
+        <SystemInActionSection />
+        <CaseStudySection />
+        <PackagesSection />
         <TestimonialsSection />
         <AboutSection />
         <ProcessSection />
