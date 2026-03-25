@@ -112,13 +112,13 @@ export const hr = {
   'home.systemInAction.headline': 'Moj sustav u akciji',
   'home.systemInAction.intro': 'Sam koristim AI Operating System koji napreduje s každom interakcijom. Ne kao koncept na papiru — već kao živući sustav koji svakodnevno koristim. Upravo to gradim i za svoje klijente.',
   'home.systemInAction.1.title': 'Kontekst koji se nikad ne gubi',
-  'home.systemInAction.1.description': 'Moj sustav poznaje klijente, projekte, odluke i preferencije. Raste sa svakom sesijom i ne zaboravlja ništa. Rezultat: AI koji zna o čemu se radi već od prve rečenice.',
+  'home.systemInAction.1.description': 'Svaki klijent, svaki projekt, svaka odluka — trajno pohranjeno. Nikakvo više „Kako je to bilo?", nikakav napor za briefing. Nakon nekoliko tjedana sustav poznaje više konteksta nego novi zaposlenik nakon mjeseci.',
   'home.systemInAction.2.title': 'Automatizirani radni tokovi',
-  'home.systemInAction.2.description': 'Jutarnji brifovi, sortiranje ulazne pošte, sadržajna pipeline, priprema sastanaka. Procesi koji su se prije odvijali ručno sada rade automatski u pozadini.',
+  'home.systemInAction.2.description': '45 minuta manje dnevno za sortiranje e-pošte. Svaki sastanak pripremljen prije nego otvorim kalendar. Sadržajna pipeline od ideje do gotovog posta u jednom tijeku rada.',
   'home.systemInAction.3.title': 'Proaktivna inteligencija',
-  'home.systemInAction.3.description': 'Sustav se javlja kad je nešto relevantno. Ne čeka da ga se pita. Prepoznaje obrasce, predlaže sljedeće korake i razmišlja unaprijed.',
+  'home.systemInAction.3.description': 'Follow-up na redu? Sustav podsjeća. Relevantna kretanja u mom području? Ujutro sažeto, prije nego pitam. Nema zaboravljenih zadataka, nema ručnog praćenja.',
   'home.systemInAction.4.title': 'Besprijekorna integracija',
-  'home.systemInAction.4.description': 'Google Workspace, CRM, kalendar, upravljanje projektima. Jedan sustav, svi kanali. Nikakvo više kopiranje i lijepljenje između izoliranih alata.',
+  'home.systemInAction.4.description': 'Što je u mailu, već je obrađeno u sljedećem briefu za sastanak. Što je u kalendaru, pokreće automatsku pripremu. Jedan sustav, svi kanali — nijedna informacija se ne gubi između alata.',
   'home.systemInAction.outro': 'Gradim upravo ovaj sustav i za vašu organizaciju. Prilagođen vašim procesima, vašim alatima, vašem timu.',
 
   // Home - Case Study Section

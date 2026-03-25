@@ -21,7 +21,7 @@ export const de = {
   'home.painPoints.intro.part2': 'Die meisten Unternehmen machen denselben Fehler: Sie setzen auf Tools statt auf Systeme.',
   'home.painPoints.intro.part3': 'Drei Muster, die ich immer wieder sehe:',
   'home.painPoints.1.title': 'ChatGPT ohne Kontext = teurer Praktikant',
-  'home.painPoints.1.description': 'Jeden Tag fängt die KIbei null an. Kein Wissen über dein Unternehmen, deine Kunden, deine Prozesse. Du erklärst immer wieder dasselbe und bekommst generische Antworten.',
+  'home.painPoints.1.description': 'Jeden Tag fängt die KI bei null an. Kein Wissen über dein Unternehmen, deine Kunden, deine Prozesse. Du erklärst immer wieder dasselbe und bekommst generische Antworten.',
   'home.painPoints.2.title': 'Isolierte Tools statt verbundenes System',
   'home.painPoints.2.description': 'Ein Tool für Texte, eins für Bilder, eins für Daten. Nichts spricht miteinander. Digitale Insellösungen, die mehr Aufwand erzeugen als sie einsparen.',
   'home.painPoints.3.title': 'Einmal-Workshops ohne nachhaltiges System',
@@ -66,7 +66,7 @@ export const de = {
 
   // Home - Process Section
   'home.process.title': 'So bringen wir KI in dein Unternehmen. Schritt für Schritt.',
-  'home.process.intro': 'Kein Beratungs-Blabla, keine endlosen Workshops. Analyse, Plan, Umsetzung und Wissenstransfer. Damit KInicht nur ein Thema bleibt, sondern Wirkung zeigt.',
+  'home.process.intro': 'Kein Beratungs-Blabla, keine endlosen Workshops. Analyse, Plan, Umsetzung und Wissenstransfer. Damit KI nicht nur ein Thema bleibt, sondern Wirkung zeigt.',
   'home.process.step1.title': 'Verstehen',
   'home.process.step1.description': 'In einem 20-Minuten-Gespräch klären wir, wo du stehst, was dich bremst und wo die größten Chancen liegen. Offen, ehrlich und auf Augenhöhe.',
   'home.process.step2.title': 'Planen',
@@ -112,13 +112,13 @@ export const de = {
   'home.systemInAction.headline': 'Mein System in Aktion',
   'home.systemInAction.intro': 'Ich betreibe selbst ein lernendes KI-System, das mit jeder Interaktion besser wird. Kein Konzept auf Papier, sondern ein lebendiges System, das ich täglich nutze. Genau das baue ich auch für meine Kunden.',
   'home.systemInAction.1.title': 'Kontext, der nie verloren geht',
-  'home.systemInAction.1.description': 'Mein System kennt Kunden, Projekte, Entscheidungen und Präferenzen. Es wächst mit jeder Session und vergisst nichts. Das Ergebnis: KI, die vom ersten Satz an weiß, worum es geht.',
+  'home.systemInAction.1.description': 'Jeder Kunde, jedes Projekt, jede Entscheidung — dauerhaft gespeichert. Kein „Wie war das nochmal?", kein Briefing-Aufwand. Nach wenigen Wochen kennt das System mehr Kontext als ein neuer Mitarbeiter nach Monaten.',
   'home.systemInAction.2.title': 'Automatisierte Workflows',
-  'home.systemInAction.2.description': 'Morning Briefings, Inbox-Triage, Content-Pipeline, Meeting-Vorbereitung. Prozesse, die vorher manuell liefen, laufen jetzt automatisch im Hintergrund.',
+  'home.systemInAction.2.description': '45 Minuten weniger pro Tag für E-Mail-Triage. Jedes Meeting vorbereitet, bevor ich den Kalender öffne. Content-Pipeline von der Idee bis zum fertigen Post in einem Workflow.',
   'home.systemInAction.3.title': 'Proaktive Intelligence',
-  'home.systemInAction.3.description': 'Das System meldet sich, wenn etwas relevant ist. Es wartet nicht, bis ich frage. Es erkennt Muster, schlägt nächste Schritte vor und denkt mit.',
+  'home.systemInAction.3.description': 'Follow-up fällig? Das System erinnert. Relevante Entwicklungen in meinem Feld? Morgens zusammengefasst, bevor ich frage. Keine vergessenen Aufgaben, kein manuelles Nachverfolgen.',
   'home.systemInAction.4.title': 'Nahtlose Integration',
-  'home.systemInAction.4.description': 'Google Workspace, CRM, Kalender, Projektmanagement. Ein System, alle Kanäle. Keine Copy-Paste-Brücken mehr zwischen isolierten Tools.',
+  'home.systemInAction.4.description': 'Was in einer Mail steht, ist im nächsten Meeting-Brief verarbeitet. Was im Kalender steht, löst automatische Vorbereitung aus. Ein System, alle Kanäle — keine Information geht zwischen Tools verloren.',
   'home.systemInAction.outro': 'Ich baue genau dieses System auch für deine Organisation. Angepasst an eure Prozesse, eure Tools, euer Team.',
 
   // Home - Case Study Section
@@ -315,7 +315,7 @@ export const de = {
   'aios.hero.subheadline': 'Die meisten KI-Tools vergessen alles nach jedem Gespräch. Ein KI System nicht. Es lernt dein Unternehmen kennen, merkt sich Entscheidungen, Kunden und Prozesse, und wird jeden Tag wertvoller.',
   'aios.hero.text1': 'Stell dir vor, du hättest einen Mitarbeiter, der jeden Kunden kennt, jeden Prozess versteht und jede Entscheidung der letzten Monate erinnert. Einen, der morgens vorbereitet ist, bevor du den Kalender öffnest. Und der dein Team befähigt statt abhängig macht.',
   'aios.hero.text2': 'Genau das ist ein KI System. Kein einzelnes Tool, sondern ein lernendes System, das alle wichtigen Informationen verbindet, automatisch wächst und dein Unternehmenswissen bewahrt.',
-  'aios.hero.text3': 'Ich baue genau diese Systeme. Für Unternehmen, die KInicht nur ausprobieren, sondern wirklich nutzen wollen.',
+  'aios.hero.text3': 'Ich baue genau diese Systeme. Für Unternehmen, die KI nicht nur ausprobieren, sondern wirklich nutzen wollen.',
   'aios.hero.cta': 'Beratungsgespräch vereinbaren',
 
   // AIOS - Memory Section

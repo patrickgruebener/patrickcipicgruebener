@@ -112,13 +112,13 @@ export const en = {
   'home.systemInAction.headline': 'My System in Action',
   'home.systemInAction.intro': "I run my own AI Operating System that gets better with every interaction. Not a concept on paper — a living system I use every day. That's exactly what I build for my clients.",
   'home.systemInAction.1.title': 'Context that never gets lost',
-  'home.systemInAction.1.description': 'My system knows clients, projects, decisions, and preferences. It grows with every session and forgets nothing. The result: AI that knows the score from the very first sentence.',
+  'home.systemInAction.1.description': 'Every client, every project, every decision — permanently stored. No more "What was that again?", no briefing overhead. After a few weeks, the system knows more context than a new employee after months.',
   'home.systemInAction.2.title': 'Automated Workflows',
-  'home.systemInAction.2.description': 'Morning briefings, inbox triage, content pipeline, meeting prep. Processes that used to run manually now run automatically in the background.',
+  'home.systemInAction.2.description': '45 minutes less per day on email triage. Every meeting prepared before I open the calendar. Content pipeline from idea to finished post in one workflow.',
   'home.systemInAction.3.title': 'Proactive Intelligence',
-  'home.systemInAction.3.description': "The system reaches out when something is relevant. It doesn't wait to be asked. It recognizes patterns, suggests next steps, and thinks ahead.",
+  'home.systemInAction.3.description': 'Follow-up due? The system reminds me. Relevant developments in my field? Summarized each morning before I ask. No forgotten tasks, no manual tracking.',
   'home.systemInAction.4.title': 'Seamless Integration',
-  'home.systemInAction.4.description': 'Google Workspace, CRM, calendar, project management. One system, all channels. No more copy-paste bridges between isolated tools.',
+  'home.systemInAction.4.description': "What's in an email is already processed in the next meeting brief. What's in the calendar triggers automatic preparation. One system, all channels — no information lost between tools.",
   'home.systemInAction.outro': 'I build this exact system for your organization too. Tailored to your processes, your tools, your team.',
 
   // Home - Case Study Section
