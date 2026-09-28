@@ -20,21 +20,33 @@ export default async function ImpressumPage() {
         </div>
 
         <div className="space-y-8">
-          {/* Angaben gemäß § 5 TMG */}
+          {/* Provider details */}
           <Card>
             <CardContent className="p-8">
               <h2 className="text-2xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-teal-500 bg-clip-text text-transparent">
-                {t('impressum.tmg.title')}
+                {t('impressum.provider.title')}
               </h2>
               <div className="space-y-4 text-gray-700">
                 <div>
-                  <p className="font-medium">{t('impressum.tmg.name')}</p>
-                  <p>{t('impressum.tmg.role')}</p>
+                  <p className="font-medium">{t('impressum.provider.name')}</p>
+                  <p>{t('impressum.provider.owner')}</p>
+                  <p>{t('impressum.provider.role')}</p>
                 </div>
                 <div>
-                  <p className="font-medium">{t('impressum.tmg.contact')}</p>
-                  <p>{t('impressum.tmg.email')}</p>
-                  <p>{t('impressum.tmg.phone')}</p>
+                  <p className="font-medium">{t('impressum.provider.seatLabel')}</p>
+                  <p>{t('impressum.provider.seat')}</p>
+                  <p>{t('impressum.provider.register')}</p>
+                  <p>{t('impressum.provider.registrationNumber')}</p>
+                  <p>{t('impressum.provider.oib')}</p>
+                </div>
+                <div>
+                  <p className="font-medium">{t('impressum.provider.postalLabel')}</p>
+                  <p>{t('impressum.provider.postal')}</p>
+                </div>
+                <div>
+                  <p className="font-medium">{t('impressum.provider.contact')}</p>
+                  <p>{t('impressum.provider.email')}</p>
+                  <p>{t('impressum.provider.phone')}</p>
                 </div>
               </div>
             </CardContent>
@@ -74,6 +86,9 @@ export default async function ImpressumPage() {
                   <h3 className="font-medium mb-2">{t('impressum.privacy.intro.title')}</h3>
                   <p className="text-sm leading-relaxed">
                     {t('impressum.privacy.intro.text')}
+                  </p>
+                  <p className="text-sm leading-relaxed mt-2">
+                    {t('impressum.privacy.controller')}
                   </p>
                 </div>
                 <div>
