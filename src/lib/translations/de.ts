@@ -162,6 +162,8 @@ export const de = {
   // Beratungstermin Page
   'consultation.backToHome': 'Zurück zur Startseite',
   'consultation.headline': 'Trage deine Daten ein. Ich melde mich innerhalb von 24 Stunden!',
+  'consultation.purchaseHeadline': 'Persönliches KI-System kaufen',
+  'consultation.purchaseMessage': 'Ich möchte das persönliche KI-System für 199 € kaufen. Bitte schick mir die nächsten Schritte.',
   'consultation.form.firstName': 'Name',
   'consultation.form.lastName': 'Nachname',
   'consultation.form.phone': 'Mobiltelefon',
@@ -171,6 +173,7 @@ export const de = {
   'consultation.form.privacy': 'Mit dem Absenden des Formulars erkläre ich mich einverstanden mit der',
   'consultation.form.privacyLink': 'Datenschutzerklärung',
   'consultation.form.submit': 'Jetzt Beratungstermin reservieren',
+  'consultation.form.purchaseSubmit': 'Kaufanfrage senden',
   'consultation.form.required': 'Dieses Feld ist erforderlich',
   'consultation.form.emailInvalid': 'Bitte geben Sie eine gültige E-Mail-Adresse ein',
   'consultation.success.title': 'Vielen Dank!',
@@ -220,7 +223,8 @@ export const de = {
   'header.angebote': 'Angebote',
 
   // Header - AIOS
-  'header.aios': 'KI System',
+  'header.businessSystem': 'KI-System für Unternehmen',
+  'header.personalSystem': 'Persönliches KI-System',
 
   // Header - KI Workshop
   'header.kiWorkshop': 'KI Workshop',
@@ -315,7 +319,7 @@ export const de = {
   'angebote.finalCta.microcopy': 'Kostenlos und unverbindlich',
 
   // AIOS Page - Meta
-  'aios.meta.title': 'KI System für dein Unternehmen | Patrick Cipic Grübener',
+  'aios.meta.title': 'KI-System für Unternehmen | Patrick Cipic Grübener',
   'aios.meta.description': 'Ein KI System das dein Unternehmen kennt, mit jeder Woche besser wird und dein Team eigenständig macht. Analyse, Aufbau, Wissenstransfer.',
 
   // AIOS - Hero Section

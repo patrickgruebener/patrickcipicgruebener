@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/Button';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
 
 interface HeaderProps {
-  currentPage?: 'home' | 'impressum' | 'beratungstermin' | 'angebote' | 'aios' | 'ki-workshop';
+  currentPage?: 'home' | 'impressum' | 'beratungstermin' | 'angebote' | 'ki-system-fuer-unternehmen' | 'ki-system' | 'ki-workshop';
 }
 
 export function Header({ currentPage = 'home' }: HeaderProps) {
@@ -32,7 +32,7 @@ export function Header({ currentPage = 'home' }: HeaderProps) {
           {/* Logo/Name */}
           <Link
             href="/"
-            className="flex items-center gap-3"
+            className="flex shrink-0 items-center gap-3"
           >
             <Image
               src="/images/logo.svg"
@@ -53,7 +53,7 @@ export function Header({ currentPage = 'home' }: HeaderProps) {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6 ml-12">
+          <nav className="ml-8 hidden items-center gap-4 whitespace-nowrap text-sm xl:flex">
             <Link
               href="/"
               className={`text-gray-600 hover:text-gray-900 transition-colors ${
@@ -63,12 +63,20 @@ export function Header({ currentPage = 'home' }: HeaderProps) {
               {t('header.home')}
             </Link>
             <Link
-              href="/aios"
+              href="/ki-system"
               className={`text-gray-600 hover:text-gray-900 transition-colors ${
-                currentPage === 'aios' ? 'text-gray-900 font-medium' : ''
+                currentPage === 'ki-system' ? 'text-gray-900 font-medium' : ''
               }`}
             >
-              {t('header.aios')}
+              {t('header.personalSystem')}
+            </Link>
+            <Link
+              href="/ki-system-fuer-unternehmen"
+              className={`text-gray-600 hover:text-gray-900 transition-colors ${
+                currentPage === 'ki-system-fuer-unternehmen' ? 'text-gray-900 font-medium' : ''
+              }`}
+            >
+              {t('header.businessSystem')}
             </Link>
             <Link
               href="/ki-workshop"
@@ -87,7 +95,7 @@ export function Header({ currentPage = 'home' }: HeaderProps) {
           </nav>
 
           {/* Right Side: Language Switcher & Consultation Button */}
-          <div className="hidden md:flex items-center gap-6 ml-auto">
+          <div className="ml-auto hidden items-center gap-4 xl:flex">
             {/* Language Switcher */}
             <LanguageSwitcher />
 
@@ -105,20 +113,14 @@ export function Header({ currentPage = 'home' }: HeaderProps) {
           </div>
 
           {/* Mobile Navigation */}
-          <div className="md:hidden flex items-center gap-2">
+          <div className="ml-auto flex items-center xl:hidden">
             {/* Mobile Language Switcher */}
             <LanguageSwitcher />
-
-            <Link href="/beratungstermin">
-              <Button size="sm">
-                {t('header.consultation')}
-              </Button>
-            </Link>
           </div>
         </div>
 
         {/* Mobile Navigation Links */}
-        <nav className="md:hidden mt-4 flex flex-wrap gap-4">
+        <nav className="mt-4 flex flex-wrap gap-4 xl:hidden">
           <Link
             href="/"
             className={`text-sm text-gray-600 hover:text-gray-900 transition-colors ${
@@ -128,12 +130,20 @@ export function Header({ currentPage = 'home' }: HeaderProps) {
             {t('header.home')}
           </Link>
           <Link
-            href="/aios"
+            href="/ki-system"
             className={`text-sm text-gray-600 hover:text-gray-900 transition-colors ${
-              currentPage === 'aios' ? 'text-gray-900 font-medium' : ''
+              currentPage === 'ki-system' ? 'text-gray-900 font-medium' : ''
             }`}
           >
-            {t('header.aios')}
+            {t('header.personalSystem')}
+          </Link>
+          <Link
+            href="/ki-system-fuer-unternehmen"
+            className={`text-sm text-gray-600 hover:text-gray-900 transition-colors ${
+              currentPage === 'ki-system-fuer-unternehmen' ? 'text-gray-900 font-medium' : ''
+            }`}
+          >
+            {t('header.businessSystem')}
           </Link>
           <Link
             href="/ki-workshop"
@@ -149,6 +159,9 @@ export function Header({ currentPage = 'home' }: HeaderProps) {
           >
             {t('header.about')}
           </button>
+          <Link href="/beratungstermin" className="text-sm font-semibold text-[#0426CB] hover:underline">
+            {t('header.consultation')}
+          </Link>
         </nav>
       </div>
     </header>

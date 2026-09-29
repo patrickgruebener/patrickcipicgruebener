@@ -8,6 +8,7 @@ import { TranslationKey } from '@/lib/translations/de';
 
 interface ContactFormProps {
   language: Language;
+  purchaseInquiry?: boolean;
 }
 
 const countryCodes = [
@@ -23,7 +24,7 @@ const countryCodes = [
   { code: '+31', country: 'Netherlands', flag: '🇳🇱' },
 ];
 
-export function ContactForm({ language }: ContactFormProps) {
+export function ContactForm({ language, purchaseInquiry = false }: ContactFormProps) {
   const t = (key: TranslationKey) => translate(language, key);
 
   const [submitted, setSubmitted] = useState(false);
@@ -34,7 +35,7 @@ export function ContactForm({ language }: ContactFormProps) {
     firstName: '',
     lastName: '',
     phone: '',
-    message: '',
+    message: purchaseInquiry ? t('consultation.purchaseMessage') : '',
     email: '',
     privacy: false,
     website: '', // Honeypot field - bots will fill this
@@ -303,7 +304,7 @@ export function ContactForm({ language }: ContactFormProps) {
           className="w-full"
           size="lg"
         >
-          {isSubmitting ? '...' : t('consultation.form.submit')}
+          {isSubmitting ? '...' : t(purchaseInquiry ? 'consultation.form.purchaseSubmit' : 'consultation.form.submit')}
         </Button>
       </form>
     </div>

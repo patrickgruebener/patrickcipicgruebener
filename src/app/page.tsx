@@ -10,6 +10,7 @@ import { TestimonialsSection } from '@/components/sections/TestimonialsSection';
 import { AboutSection } from '@/components/sections/AboutSection';
 import { ProcessSection } from '@/components/sections/ProcessSection';
 import { FinalCtaSection } from '@/components/sections/FinalCtaSection';
+import { PersonalSystemTeaser } from '@/components/sections/PersonalSystemTeaser';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Header currentPage="home" />
       <main>
         <HeroSection />
+        <PersonalSystemTeaser />
         <PainPointsSection />
         <MidCtaSection />
         <SystemInActionSection />

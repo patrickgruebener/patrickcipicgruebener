@@ -10,26 +10,32 @@ import { AiosAudienceSection } from '@/components/sections/aios/AiosAudienceSect
 import { AiosFaqSection } from '@/components/sections/aios/AiosFaqSection';
 import { AiosSocialProofSection } from '@/components/sections/aios/AiosSocialProofSection';
 import { AiosCtaSection } from '@/components/sections/aios/AiosCtaSection';
+import { PersonalSystemTeaser } from '@/components/sections/PersonalSystemTeaser';
+
+const pageUrl = 'https://patrickcipicgruebener.com/ki-system-fuer-unternehmen';
 
 export async function generateMetadata(): Promise<Metadata> {
   const { t } = await getTranslations();
   return {
     title: t('aios.meta.title'),
     description: t('aios.meta.description'),
+    alternates: { canonical: pageUrl },
     openGraph: {
       title: t('aios.meta.title'),
       description: t('aios.meta.description'),
       type: 'website',
+      url: pageUrl,
     },
   };
 }
 
-export default function AiosPage() {
+export default function BusinessKiSystemPage() {
   return (
     <div className="min-h-screen bg-white">
-      <Header currentPage="aios" />
+      <Header currentPage="ki-system-fuer-unternehmen" />
       <main>
         <AiosHeroSection />
+        <PersonalSystemTeaser />
         <AiosMemorySection />
         <AiosFeaturesSection />
         <AiosProcessSection />

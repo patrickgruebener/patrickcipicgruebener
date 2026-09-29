@@ -162,6 +162,8 @@ export const en = {
   // Beratungstermin Page
   'consultation.backToHome': 'Back to Home',
   'consultation.headline': "Enter your details and I'll contact you within 48 hours!",
+  'consultation.purchaseHeadline': 'Buy the personal AI system',
+  'consultation.purchaseMessage': 'I would like to buy the personal AI system for €199. Please send me the next steps.',
   'consultation.form.firstName': 'First Name',
   'consultation.form.lastName': 'Last Name',
   'consultation.form.phone': 'Mobile Phone',
@@ -171,6 +173,7 @@ export const en = {
   'consultation.form.privacy': 'By submitting the form, I agree to the',
   'consultation.form.privacyLink': 'privacy policy',
   'consultation.form.submit': 'Book Consultation Now',
+  'consultation.form.purchaseSubmit': 'Send purchase enquiry',
   'consultation.form.required': 'This field is required',
   'consultation.form.emailInvalid': 'Please enter a valid email address',
   'consultation.success.title': 'Thank you!',
@@ -220,7 +223,8 @@ export const en = {
   'header.angebote': 'Services',
 
   // Header - AIOS
-  'header.aios': 'AI System',
+  'header.businessSystem': 'AI System for Businesses',
+  'header.personalSystem': 'Personal AI System',
 
   // Header - KI Workshop
   'header.kiWorkshop': 'AI Workshop',
@@ -315,7 +319,7 @@ export const en = {
   'angebote.finalCta.microcopy': 'Free and non-binding',
 
   // AIOS Page - Meta
-  'aios.meta.title': 'AI System for Your Business | Patrick Cipic Grübener',
+  'aios.meta.title': 'AI System for Businesses | Patrick Cipic Grübener',
   'aios.meta.description': 'An AI system that knows your business, gets better every week, and makes your team self-sufficient. Analysis, implementation, knowledge transfer.',
 
   // AIOS - Hero Section

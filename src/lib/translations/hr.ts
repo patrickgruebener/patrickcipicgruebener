@@ -162,6 +162,8 @@ export const hr = {
   // Beratungstermin Page
   'consultation.backToHome': 'Natrag na početnu',
   'consultation.headline': 'Unesite svoje podatke. Javit ću se u roku od 24 sata!',
+  'consultation.purchaseHeadline': 'Kupi osobni AI sustav',
+  'consultation.purchaseMessage': 'Želim kupiti osobni AI sustav za 199 €. Molim pošaljite mi sljedeće korake.',
   'consultation.form.firstName': 'Ime',
   'consultation.form.lastName': 'Prezime',
   'consultation.form.phone': 'Mobilni telefon',
@@ -171,6 +173,7 @@ export const hr = {
   'consultation.form.privacy': 'Slanjem obrasca slažem se s',
   'consultation.form.privacyLink': 'politikom privatnosti',
   'consultation.form.submit': 'Rezerviraj savjetovanje sada',
+  'consultation.form.purchaseSubmit': 'Pošalji upit za kupnju',
   'consultation.form.required': 'Ovo polje je obavezno',
   'consultation.form.emailInvalid': 'Molimo unesite važeću e-mail adresu',
   'consultation.success.title': 'Hvala vam!',
@@ -220,7 +223,8 @@ export const hr = {
   'header.angebote': 'Usluge',
 
   // Header - AIOS
-  'header.aios': 'AI Sustav',
+  'header.businessSystem': 'AI sustav za tvrtke',
+  'header.personalSystem': 'Osobni AI sustav',
 
   // Header - KI Workshop
   'header.kiWorkshop': 'KI Workshop',
@@ -315,7 +319,7 @@ export const hr = {
   'angebote.finalCta.microcopy': 'Besplatno i bez obveze',
 
   // AIOS Page - Meta
-  'aios.meta.title': 'AI sustav za tvoje poduzeće | Patrick Cipic Grübener',
+  'aios.meta.title': 'AI sustav za tvrtke | Patrick Cipic Grübener',
   'aios.meta.description': 'AI sustav koji poznaje tvoje poduzeće, svaki tjedan postaje bolji i čini tvoj tim samostalnim. Analiza, izgradnja, prijenos znanja.',
 
   // AIOS - Hero Section

@@ -2,8 +2,9 @@ import Image from 'next/image';
 import { getTranslations } from '@/lib/i18n.server';
 import { ContactForm } from '@/components/ContactForm';
 
-export default async function BeratungsterminPage() {
+export default async function BeratungsterminPage({ searchParams }: { searchParams: Promise<{ anliegen?: string }> }) {
   const { t, language } = await getTranslations();
+  const purchaseInquiry = (await searchParams).anliegen === 'ki-system-kauf';
 
   return (
     <div className="min-h-screen bg-white">
@@ -14,7 +15,7 @@ export default async function BeratungsterminPage() {
             Patrick Cipic Grübener
           </h1>
           <a
-            href="/"
+            href={purchaseInquiry ? '/ki-system' : '/'}
             className="text-gray-600 hover:text-blue-600 transition-colors"
           >
             {t('consultation.backToHome')}
@@ -29,7 +30,7 @@ export default async function BeratungsterminPage() {
             {/* Left Column - Text and Profile */}
             <div className="space-y-8">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
-                {t('consultation.headline')}
+                {t(purchaseInquiry ? 'consultation.purchaseHeadline' : 'consultation.headline')}
               </h2>
 
               {/* Profile */}
@@ -54,7 +55,7 @@ export default async function BeratungsterminPage() {
             </div>
 
             {/* Right Column - Form */}
-            <ContactForm language={language} />
+            <ContactForm language={language} purchaseInquiry={purchaseInquiry} />
           </div>
         </div>
       </main>

@@ -12,6 +12,15 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "/aios",
+        destination: "/ki-system-fuer-unternehmen",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
