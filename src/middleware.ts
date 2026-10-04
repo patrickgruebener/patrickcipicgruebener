@@ -3,6 +3,10 @@ import type { NextRequest } from 'next/server'
 
 export function middleware(request: NextRequest) {
   const response = NextResponse.next()
+  if (request.nextUrl.pathname === '/lernraum') {
+    response.headers.set('X-Robots-Tag', 'noindex, nofollow, noarchive')
+    response.headers.set('Cache-Control', 'private, no-store, max-age=0')
+  }
   const indexableHosts = new Set(['patrickcipicgruebener.com', 'www.patrickcipicgruebener.com'])
   const forwardedHost = request.headers.get('x-forwarded-host') || ''
   const host = forwardedHost || request.headers.get('host') || ''
