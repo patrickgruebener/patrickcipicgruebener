@@ -62,12 +62,9 @@ export async function WorkshopFormatSection() {
           <p className="text-gray-400 text-sm font-medium uppercase tracking-wider mb-3">
             {t('workshop.pricing.label')}
           </p>
-          <div className="flex items-baseline justify-center gap-3 mb-2">
-            <span className="text-5xl md:text-6xl font-bold text-white">
+          <div className="flex flex-wrap items-baseline justify-center gap-3 mb-2">
+            <span className="text-3xl md:text-4xl font-bold text-white">
               {t('workshop.pricing.price')}
-            </span>
-            <span className="text-gray-400 text-xl">
-              {t('workshop.pricing.suffix')}
             </span>
           </div>
           <p className="text-gray-300 mb-8">

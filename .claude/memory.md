@@ -11,3 +11,5 @@ Do NOT duplicate what is in CLAUDE.md.
 ---
 
 - 2026-09-14 | Persönliche Landingpage unter `/dasneuewir` ergänzt | Für Chris und Tanja Roos als unlinked, `noindex` Einstieg in ein Diagnosegespräch. Sie nutzt eine reduzierte eigene Kopfzeile mit Startseitenlink, WhatsApp- und Mail-CTA statt Formular oder Buchungsstrecke.
+
+- 2026-10-20 | Workshop als kundenspezifische Schulung im Anschluss an Quick Win oder KI-System positioniert; öffentlicher 299-€-Preis durch individuelles Angebot ersetzt, auch in EN und deutschem HR-Fallback | Patrick priorisiert Quick Win als Einstieg. Workshop-Umfang und Nachbereitung werden im Angebot festgelegt. Lokaler Stand; Veröffentlichung separat prüfen.

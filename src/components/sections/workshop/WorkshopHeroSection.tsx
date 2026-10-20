@@ -19,8 +19,8 @@ export async function WorkshopHeroSection() {
           {t('workshop.hero.subheadline')}
         </p>
 
-        <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 mb-10">
-          <span className="text-2xl md:text-3xl font-bold text-white">{t('workshop.hero.priceBadge')}</span>
+        <div className="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 mb-10">
+          <span className="text-xl md:text-2xl font-bold text-white">{t('workshop.hero.priceBadge')}</span>
           <span className="text-gray-300">{t('workshop.hero.priceNote')}</span>
         </div>
 
