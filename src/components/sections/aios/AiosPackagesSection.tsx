@@ -1,4 +1,7 @@
 import Link from "next/link";
+import { buttonStyles } from "@/components/ui/Button";
+import { Card, CardFlag, CardPrice } from "@/components/ui/Card";
+import { Section, SectionHead } from "@/components/sections/section-shell";
 import { getLanguage } from "@/lib/i18n.server";
 import type { Language } from "@/lib/i18n";
 
@@ -132,71 +135,110 @@ const copy: Record<Language, PackageCopy> = {
   },
 };
 
+const NOT_INCLUDED = ["Nicht enthalten", "Not included", "Nije uključeno"];
+
 function FeatureValue({ value }: { value: string }) {
-  const included = !["Nicht enthalten", "Not included", "Nije uključeno"].includes(value);
-  return (
-    <span className={included ? "inline-flex items-center gap-2 font-medium text-slate-800" : "text-slate-400"}>
-      {included && <span aria-hidden="true" className="text-emerald-600 font-bold">✓</span>}
-      {value}
-    </span>
-  );
+  const included = !NOT_INCLUDED.includes(value);
+  return <span className={included ? "font-semibold text-ink" : "text-ink-2"}>{value}</span>;
 }
 
+/** Three package cards (recommended one framed in blue with a text flag), then a real comparison table. */
 export async function AiosPackagesSection() {
   const language = await getLanguage();
   const content = copy[language];
 
   return (
-    <section id="pakete" className="bg-[#F6F8FC] px-6 py-20 md:py-28">
-      <div className="mx-auto max-w-6xl">
-        <div className="max-w-3xl">
-          <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-[#0426CB]">{content.eyebrow}</p>
-          <h2 className="text-3xl font-bold leading-tight text-slate-950 md:text-5xl">{content.title}</h2>
-          <p className="mt-5 text-lg leading-relaxed text-slate-600">{content.intro}</p>
-        </div>
+    <Section id="pakete">
+      <SectionHead
+        heavy={content.title}
+        intro={
+          <>
+            <p className="font-bold text-brand-blue">{content.eyebrow}</p>
+            <p>{content.intro}</p>
+          </>
+        }
+      />
 
-        <div className="mt-12 grid gap-5 lg:grid-cols-3 lg:items-stretch">
-          {content.packages.map((item, index) => {
-            const featured = index === 1;
-            return (
-              <article key={item.name} className={`relative flex h-full flex-col rounded-3xl border p-7 shadow-sm md:p-8 ${featured ? "border-[#0426CB] bg-[#07154F] text-white shadow-xl" : "border-slate-200 bg-white text-slate-950"}`}>
-                {featured && <span className="absolute right-6 top-0 -translate-y-1/2 rounded-full bg-[#65C87A] px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-[#07154F]">{content.recommended}</span>}
-                <p className={`text-sm font-medium ${featured ? "text-blue-200" : "text-[#0426CB]"}`}>{item.audience}</p>
-                <h3 className="mt-3 text-2xl font-bold">{item.name}</h3>
-                <div className="mt-5 flex items-baseline gap-2">
-                  {index < 2 && <span className={`text-sm ${featured ? "text-blue-200" : "text-slate-500"}`}>{content.from}</span>}
-                  <strong className="text-4xl tracking-tight">{item.price}</strong>
-                </div>
-                {index < 2 && <span className={`mt-1 text-sm ${featured ? "text-blue-200" : "text-slate-500"}`}>{content.once}</span>}
-                <p className={`mt-6 min-h-20 leading-relaxed ${featured ? "text-blue-100" : "text-slate-600"}`}>{item.description}</p>
-                <p className={`mb-3 mt-6 text-xs font-bold uppercase tracking-widest ${featured ? "text-blue-200" : "text-slate-500"}`}>{content.included}</p>
-                <ul className="mb-8 space-y-3">
-                  {item.items.map((feature) => <li key={feature} className="flex gap-3 text-sm leading-6"><span aria-hidden="true" className={featured ? "text-[#65C87A]" : "text-emerald-600"}>✓</span><span>{feature}</span></li>)}
-                </ul>
-                <Link href="/beratungstermin" className={`mt-auto inline-flex min-h-12 items-center justify-center rounded-xl px-5 text-center text-sm font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${featured ? "bg-[#65C87A] text-[#07154F] hover:bg-[#83d595]" : "bg-[#0426CB] text-white hover:bg-[#173dd8]"}`}>
-                  {content.cta}
-                </Link>
-              </article>
-            );
-          })}
-        </div>
-
-        <div className="mt-20">
-          <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-[#0426CB]">{content.compareEyebrow}</p>
-          <h3 className="text-3xl font-bold text-slate-950 md:text-4xl">{content.compareTitle}</h3>
-          <p className="mt-4 max-w-3xl leading-relaxed text-slate-600">{content.compareIntro}</p>
-          <div className="mt-8 hidden overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm md:block">
-            <table className="w-full border-collapse text-left">
-              <thead className="bg-[#EAF0FC] text-sm text-slate-900"><tr><th scope="col" className="w-[43%] px-6 py-5 font-semibold">{content.compareEyebrow}</th>{content.packages.map((item) => <th scope="col" key={item.name} className="px-5 py-5 font-semibold">{item.name}</th>)}</tr></thead>
-              <tbody>{content.features.map((feature) => <tr key={feature.useCase} className="border-t border-slate-100"><th scope="row" className="px-6 py-5 text-sm font-medium leading-relaxed text-slate-800">{feature.useCase}</th><td className="px-5 py-5 text-sm"><FeatureValue value={feature.basic} /></td><td className="px-5 py-5 text-sm"><FeatureValue value={feature.team} /></td><td className="px-5 py-5 text-sm"><FeatureValue value={feature.custom} /></td></tr>)}</tbody>
-            </table>
-          </div>
-          <div className="mt-7 space-y-3 md:hidden">
-            {content.features.map((feature) => <article key={feature.useCase} className="rounded-2xl border border-slate-200 bg-white p-5"><h4 className="font-semibold leading-snug text-slate-900">{feature.useCase}</h4><dl className="mt-4 grid grid-cols-3 gap-2 text-xs">{(["basic", "team", "custom"] as const).map((key, index) => <div key={key}><dt className="mb-2 font-bold text-slate-500">{content.packages[index].name}</dt><dd><FeatureValue value={feature[key]} /></dd></div>)}</dl></article>)}
-          </div>
-          <p className="mt-6 max-w-4xl text-sm leading-relaxed text-slate-500">{content.prerequisites}</p>
-        </div>
+      <div className="grid grid-cols-1 gap-5 lg:grid-cols-3 lg:items-stretch">
+        {content.packages.map((item, index) => {
+          const featured = index === 1;
+          return (
+            <Card key={item.name} highlighted={featured} className="flex h-full flex-col p-6 md:p-7">
+              <CardFlag>{featured ? `${content.recommended}. ${item.audience}` : item.audience}</CardFlag>
+              <h3 className="mt-2 text-[22px] leading-tight font-bold text-ink">{item.name}</h3>
+              <div className="mt-4 flex items-baseline gap-2">
+                {index < 2 && <span className="text-sm text-ink-2">{content.from}</span>}
+                <CardPrice unit={index < 2 ? content.once : undefined} className="text-[48px]">
+                  {item.price}
+                </CardPrice>
+              </div>
+              <p className="mt-5 min-h-20 leading-[1.55] text-ink-2">{item.description}</p>
+              <h4 className="mt-6 border-b-2 border-ink pb-2 text-[14px] font-bold text-ink">{content.included}</h4>
+              <ul className="m-0 mb-8 list-none p-0">
+                {item.items.map((feature) => (
+                  <li key={feature} className="border-b border-line py-2.5 text-[15px] leading-[1.5] text-ink">
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="/beratungstermin"
+                className={buttonStyles({ variant: "secondary", className: "mt-auto justify-start" })}
+              >
+                {content.cta}
+              </Link>
+            </Card>
+          );
+        })}
       </div>
-    </section>
+
+      <div className="mt-[72px]">
+        <h3 className="font-display text-[clamp(32px,7vw,44px)] leading-[0.95] font-[820] text-balance text-ink">
+          {content.compareTitle}
+        </h3>
+        <p className="mt-4 max-w-[64ch] leading-[1.55] text-ink-2">{content.compareIntro}</p>
+        <table className="mt-8 hidden w-full border-collapse text-left md:table">
+          <caption className="sr-only">{content.compareTitle}</caption>
+          <thead>
+            <tr>
+              <th scope="col" className="w-[43%] border-b-2 border-ink py-3 pr-6 text-[14px] font-bold text-ink">
+                {content.compareEyebrow}
+              </th>
+              {content.packages.map((item) => (
+                <th key={item.name} scope="col" className="border-b-2 border-ink py-3 pr-6 text-[14px] font-bold text-ink">
+                  {item.name}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {content.features.map((feature) => (
+              <tr key={feature.useCase} className="border-b border-line">
+                <th scope="row" className="py-3.5 pr-6 text-[15px] leading-[1.5] font-medium text-ink">{feature.useCase}</th>
+                <td className="py-3.5 pr-6 text-[15px]"><FeatureValue value={feature.basic} /></td>
+                <td className="py-3.5 pr-6 text-[15px]"><FeatureValue value={feature.team} /></td>
+                <td className="py-3.5 pr-6 text-[15px]"><FeatureValue value={feature.custom} /></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <div className="mt-7 border-t-2 border-ink md:hidden">
+          {content.features.map((feature) => (
+            <div key={feature.useCase} className="border-b border-line py-4">
+              <h4 className="font-semibold leading-snug text-ink">{feature.useCase}</h4>
+              <dl className="mt-3 grid grid-cols-3 gap-2 text-[13px]">
+                {(["basic", "team", "custom"] as const).map((key, index) => (
+                  <div key={key}>
+                    <dt className="mb-1 font-bold text-ink-2">{content.packages[index].name}</dt>
+                    <dd className="m-0"><FeatureValue value={feature[key]} /></dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          ))}
+        </div>
+        <p className="mt-6 max-w-[64ch] text-sm leading-[1.55] text-ink-2">{content.prerequisites}</p>
+      </div>
+    </Section>
   );
 }

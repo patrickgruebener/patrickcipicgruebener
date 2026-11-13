@@ -28,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function BusinessKiSystemPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-paper">
       <Header currentPage="ki-system-fuer-unternehmen" />
       <main>
         <AiosHeroSection />

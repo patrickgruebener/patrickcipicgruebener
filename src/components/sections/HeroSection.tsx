@@ -6,10 +6,10 @@ import { Figure } from '@/components/ui/figure';
 import { FileTree, FileTreeNode } from '@/components/ui/file-tree';
 import { Leitlinie } from '@/components/ui/leitlinie';
 
-type Translate = Awaited<ReturnType<typeof getTranslations>>['t'];
+export type Translate = Awaited<ReturnType<typeof getTranslations>>['t'];
 
 // Cleaned system excerpt from the moodboard hero, within the approved list in .claude/memory.md
-function systemTree(t: Translate): FileTreeNode {
+export function systemTree(t: Translate): FileTreeNode {
   return {
     name: 'ki-system/',
     children: [

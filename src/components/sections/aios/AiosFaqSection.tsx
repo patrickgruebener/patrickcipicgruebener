@@ -2,32 +2,32 @@
 
 import { useState } from 'react';
 import { useLanguage } from '@/hooks/useLanguage';
+import { Section, SectionHead } from '@/components/sections/section-shell';
 
-function FaqItem({ question, answer }: { question: string; answer: string }) {
+function FaqItem({ id, question, answer }: { id: string; question: string; answer: string }) {
   const [isOpen, setIsOpen] = useState(false);
+  const panelId = `faq-panel-${id}`;
 
   return (
-    <div className="border-b border-gray-200">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between py-5 text-left"
-      >
-        <span className="text-lg font-medium text-gray-900 pr-4">{question}</span>
-        <svg
-          className={`w-5 h-5 text-gray-500 shrink-0 transition-transform duration-200 ${
-            isOpen ? 'rotate-180' : ''
-          }`}
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={2}
+    <div className="border-b border-line">
+      <h3 className="m-0">
+        <button
+          type="button"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-expanded={isOpen}
+          aria-controls={panelId}
+          className="flex w-full items-baseline justify-between gap-6 py-4 text-left"
         >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
+          <span className="text-[17px] font-semibold text-ink">{question}</span>
+          {/* Plain text marker instead of an icon */}
+          <span aria-hidden="true" className="shrink-0 font-mono-brand text-ink-2">
+            {isOpen ? '–' : '+'}
+          </span>
+        </button>
+      </h3>
       {isOpen && (
-        <div className="pb-5">
-          <p className="text-gray-600 leading-relaxed">{answer}</p>
+        <div id={panelId} role="region" className="pb-5">
+          <p className="max-w-[64ch] leading-[1.55] text-ink-2">{answer}</p>
         </div>
       )}
     </div>
@@ -36,27 +36,23 @@ function FaqItem({ question, answer }: { question: string; answer: string }) {
 
 const faqKeys = ['1', '2', '3', '4', '5', '6', '7'] as const;
 
+/** Questions as ruled rows, one answer open at a time per row, operable by keyboard. */
 export function AiosFaqSection() {
   const { t } = useLanguage();
 
   return (
-    <section className="py-24 px-6 bg-gradient-to-br from-gray-50 to-blue-50">
-      <div className="max-w-3xl mx-auto">
-        {/* Section Title */}
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
-          {t('aios.faq.title' as any)}
-        </h2>
-
-        <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 md:p-10">
-          {faqKeys.map((key) => (
-            <FaqItem
-              key={key}
-              question={t(`aios.faq.${key}.question` as any)}
-              answer={t(`aios.faq.${key}.answer` as any)}
-            />
-          ))}
-        </div>
+    <Section id="faq">
+      <SectionHead heavy={t('aios.faq.title')} />
+      <div className="max-w-[820px] border-t-2 border-ink">
+        {faqKeys.map((key) => (
+          <FaqItem
+            key={key}
+            id={key}
+            question={t(`aios.faq.${key}.question`)}
+            answer={t(`aios.faq.${key}.answer`)}
+          />
+        ))}
       </div>
-    </section>
+    </Section>
   );
 }

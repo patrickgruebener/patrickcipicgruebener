@@ -3,13 +3,15 @@ import Link from 'next/link';
 import { buttonStyles } from '@/components/ui/Button';
 
 interface ClosingCtaProps {
-  /** First headline part, set light. */
-  headlineLight: string;
+  /** First headline part, set light. Omit when the headline is a single heavy line. */
+  headlineLight?: string;
   /** Second headline part, set heavy in blue on its own line. */
   headlineHeavy: string;
   text: string;
   buttonLabel: string;
   href: string;
+  /** Small clarifying line below the button, e.g. a note on availability. */
+  note?: string;
   portrait?: {
     src: string;
     alt: string;
@@ -31,6 +33,7 @@ export function ClosingCta({
   text,
   buttonLabel,
   href,
+  note,
   portrait,
   guideLine = true,
   className = '',
@@ -45,13 +48,18 @@ export function ClosingCta({
     >
       <div>
         <h2 className="mb-3.5 font-display text-[61px] leading-[0.9] tracking-[-0.005em] text-balance text-ink">
-          <span className="font-light">{headlineLight}</span>{' '}
-          <span className="block font-[820] text-brand-blue">{headlineHeavy}</span>
+          {headlineLight && (
+            <>
+              <span className="font-light">{headlineLight}</span>{' '}
+            </>
+          )}
+          <span className={`font-[820] text-brand-blue ${headlineLight ? 'block' : ''}`}>{headlineHeavy}</span>
         </h2>
         <p className="mb-6 max-w-[64ch] text-[17px] leading-[1.55] text-ink">{text}</p>
         <Link href={href} className={buttonStyles()}>
           {buttonLabel}
         </Link>
+        {note && <p className="mt-4 max-w-[64ch] text-sm text-ink-2">{note}</p>}
       </div>
       {portrait && (
         <div className="grid grid-cols-[72px_auto] items-center gap-3.5 text-sm text-ink-2">
