@@ -59,7 +59,6 @@ export function LanguageSwitcher() {
         aria-label="Select language"
         aria-expanded={isOpen}
       >
-        <span className="text-lg leading-none">{currentLanguage?.flag}</span>
         <span className="font-medium text-ink">{currentLanguage?.code.toUpperCase()}</span>
         <svg
           className={`w-4 h-4 text-ink-2 transition-transform motion-reduce:transition-none ${isOpen ? 'rotate-180' : ''}`}
@@ -84,7 +83,6 @@ export function LanguageSwitcher() {
                   : 'text-ink hover:bg-sheet'
               }`}
             >
-              <span className="text-lg leading-none">{lang.flag}</span>
               <span className="flex-1 text-left">{lang.name}</span>
               {language === lang.code && (
                 <svg className="w-4 h-4 text-brand-blue" fill="currentColor" viewBox="0 0 20 20">

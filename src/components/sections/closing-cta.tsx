@@ -16,6 +16,8 @@ interface ClosingCtaProps {
     name: string;
     role: string;
   };
+  /** Gradient line on top. Off when the page already shows its one guide line elsewhere. */
+  guideLine?: boolean;
   className?: string;
 }
 
@@ -30,11 +32,16 @@ export function ClosingCta({
   buttonLabel,
   href,
   portrait,
+  guideLine = true,
   className = '',
 }: ClosingCtaProps) {
+  const line = guideLine
+    ? "before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-brand-gradient before:content-['']"
+    : '';
+
   return (
     <div
-      className={`relative grid grid-cols-1 items-end gap-x-10 gap-y-7 bg-sheet px-[22px] py-7 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-brand-gradient before:content-[''] min-[721px]:grid-cols-[minmax(0,1fr)_auto] min-[721px]:p-10 ${className}`}
+      className={`relative grid grid-cols-1 items-end gap-x-10 gap-y-7 bg-sheet px-[22px] py-7 ${line} min-[721px]:grid-cols-[minmax(0,1fr)_auto] min-[721px]:p-10 ${className}`}
     >
       <div>
         <h2 className="mb-3.5 font-display text-[61px] leading-[0.9] tracking-[-0.005em] text-balance text-ink">

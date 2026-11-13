@@ -81,7 +81,7 @@ export async function Footer() {
               <span>patrickgruebener@gmail.com</span>
             </a>
 
-            <Link href="/beratungstermin" className={buttonStyles({ size: 'sm', className: 'mt-2 self-start' })}>
+            <Link href="/beratungstermin" className={buttonStyles({ variant: 'secondary', size: 'sm', className: 'mt-2 self-start' })}>
               {t('footer.cta')}
             </Link>
           </div>
