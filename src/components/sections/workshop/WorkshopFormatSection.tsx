@@ -1,90 +1,60 @@
 import Link from 'next/link';
 import { getTranslations } from '@/lib/i18n.server';
-import { Button } from '@/components/ui/Button';
+import { buttonStyles } from '@/components/ui/Button';
+import { Card, CardFlag, CardPrice } from '@/components/ui/Card';
+import { Section, SectionHead } from '@/components/sections/section-shell';
+import { FlowSketch } from '@/components/ui/flow-sketch';
 
-const steps = [
-  { key: 'step1', gradient: 'from-blue-500 to-cyan-500' },
-  { key: 'step2', gradient: 'from-cyan-500 to-teal-500' },
-  { key: 'step3', gradient: 'from-teal-500 to-emerald-500' },
-] as const;
+const STEPS = ['step1', 'step2', 'step3'] as const;
+const DETAILS = ['remote', 'participants', 'interactive', 'materials'] as const;
+const PRICING_INCLUDES = ['1', '2', '3', '4', '5'] as const;
 
-const details = ['remote', 'participants', 'interactive', 'materials'] as const;
-
-const pricingIncludes = ['1', '2', '3', '4', '5'] as const;
-
+/** Workshop sequence as flow sketch with step texts below, format facts and the price as a highlighted card. */
 export async function WorkshopFormatSection() {
   const { t } = await getTranslations();
+  const flowSteps = STEPS.map((key) => t(`workshop.format.${key}.title`));
 
   return (
-    <section className="py-24 px-6 bg-white">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-16">
-          {t('workshop.format.title')}
-        </h2>
-
-        <div className="space-y-12 mb-16">
-          {steps.map(({ key, gradient }, index) => (
-            <div key={key} className="flex gap-6 items-start">
-              <div className={`w-14 h-14 rounded-full bg-gradient-to-br ${gradient} flex items-center justify-center text-white text-xl font-bold shrink-0`}>
-                {index + 1}
-              </div>
-              <div className="flex-1">
-                <h3 className="text-xl font-semibold text-gray-900 mb-1">
-                  {t(`workshop.format.${key}.title` as any)}
-                </h3>
-                <p className="text-sm font-medium text-green-600 mb-3">
-                  {t(`workshop.format.${key}.duration` as any)}
-                </p>
-                <p className="text-gray-600 leading-relaxed">
-                  {t(`workshop.format.${key}.description` as any)}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100 mb-12">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">
-            {t('workshop.format.details.title')}
-          </h3>
-          <div className="grid sm:grid-cols-2 gap-3">
-            {details.map((key) => (
-              <div key={key} className="flex items-center gap-3 text-gray-600">
-                <span className="text-green-500">&#10003;</span>
-                {t(`workshop.format.details.${key}` as any)}
-              </div>
-            ))}
+    <Section id="ablauf">
+      <SectionHead heavy={t('workshop.format.title')} />
+      <div className="bg-sheet px-7 py-6">
+        <FlowSketch steps={flowSteps} label={flowSteps.join(', ')} className="max-w-[420px]" />
+      </div>
+      <div className="mt-10 grid grid-cols-1 gap-x-10 gap-y-8 md:grid-cols-3">
+        {STEPS.map((key) => (
+          <div key={key} className="border-t-2 border-ink pt-3.5">
+            <h3 className="text-[20px] leading-tight font-bold text-ink">{t(`workshop.format.${key}.title`)}</h3>
+            <p className="mt-1 mb-2 font-semibold text-brand-blue">{t(`workshop.format.${key}.duration`)}</p>
+            <p className="text-ink-2">{t(`workshop.format.${key}.description`)}</p>
           </div>
-        </div>
+        ))}
+      </div>
 
-        {/* Pricing Card */}
-        <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 md:p-12 text-center">
-          <p className="text-gray-400 text-sm font-medium uppercase tracking-wider mb-3">
-            {t('workshop.pricing.label')}
-          </p>
-          <div className="flex flex-wrap items-baseline justify-center gap-3 mb-2">
-            <span className="text-3xl md:text-4xl font-bold text-white">
-              {t('workshop.pricing.price')}
-            </span>
-          </div>
-          <p className="text-gray-300 mb-8">
-            {t('workshop.pricing.description')}
-          </p>
-          <ul className="space-y-3 max-w-md mx-auto mb-10 text-left">
-            {pricingIncludes.map((key) => (
-              <li key={key} className="flex gap-3 text-gray-300">
-                <span className="text-green-400 mt-0.5 shrink-0">&#10003;</span>
-                {t(`workshop.pricing.includes.${key}` as any)}
-              </li>
+      <div className="mt-14 grid grid-cols-1 items-start gap-x-12 gap-y-10 min-[821px]:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+        <div className="border-t-2 border-ink pt-3.5">
+          <h3 className="mb-3 text-[20px] leading-tight font-bold text-ink">{t('workshop.format.details.title')}</h3>
+          <ul className="m-0 grid list-disc gap-2 pl-5 text-ink marker:text-brand-blue">
+            {DETAILS.map((key) => (
+              <li key={key}>{t(`workshop.format.details.${key}`)}</li>
             ))}
           </ul>
-          <Link href="/beratungstermin">
-            <Button size="lg">
-              {t('workshop.pricing.cta')}
-            </Button>
-          </Link>
         </div>
+        <Card highlighted>
+          <div className="grid gap-4 p-6 min-[821px]:p-8">
+            <CardFlag>{t('workshop.pricing.label')}</CardFlag>
+            <CardPrice className="text-[40px] sm:text-[48px]">{t('workshop.pricing.price')}</CardPrice>
+            <p className="max-w-[56ch] text-ink-2">{t('workshop.pricing.description')}</p>
+            <ul className="m-0 grid list-disc gap-2 pl-5 text-ink marker:text-brand-blue">
+              {PRICING_INCLUDES.map((key) => (
+                <li key={key}>{t(`workshop.pricing.includes.${key}`)}</li>
+              ))}
+            </ul>
+            <Link href="/beratungstermin" className={buttonStyles({ variant: 'secondary', className: 'justify-self-start' })}>
+              {t('workshop.pricing.cta')}
+            </Link>
+          </div>
+        </Card>
       </div>
-    </section>
+    </Section>
   );
 }

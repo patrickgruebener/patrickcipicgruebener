@@ -1,19 +1,28 @@
-import Link from "next/link";
-import { getLanguage } from "@/lib/i18n.server";
-import { kiSystemContent } from "@/lib/ki-system-content";
+import Link from 'next/link';
+import { getLanguage } from '@/lib/i18n.server';
+import { kiSystemContent } from '@/lib/ki-system-content';
+import { buttonStyles } from '@/components/ui/Button';
+import { Card, CardFlag } from '@/components/ui/Card';
+import { Section } from '@/components/sections/section-shell';
 
+/** Pointer to the personal AI system for solo makers, framed by a hairline card. */
 export async function PersonalSystemTeaser() {
   const copy = kiSystemContent[await getLanguage()];
+
   return (
-    <section className="bg-white px-6 py-14" aria-label={copy.eyebrow}>
-      <div className="mx-auto flex max-w-6xl flex-col gap-7 rounded-3xl border border-blue-100 bg-gradient-to-r from-[#eef2ff] to-[#e9f8ed] p-8 md:flex-row md:items-center md:justify-between md:p-10">
-        <div className="max-w-3xl">
-          <p className="text-sm font-bold text-[#0426CB]">{copy.eyebrow} · {copy.priceLabel}</p>
-          <h2 className="mt-3 text-2xl font-bold tracking-tight md:text-3xl">{copy.teaserTitle}</h2>
-          <p className="mt-3 leading-relaxed text-gray-700">{copy.teaserText}</p>
+    <Section label={copy.eyebrow}>
+      <Card className="grid grid-cols-1 items-end gap-x-10 gap-y-6 p-6 min-[821px]:grid-cols-[minmax(0,1fr)_auto] min-[821px]:p-8">
+        <div className="grid max-w-[64ch] gap-3">
+          <CardFlag>{copy.eyebrow}</CardFlag>
+          <h2 className="font-display text-[clamp(32px,7vw,44px)] leading-[0.95] font-[820] tracking-[-0.005em] text-balance text-ink">
+            {copy.teaserTitle}
+          </h2>
+          <p className="text-ink-2">{copy.teaserText}</p>
         </div>
-        <Link href="/ki-system" className="inline-flex min-h-12 shrink-0 items-center justify-center rounded-full bg-[#0426CB] px-6 py-3 text-center font-semibold text-white transition hover:bg-[#031da4]">{copy.teaserLink} →</Link>
-      </div>
-    </section>
+        <Link href="/ki-system" className={buttonStyles({ variant: 'secondary', className: 'justify-start' })}>
+          {copy.teaserLink}
+        </Link>
+      </Card>
+    </Section>
   );
 }

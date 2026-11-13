@@ -12,16 +12,16 @@ interface ContactFormProps {
 }
 
 const countryCodes = [
-  { code: '+49', country: 'Germany', flag: '🇩🇪' },
-  { code: '+43', country: 'Austria', flag: '🇦🇹' },
-  { code: '+41', country: 'Switzerland', flag: '🇨🇭' },
-  { code: '+385', country: 'Croatia', flag: '🇭🇷' },
-  { code: '+44', country: 'UK', flag: '🇬🇧' },
-  { code: '+1', country: 'USA/Canada', flag: '🇺🇸' },
-  { code: '+33', country: 'France', flag: '🇫🇷' },
-  { code: '+39', country: 'Italy', flag: '🇮🇹' },
-  { code: '+34', country: 'Spain', flag: '🇪🇸' },
-  { code: '+31', country: 'Netherlands', flag: '🇳🇱' },
+  { code: '+49', country: 'Germany', iso: 'DE' },
+  { code: '+43', country: 'Austria', iso: 'AT' },
+  { code: '+41', country: 'Switzerland', iso: 'CH' },
+  { code: '+385', country: 'Croatia', iso: 'HR' },
+  { code: '+44', country: 'UK', iso: 'GB' },
+  { code: '+1', country: 'USA/Canada', iso: 'US' },
+  { code: '+33', country: 'France', iso: 'FR' },
+  { code: '+39', country: 'Italy', iso: 'IT' },
+  { code: '+34', country: 'Spain', iso: 'ES' },
+  { code: '+31', country: 'Netherlands', iso: 'NL' },
 ];
 
 export function ContactForm({ language, purchaseInquiry = false }: ContactFormProps) {
@@ -156,18 +156,17 @@ export function ContactForm({ language, purchaseInquiry = false }: ContactFormPr
   // Success message view
   if (submitted) {
     return (
-      <div className="bg-gray-50 p-8 rounded-lg">
-        <div className="bg-green-50 border-2 border-green-500 rounded-lg p-12 space-y-6 text-center">
-          <div className="text-6xl">✓</div>
-          <h2 className="text-3xl font-bold text-gray-900">
+      <div className="bg-sheet p-6 min-[721px]:p-8" role="status">
+        <div className="grid gap-5 border-t-2 border-ink pt-5">
+          <h2 className="m-0 font-display text-[44px] leading-[0.95] font-[820] text-ink">
             {t('consultation.success.title')}
           </h2>
-          <p className="text-lg text-gray-600">
+          <p className="max-w-[40ch] text-[17px] text-ink-2">
             {t('consultation.success.message')}
           </p>
           <Button
             onClick={() => (window.location.href = '/')}
-            className="mt-6"
+            className="justify-self-start"
           >
             {t('consultation.success.backToHome')}
           </Button>
@@ -177,8 +176,8 @@ export function ContactForm({ language, purchaseInquiry = false }: ContactFormPr
   }
 
   return (
-    <div className="bg-gray-50 p-8 rounded-lg">
-      <form onSubmit={handleSubmit} className="space-y-6">
+    <div className="bg-sheet p-6 min-[721px]:p-8">
+      <form onSubmit={handleSubmit} className="grid gap-5">
         {/* First Name */}
         <Input
           label={`${t('consultation.form.firstName')} *`}
@@ -199,22 +198,24 @@ export function ContactForm({ language, purchaseInquiry = false }: ContactFormPr
 
         {/* Phone (optional) */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="phone" className="mb-1.5 block text-sm font-semibold text-ink">
             {t('consultation.form.phone')}
           </label>
           <div className="flex gap-2">
             <select
+              aria-label={t('consultation.form.phone')}
               value={countryCode}
               onChange={(e) => setCountryCode(e.target.value)}
-              className="w-[130px] px-3 py-3 rounded-lg border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-[120px] rounded-[3px] border border-ink-2 bg-paper px-3 py-2.5 font-text text-base text-ink focus:border-brand-blue focus:outline-2 focus:outline-offset-0! focus:outline-brand-blue!"
             >
               {countryCodes.map((country) => (
                 <option key={country.code} value={country.code}>
-                  {country.flag} {country.code}
+                  {country.iso} {country.code}
                 </option>
               ))}
             </select>
             <Input
+              id="phone"
               type="tel"
               value={formData.phone}
               onChange={(e) => handleInputChange('phone', e.target.value)}
@@ -226,15 +227,16 @@ export function ContactForm({ language, purchaseInquiry = false }: ContactFormPr
 
         {/* Message */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="message" className="mb-1.5 block text-sm font-semibold text-ink">
             {t('consultation.form.message')}
           </label>
           <textarea
+            id="message"
             value={formData.message}
             onChange={(e) => handleInputChange('message', e.target.value)}
             placeholder={t('consultation.form.messagePlaceholder')}
             rows={4}
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+            className="w-full resize-none placeholder:text-ink-2 rounded-[3px] border border-ink-2 bg-paper px-3 py-2.5 font-text text-base text-ink focus:border-brand-blue focus:outline-2 focus:outline-offset-0! focus:outline-brand-blue!"
           />
         </div>
 
@@ -255,18 +257,17 @@ export function ContactForm({ language, purchaseInquiry = false }: ContactFormPr
               id="privacy"
               checked={formData.privacy}
               onChange={(e) => handleInputChange('privacy', e.target.checked)}
-              className={`mt-1 w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500 ${
-                errors.privacy ? 'border-red-500' : ''
-              }`}
+              aria-invalid={errors.privacy ? true : undefined}
+              className="mt-1 h-4 w-4 accent-brand-blue"
             />
             <label
               htmlFor="privacy"
-              className="text-sm text-gray-600 leading-tight cursor-pointer"
+              className="cursor-pointer text-sm leading-snug text-ink-2"
             >
               {t('consultation.form.privacy')}{' '}
               <a
                 href="/impressum"
-                className="text-blue-600 underline hover:text-blue-700"
+                className="text-brand-blue underline underline-offset-[3px]"
               >
                 {t('consultation.form.privacyLink')}
               </a>{' '}
@@ -274,7 +275,7 @@ export function ContactForm({ language, purchaseInquiry = false }: ContactFormPr
             </label>
           </div>
           {errors.privacy && (
-            <p className="text-red-500 text-sm mt-1">{errors.privacy}</p>
+            <p className="mt-1 text-sm text-warn">{errors.privacy}</p>
           )}
         </div>
 
@@ -292,7 +293,7 @@ export function ContactForm({ language, purchaseInquiry = false }: ContactFormPr
 
         {/* Error Message */}
         {submitError && (
-          <div className="bg-red-50 border-2 border-red-500 rounded-lg p-4 text-red-700">
+          <div role="alert" className="rounded-[3px] border-2 border-warn bg-paper p-4 text-warn">
             {submitError}
           </div>
         )}

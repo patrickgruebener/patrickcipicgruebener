@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 const PRODUCTION_URL = "https://patrickcipicgruebener.com";
-const OG_IMAGE = `${PRODUCTION_URL}/images/patrickcipicgruebener_portrait.webp`;
+const OG_IMAGE = `${PRODUCTION_URL}/images/werkstatt/og-werkstatt.png`;
 
 export async function generateMetadata(): Promise<Metadata> {
   const headersList = await headers();

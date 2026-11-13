@@ -1,51 +1,32 @@
 import { getTranslations } from '@/lib/i18n.server';
+import { Section, SectionHead } from '@/components/sections/section-shell';
 
 const testimonials = ['testimonial1', 'testimonial2', 'testimonial3'] as const;
 
+/** W.A.F. case as a ruled text block, quotes as plain blocks under a rule, no stars. */
 export async function AiosSocialProofSection() {
   const { t } = await getTranslations();
 
   return (
-    <section className="py-24 px-6 bg-gradient-to-br from-gray-50 to-blue-50">
-      <div className="max-w-5xl mx-auto">
-        {/* Title */}
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-10">
-          {t('aios.social.title')}
-        </h2>
-
-        {/* W.A.F. Case Study */}
-        <div className="bg-white rounded-2xl p-8 md:p-10 border border-gray-100 shadow-lg mb-16 max-w-3xl mx-auto">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-2 h-8 bg-gradient-to-b from-blue-500 to-green-500 rounded-full" />
-            <p className="text-sm font-medium text-gray-500 uppercase tracking-wide">Case Study</p>
-          </div>
-          <p className="text-gray-700 text-lg leading-relaxed">
-            {t('aios.social.story')}
-          </p>
-        </div>
-
-        {/* Testimonials */}
-        <div className="grid md:grid-cols-3 gap-6">
-          {testimonials.map((key) => (
-            <div
-              key={key}
-              className="bg-white rounded-2xl p-6 border border-gray-100 hover:shadow-lg transition-shadow duration-300"
-            >
-              <p className="text-gray-700 italic leading-relaxed text-sm mb-6">
-                {t(`aios.social.${key}.quote` as any)}
-              </p>
-              <div>
-                <p className="text-sm font-semibold text-gray-900">
-                  {t(`aios.social.${key}.name` as any)}
-                </p>
-                <p className="text-xs text-gray-500">
-                  {t(`aios.social.${key}.role` as any)}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
+    <Section>
+      <SectionHead heavy={t('aios.social.title')} />
+      <div className="mb-12 max-w-[64ch] border-l-4 border-brand-green pl-4">
+        <p className="font-bold text-brand-blue">Case Study</p>
+        <p className="mt-2 text-[17px] leading-[1.55] text-ink">{t('aios.social.story')}</p>
       </div>
-    </section>
+      <div className="grid grid-cols-1 items-start gap-x-12 gap-y-10 md:grid-cols-3">
+        {testimonials.map((key) => (
+          <figure key={key} className="m-0 border-t-2 border-ink pt-5">
+            <blockquote className="m-0 text-[17px] leading-[1.6] text-ink">
+              {t(`aios.social.${key}.quote`)}
+            </blockquote>
+            <figcaption className="mt-5 text-[15px]">
+              <b className="block text-ink">{t(`aios.social.${key}.name`)}</b>
+              <span className="text-ink-2">{t(`aios.social.${key}.role`)}</span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </Section>
   );
 }

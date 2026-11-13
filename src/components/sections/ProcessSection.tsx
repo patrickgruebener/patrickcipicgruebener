@@ -1,51 +1,49 @@
 import { getTranslations } from '@/lib/i18n.server';
+import { Section, SectionHead } from '@/components/sections/section-shell';
+import { Figure } from '@/components/ui/figure';
+import { FlowSketch } from '@/components/ui/flow-sketch';
 
+const STEPS = ['1', '2', '3'] as const;
+
+/** Collaboration as a flow sketch with dimension lines (Abb. 3), step texts below in three columns. */
 export async function ProcessSection() {
   const { t } = await getTranslations();
-
-  const steps = [
-    { key: '1', number: '1', gradient: 'from-blue-500 to-cyan-500' },
-    { key: '2', number: '2', gradient: 'from-cyan-500 to-teal-500' },
-    { key: '3', number: '3', gradient: 'from-teal-500 to-emerald-500' },
+  const flowSteps = [
+    t('home.process.flow.step1'),
+    t('home.process.flow.step2'),
+    t('home.process.flow.step3'),
+    t('home.process.flow.step4'),
   ];
 
   return (
-    <section id="process" className="py-24 px-6 bg-gradient-to-br from-gray-50 to-blue-50">
-      <div className="max-w-6xl mx-auto">
-        {/* Section Title */}
-        <div className="text-center mb-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            {t('home.process.title')}
-          </h2>
-          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            {t('home.process.intro')}
-          </p>
-        </div>
-
-        {/* Three Steps */}
-        <div className="grid md:grid-cols-3 gap-8 mb-12 mt-16">
-          {steps.map(({ key, number, gradient }) => (
-            <div
-              key={key}
-              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
-            >
-              <div className="flex justify-center mb-6">
-                <div
-                  className={`w-16 h-16 rounded-full bg-gradient-to-br ${gradient} flex items-center justify-center text-white text-2xl font-bold`}
-                >
-                  {number}
-                </div>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 text-center mb-4">
-                {t(`home.process.step${key}.title` as any)}
-              </h3>
-              <p className="text-gray-600 text-center leading-relaxed">
-                {t(`home.process.step${key}.description` as any)}
-              </p>
-            </div>
-          ))}
-        </div>
+    <Section id="process">
+      <SectionHead
+        light={t('home.process.title.light')}
+        heavy={t('home.process.title.heavy')}
+        intro={<p>{t('home.process.intro')}</p>}
+      />
+      <Figure number={4} caption={t('home.process.flow.caption')}>
+        <FlowSketch
+          steps={flowSteps}
+          tail={t('home.process.flow.tail')}
+          dimensions={[
+            { from: 2, to: 2, label: t('home.process.flow.build') },
+            { from: 3, to: 3, label: t('home.process.flow.show') },
+          ]}
+          label={t('home.process.flow.label')}
+          className="max-w-[760px]"
+        />
+      </Figure>
+      <div className="mt-10 grid grid-cols-1 gap-x-10 gap-y-8 md:grid-cols-3">
+        {STEPS.map((key) => (
+          <div key={key} className="border-t-2 border-ink pt-3.5">
+            <h3 className="mb-2 text-[20px] leading-tight font-bold text-ink">
+              {t(`home.process.step${key}.title`)}
+            </h3>
+            <p className="text-ink-2">{t(`home.process.step${key}.description`)}</p>
+          </div>
+        ))}
       </div>
-    </section>
+    </Section>
   );
 }

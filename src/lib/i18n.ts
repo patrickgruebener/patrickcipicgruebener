@@ -12,10 +12,10 @@ export const translations: { de: typeof de } & Record<string, Record<string, str
 
 export const defaultLanguage: Language = 'de';
 
-export const languages: { code: Language; name: string; flag: string }[] = [
-  { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-  { code: 'en', name: 'English', flag: '🇬🇧' },
-  { code: 'hr', name: 'Hrvatski', flag: '🇭🇷' },
+export const languages: { code: Language; name: string }[] = [
+  { code: 'de', name: 'Deutsch' },
+  { code: 'en', name: 'English' },
+  { code: 'hr', name: 'Hrvatski' },
 ];
 
 // Client-side translation lookup (for when you have the language already)

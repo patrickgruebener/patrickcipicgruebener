@@ -1,39 +1,23 @@
 import { getTranslations } from '@/lib/i18n.server';
+import { Section, SectionHead } from '@/components/sections/section-shell';
 
-const painPoints = [
-  { key: '1', icon: '😐' },
-  { key: '2', icon: '🔀' },
-  { key: '3', icon: '🧠' },
-  { key: '4', icon: '🔧' },
-] as const;
+const PAIN_POINTS = ['1', '2', '3', '4'] as const;
 
+/** Four pain points as ruled text blocks, no icons. */
 export async function WorkshopPainSection() {
   const { t } = await getTranslations();
 
   return (
-    <section className="py-24 px-6 bg-white">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-16">
-          {t('workshop.pain.title')}
-        </h2>
-
-        <div className="grid md:grid-cols-2 gap-8">
-          {painPoints.map(({ key, icon }) => (
-            <div
-              key={key}
-              className="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow duration-300"
-            >
-              <div className="text-3xl mb-4">{icon}</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                {t(`workshop.pain.${key}.title` as any)}
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                {t(`workshop.pain.${key}.description` as any)}
-              </p>
-            </div>
-          ))}
-        </div>
+    <Section id="pain">
+      <SectionHead heavy={t('workshop.pain.title')} />
+      <div className="grid grid-cols-1 gap-x-12 gap-y-8 md:grid-cols-2">
+        {PAIN_POINTS.map((key) => (
+          <div key={key} className="border-t-2 border-ink pt-3.5">
+            <h3 className="mb-2 text-[20px] leading-tight font-bold text-ink">{t(`workshop.pain.${key}.title`)}</h3>
+            <p className="max-w-[56ch] text-ink-2">{t(`workshop.pain.${key}.description`)}</p>
+          </div>
+        ))}
       </div>
-    </section>
+    </Section>
   );
 }
