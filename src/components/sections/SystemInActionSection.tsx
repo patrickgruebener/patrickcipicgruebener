@@ -32,7 +32,7 @@ export async function SystemInActionSection() {
         intro={<p>{t('home.systemInAction.intro')}</p>}
       />
       <div className="grid grid-cols-1 items-start gap-x-12 gap-y-10 min-[821px]:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
-        <Figure number={2} caption={t('home.systemInAction.figure.caption')}>
+        <Figure number={3} caption={t('home.systemInAction.figure.caption')}>
           <FileTree root={skillsTree(t)} label={t('home.systemInAction.figure.label')} className="text-ink" />
         </Figure>
         <div>

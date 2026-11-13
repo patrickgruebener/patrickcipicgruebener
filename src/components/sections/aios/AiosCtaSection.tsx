@@ -16,7 +16,7 @@ export async function AiosCtaSection() {
           href="/beratungstermin"
           guideLine={false}
           portrait={{
-            src: '/images/profile.webp',
+            src: '/images/werkstatt/patrick-profil-800.webp',
             alt: t('home.finalCta.portraitAlt'),
             name: 'Patrick Čipić Grübener',
             role: t('home.finalCta.portraitRole'),

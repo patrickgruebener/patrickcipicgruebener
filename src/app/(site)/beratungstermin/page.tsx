@@ -34,7 +34,7 @@ export default async function BeratungsterminPage({ searchParams }: { searchPara
 
             <div className="grid grid-cols-[96px_minmax(0,1fr)] items-center gap-4">
               <Image
-                src="/images/patrickcipicgruebener_portrait.webp"
+                src="/images/werkstatt/patrick-profil-800.webp"
                 alt="Patrick Čipić Grübener"
                 width={96}
                 height={96}

@@ -27,6 +27,8 @@ export const de = {
   'home.painPoints.intro.part1': 'Es liegt nicht an der Technologie. Es liegt am fehlenden Kontext.',
   'home.painPoints.intro.part2': 'Die meisten Unternehmen machen denselben Fehler: Sie setzen auf Tools statt auf Systeme.',
   'home.painPoints.intro.part3': 'Drei Muster, die ich immer wieder sehe:',
+  'home.painPoints.figure.caption': "Vorher und nachher",
+  'home.painPoints.figure.alt': "Zwei Blätter nebeneinander: links ein durchgestrichenes Geflecht aus Kästen und Pfeilen, rechts vier Kästen in klarer Reihenfolge",
   'home.painPoints.1.title': 'ChatGPT ohne Kontext = teurer Praktikant',
   'home.painPoints.1.description': 'Jeden Tag fängt die KI bei null an. Kein Wissen über dein Unternehmen, deine Kunden, deine Prozesse. Du erklärst immer wieder dasselbe und bekommst generische Antworten.',
   'home.painPoints.2.title': 'Isolierte Tools statt verbundenes System',
@@ -358,6 +360,8 @@ export const de = {
   'aios.hero.text2': "Du entscheidest, wie weit das System gehen soll: ein gemeinsamer Einstieg, strukturiertes Teamwissen oder zusätzliche Anbindungen und Automationen.",
   'aios.hero.text3': "Ich richte die passende Version in eurer vorhandenen Arbeitsumgebung ein und teste sie mit eurem Team.",
   'aios.hero.cta': "Pakete ansehen",
+  'aios.hero.figure.caption': "Erst der Plan, dann das System",
+  'aios.hero.figure.alt': "Aufgeschlagenes Notizbuch mit Ablaufskizzen und Maßlinien in Bleistift, daneben Stahllineal und Druckbleistift",
 
   // AIOS - Memory Section
   'aios.memory.title': 'Der Unterschied: Dein System hat ein Gedächtnis',
@@ -460,6 +464,8 @@ export const de = {
   'workshop.hero.priceBadge': "Individuelles Angebot",
   'workshop.hero.priceNote': "nach Teamgröße und Schwerpunkten",
   'workshop.hero.cta': 'Workshop anfragen',
+  'workshop.hero.figure.caption': "Gebaut wird am eigenen Material",
+  'workshop.hero.figure.alt': "Schneidematte mit zwei Ausdrucken eines Ordnerbaums, Skalpell und einer Rolle Kreppband",
 
   // KI Workshop - Pain Section
   'workshop.pain.title': 'Kommt dir das bekannt vor?',

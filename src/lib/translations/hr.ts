@@ -27,6 +27,8 @@ export const hr = {
   'home.painPoints.intro.part1': 'Nije u pitanju tehnologija. Radi se o nedostatku konteksta.',
   'home.painPoints.intro.part2': 'Većina poduzeća pravi istu grešku: oslanjaju se na alate umjesto na sustave.',
   'home.painPoints.intro.part3': 'Tri obrasca koja uvijek iznova vidim:',
+  'home.painPoints.figure.caption': "Prije i poslije",
+  'home.painPoints.figure.alt': "Dva lista jedan do drugog: lijevo prekrižena zbrka kvadrata i strelica, desno četiri kvadrata jasnim redoslijedom",
   'home.painPoints.1.title': 'ChatGPT bez konteksta = skupi pripravnik',
   'home.painPoints.1.description': 'Svaki dan AI počinje od nule. Nema znanja o tvom poduzeću, tvojim kupcima, tvojim procesima. Objašnjavaš iste stvari iznova i iznova i dobivaš generičke odgovore.',
   'home.painPoints.2.title': 'Izolirani alati umjesto povezanog sustava',
@@ -358,6 +360,8 @@ export const hr = {
   'aios.hero.text2': "Odaberi opseg koji ti treba: zajednički početak, strukturirano timsko znanje ili dodatna povezivanja i automatizacije.",
   'aios.hero.text3': "Postavljam odgovarajuću verziju u vašem postojećem okruženju i testiram je s vašim timom.",
   'aios.hero.cta': "Pogledaj pakete",
+  'aios.hero.figure.caption': "Prvo plan, zatim sustav",
+  'aios.hero.figure.alt': "Otvorena bilježnica sa skicama tijeka i kotama olovkom, pored čelično ravnalo i tehnička olovka",
 
   // AIOS - Memory Section
   'aios.memory.title': 'Razlika: Tvoj sustav ima pamćenje',
@@ -458,6 +462,8 @@ export const hr = {
   'workshop.hero.priceBadge': "Individuelles Angebot",
   'workshop.hero.priceNote': "nach Teamgröße und Schwerpunkten",
   'workshop.hero.cta': 'Workshop anfragen',
+  'workshop.hero.figure.caption': "Gradi se na vlastitom materijalu",
+  'workshop.hero.figure.alt': "Podloga za rezanje s dva ispisa stabla mapa, skalpelom i rolom ljepljive trake",
   'workshop.pain.title': 'Kommt dir das bekannt vor?',
   'workshop.pain.1.title': 'KI-Outputs sind generisch',
   'workshop.pain.1.description': 'Dein Team tippt einen Satz in ChatGPT und bekommt Texte, die nach allem klingen. Nur nicht nach euch. Die Qualität schwankt, das Vertrauen sinkt.',

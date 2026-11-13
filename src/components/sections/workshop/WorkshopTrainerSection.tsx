@@ -13,7 +13,7 @@ export async function WorkshopTrainerSection() {
       <SectionHead heavy={t('workshop.trainer.title')} />
       <div className="grid grid-cols-1 items-start gap-x-12 gap-y-8 min-[821px]:grid-cols-[minmax(0,4fr)_minmax(0,8fr)]">
         <Image
-          src="/images/patrickcipicgruebener_portrait.webp"
+          src="/images/werkstatt/patrick-profil-800.webp"
           alt={t('workshop.trainer.name')}
           width={400}
           height={400}

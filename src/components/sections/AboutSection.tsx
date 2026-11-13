@@ -23,7 +23,7 @@ export async function AboutSection() {
       <SectionHead light={t('home.about.title')} heavy={t('home.about.titleHighlight')} />
       <div className="grid grid-cols-1 items-start gap-x-12 gap-y-10 min-[821px]:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
         <Image
-          src="/images/profile.webp"
+          src="/images/werkstatt/patrick-profil-800.webp"
           alt="Patrick Čipić Grübener"
           width={600}
           height={600}

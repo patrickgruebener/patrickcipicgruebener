@@ -42,7 +42,7 @@ export async function Footer() {
           <div className="flex h-full flex-col justify-between">
             <div className="grid grid-cols-[72px_auto] items-center gap-3.5">
               <Image
-                src="/images/profile.webp"
+                src="/images/werkstatt/patrick-profil-800.webp"
                 alt="Patrick Cipic Grübener"
                 width={72}
                 height={72}

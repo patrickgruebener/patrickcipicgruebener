@@ -1,12 +1,11 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { getTranslations } from '@/lib/i18n.server';
 import { buttonStyles } from '@/components/ui/Button';
 import { Figure } from '@/components/ui/figure';
-import { FileTree } from '@/components/ui/file-tree';
 import { Leitlinie } from '@/components/ui/leitlinie';
-import { systemTree } from '@/components/sections/HeroSection';
 
-/** First screen: light/heavy headline, system excerpt as Abb. 1, guide line below. */
+/** First screen: light/heavy headline, planning photo as Abb. 1, guide line below. */
 export async function AiosHeroSection() {
   const { t } = await getTranslations();
 
@@ -25,8 +24,16 @@ export async function AiosHeroSection() {
             {t('aios.hero.cta')}
           </Link>
         </div>
-        <Figure number={1} caption={t('home.hero.figure.caption')} className="min-[900px]:mt-1.5">
-          <FileTree root={systemTree(t)} label={t('home.hero.figure.label')} className="text-ink" />
+        <Figure number={1} caption={t('aios.hero.figure.caption')} className="min-[900px]:mt-1.5">
+          <Image
+            src="/images/werkstatt/planmappe-ablaufskizze.webp"
+            alt={t('aios.hero.figure.alt')}
+            width={1500}
+            height={1000}
+            priority
+            className="block h-auto w-full"
+            sizes="(min-width: 900px) 460px, 100vw"
+          />
         </Figure>
       </div>
       <Leitlinie />

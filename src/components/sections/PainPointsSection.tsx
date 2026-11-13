@@ -1,9 +1,11 @@
+import Image from 'next/image';
 import { getTranslations } from '@/lib/i18n.server';
+import { Figure } from '@/components/ui/figure';
 import { Section, SectionHead } from '@/components/sections/section-shell';
 
 const PAIN_POINTS = ['1', '2', '3'] as const;
 
-/** Three recurring patterns as plain rows with hairlines, no icons. */
+/** Three recurring patterns as plain rows with hairlines, no icons, then a before/after photo as Abb. 2. */
 export async function PainPointsSection() {
   const { t } = await getTranslations();
 
@@ -35,6 +37,16 @@ export async function PainPointsSection() {
           </div>
         ))}
       </div>
+      <Figure number={2} caption={t('home.painPoints.figure.caption')} className="mt-10 max-w-[760px]">
+        <Image
+          src="/images/werkstatt/zwei-blaetter-vorher-nachher.webp"
+          alt={t('home.painPoints.figure.alt')}
+          width={1500}
+          height={1000}
+          className="block h-auto w-full"
+          sizes="(min-width: 820px) 704px, 100vw"
+        />
+      </Figure>
     </Section>
   );
 }

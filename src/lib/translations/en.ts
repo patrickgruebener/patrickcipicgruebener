@@ -27,6 +27,8 @@ export const en = {
   'home.painPoints.intro.part1': "It's not about the technology. It's about missing context.",
   'home.painPoints.intro.part2': 'Most companies make the same mistake: they bet on tools instead of systems.',
   'home.painPoints.intro.part3': 'Three patterns I see over and over:',
+  'home.painPoints.figure.caption': "Before and after",
+  'home.painPoints.figure.alt': "Two sheets side by side: on the left a crossed-out tangle of boxes and arrows, on the right four boxes in a clear sequence",
   'home.painPoints.1.title': 'ChatGPT without context = expensive intern',
   'home.painPoints.1.description': 'Every day the AI starts from scratch. No knowledge about your business, your customers, your processes. You explain the same things again and again and get generic answers.',
   'home.painPoints.2.title': 'Isolated tools instead of a connected system',
@@ -358,6 +360,8 @@ export const en = {
   'aios.hero.text2': "Choose the scope you need: a shared starting point, structured team knowledge, or additional integrations and automations.",
   'aios.hero.text3': "I set up the right version in your existing environment and test it with your team.",
   'aios.hero.cta': "Explore packages",
+  'aios.hero.figure.caption': "First the plan, then the system",
+  'aios.hero.figure.alt': "Open notebook with pencil flow sketches and dimension lines, a steel ruler and a mechanical pencil beside it",
 
   // AIOS - Memory Section
   'aios.memory.title': 'The difference: Your system has a memory',
@@ -460,6 +464,8 @@ export const en = {
   'workshop.hero.priceBadge': "Custom quote",
   'workshop.hero.priceNote': "based on team size and focus",
   'workshop.hero.cta': 'Request Workshop',
+  'workshop.hero.figure.caption': "Built on your own material",
+  'workshop.hero.figure.alt': "Cutting mat with two printouts of a folder tree, a scalpel and a roll of masking tape",
 
   // KI Workshop - Pain Section
   'workshop.pain.title': 'Sound familiar?',

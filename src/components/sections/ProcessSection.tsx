@@ -22,7 +22,7 @@ export async function ProcessSection() {
         heavy={t('home.process.title.heavy')}
         intro={<p>{t('home.process.intro')}</p>}
       />
-      <Figure number={3} caption={t('home.process.flow.caption')}>
+      <Figure number={4} caption={t('home.process.flow.caption')}>
         <FlowSketch
           steps={flowSteps}
           tail={t('home.process.flow.tail')}

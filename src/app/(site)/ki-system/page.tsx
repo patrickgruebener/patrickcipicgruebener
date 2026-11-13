@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -8,7 +9,6 @@ import type { Language } from "@/lib/i18n";
 import { buttonStyles } from "@/components/ui/Button";
 import { Card, CardFlag, CardPrice } from "@/components/ui/Card";
 import { Figure } from "@/components/ui/figure";
-import { FileTree } from "@/components/ui/file-tree";
 import { Leitlinie } from "@/components/ui/leitlinie";
 import { Section, SectionHead } from "@/components/sections/section-shell";
 import { ClosingCta } from "@/components/sections/closing-cta";
@@ -86,10 +86,14 @@ function Hero({ copy }: { copy: Copy }) {
             <CardPrice unit={copy.priceLabel}>199 €</CardPrice>
           </Card>
           <Figure number={1} caption={copy.heroPoint}>
-            <FileTree
-              root={{ name: "projekte/", children: [{ name: "angebot-kunde.md", note: "aktuelle Fassung" }] }}
-              label={copy.eyebrow}
-              className="text-ink"
+            <Image
+              src="/images/werkstatt/karteikasten-reiter.webp"
+              alt={copy.heroImageAlt}
+              width={1500}
+              height={1000}
+              priority
+              className="block h-auto w-full"
+              sizes="(min-width: 900px) 460px, 100vw"
             />
           </Figure>
         </div>
@@ -217,7 +221,7 @@ export default async function KiSystemPage() {
               note={checkoutUrl ? copy.contactNote : copy.checkoutPending}
               guideLine={false}
               portrait={{
-                src: "/images/profile.webp",
+                src: "/images/werkstatt/patrick-profil-800.webp",
                 alt: t("home.finalCta.portraitAlt"),
                 name: "Patrick Čipić Grübener",
                 role: t("home.finalCta.portraitRole"),
