@@ -26,6 +26,37 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Werkstatt brand tokens (source: memory/skills/brand-patrick/tokens.json) */
+  --color-paper: #ffffff;
+  --color-sheet: #f4f6fb;
+  --color-ink: #0b1233;
+  --color-ink-2: #4a5372;
+  --color-line: #d6dceb;
+  --color-brand-blue: #0426cb;
+  --color-brand-blue-dark: #0320a3;
+  --color-brand-green: #65c87a;
+  --color-brand-green-ink: #2b7a3f;
+  --color-warn: #b4361f;
+
+  --font-display: var(--font-sofia-display), "Arial Narrow", sans-serif;
+  --font-text: var(--font-sofia-text), "Helvetica Neue", Arial, sans-serif;
+  --font-mono-brand: var(--font-chivo-mono), ui-monospace, Menlo, monospace;
+}
+
+/* Brand gradient: OKLab mix, sRGB stops as fallback */
+@utility bg-brand-gradient {
+  background-image: linear-gradient(
+    90deg,
+    #0426cb 0%,
+    #0060bf 25%,
+    #0a86af 50%,
+    #3da899 75%,
+    #65c87a 100%
+  );
+  @supports (background-image: linear-gradient(in oklab, red, blue)) {
+    background-image: linear-gradient(90deg in oklab, #0426cb, #65c87a);
+  }
 }
 
 body {
