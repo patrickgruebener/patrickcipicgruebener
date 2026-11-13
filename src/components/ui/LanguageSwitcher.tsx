@@ -55,14 +55,14 @@ export function LanguageSwitcher() {
       {/* Trigger Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-2 text-sm bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+        className="flex items-center gap-2 rounded-[3px] border border-line bg-paper px-3 py-2 text-sm text-ink transition-colors hover:border-ink-2 motion-reduce:transition-none"
         aria-label="Select language"
         aria-expanded={isOpen}
       >
         <span className="text-lg leading-none">{currentLanguage?.flag}</span>
-        <span className="font-medium text-gray-900">{currentLanguage?.code.toUpperCase()}</span>
+        <span className="font-medium text-ink">{currentLanguage?.code.toUpperCase()}</span>
         <svg
-          className={`w-4 h-4 text-gray-600 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+          className={`w-4 h-4 text-ink-2 transition-transform motion-reduce:transition-none ${isOpen ? 'rotate-180' : ''}`}
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -73,21 +73,21 @@ export function LanguageSwitcher() {
 
       {/* Dropdown Menu */}
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-50">
+        <div className="absolute right-0 z-50 mt-2 w-40 rounded-[4px] border border-line bg-paper py-1">
           {languages.map((lang) => (
             <button
               key={lang.code}
               onClick={() => handleLanguageChange(lang.code as Language)}
               className={`w-full flex items-center gap-3 px-4 py-2 text-sm transition-colors ${
                 language === lang.code
-                  ? 'bg-gray-100 text-gray-900 font-medium'
-                  : 'text-gray-700 hover:bg-gray-50'
+                  ? 'bg-sheet text-ink font-medium'
+                  : 'text-ink hover:bg-sheet'
               }`}
             >
               <span className="text-lg leading-none">{lang.flag}</span>
               <span className="flex-1 text-left">{lang.name}</span>
               {language === lang.code && (
-                <svg className="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-4 h-4 text-brand-blue" fill="currentColor" viewBox="0 0 20 20">
                   <path
                     fillRule="evenodd"
                     d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"

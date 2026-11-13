@@ -3,11 +3,18 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useLanguage } from '@/hooks/useLanguage';
-import { Button } from '@/components/ui/Button';
+import { buttonStyles } from '@/components/ui/Button';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
 
 interface HeaderProps {
-  currentPage?: 'home' | 'impressum' | 'beratungstermin' | 'angebote' | 'ki-system-fuer-unternehmen' | 'ki-system' | 'ki-workshop';
+  currentPage?: 'home' | 'impressum' | 'beratungstermin' | 'angebote' | 'ki-system-fuer-unternehmen' | 'ki-system' | 'ki-workshop' | 'bausteine';
+}
+
+// Active page: green underline as in the secondary link style
+function navLinkClass(isActive: boolean, isMobile = false): string {
+  const size = isMobile ? 'text-sm' : '';
+  const active = isActive ? 'underline decoration-brand-green decoration-2 underline-offset-[5px]' : 'hover:text-brand-blue';
+  return `${size} text-ink transition-colors motion-reduce:transition-none ${active}`.trim();
 }
 
 export function Header({ currentPage = 'home' }: HeaderProps) {
@@ -26,8 +33,8 @@ export function Header({ currentPage = 'home' }: HeaderProps) {
   };
 
   return (
-    <header className="sticky top-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-40">
-      <div className="max-w-6xl mx-auto px-6 py-4">
+    <header className="sticky top-0 z-40 border-b border-line bg-paper font-text text-ink">
+      <div className="mx-auto max-w-[1180px] px-4 py-3 xl:py-4">
         <div className="flex items-center">
           {/* Logo/Name */}
           <Link
@@ -39,7 +46,7 @@ export function Header({ currentPage = 'home' }: HeaderProps) {
               alt="Patrick Cipic Grübener"
               width={200}
               height={32}
-              className="h-8 w-auto hidden sm:block"
+              className="h-6 w-auto hidden sm:block"
               priority
             />
             <Image
@@ -47,48 +54,44 @@ export function Header({ currentPage = 'home' }: HeaderProps) {
               alt="Patrick Cipic Grübener"
               width={160}
               height={24}
-              className="h-6 w-auto sm:hidden"
+              className="h-[15px] w-auto sm:hidden"
               priority
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="ml-8 hidden items-center gap-4 whitespace-nowrap text-sm xl:flex">
+          <nav className="ml-8 hidden items-center gap-8 whitespace-nowrap text-base font-medium xl:flex">
             <Link
               href="/"
-              className={`text-gray-600 hover:text-gray-900 transition-colors ${
-                currentPage === 'home' ? 'text-gray-900 font-medium' : ''
-              }`}
+              aria-current={currentPage === 'home' ? 'page' : undefined}
+              className={navLinkClass(currentPage === 'home')}
             >
               {t('header.home')}
             </Link>
             <Link
               href="/ki-system"
-              className={`text-gray-600 hover:text-gray-900 transition-colors ${
-                currentPage === 'ki-system' ? 'text-gray-900 font-medium' : ''
-              }`}
+              aria-current={currentPage === 'ki-system' ? 'page' : undefined}
+              className={navLinkClass(currentPage === 'ki-system')}
             >
               {t('header.personalSystem')}
             </Link>
             <Link
               href="/ki-system-fuer-unternehmen"
-              className={`text-gray-600 hover:text-gray-900 transition-colors ${
-                currentPage === 'ki-system-fuer-unternehmen' ? 'text-gray-900 font-medium' : ''
-              }`}
+              aria-current={currentPage === 'ki-system-fuer-unternehmen' ? 'page' : undefined}
+              className={navLinkClass(currentPage === 'ki-system-fuer-unternehmen')}
             >
               {t('header.businessSystem')}
             </Link>
             <Link
               href="/ki-workshop"
-              className={`text-gray-600 hover:text-gray-900 transition-colors ${
-                currentPage === 'ki-workshop' ? 'text-gray-900 font-medium' : ''
-              }`}
+              aria-current={currentPage === 'ki-workshop' ? 'page' : undefined}
+              className={navLinkClass(currentPage === 'ki-workshop')}
             >
               {t('header.kiWorkshop')}
             </Link>
             <button
               onClick={() => scrollToSection('about')}
-              className="text-gray-600 hover:text-gray-900 transition-colors"
+              className={navLinkClass(false)}
             >
               {t('header.about')}
             </button>
@@ -101,12 +104,10 @@ export function Header({ currentPage = 'home' }: HeaderProps) {
 
             {/* Consultation Button */}
             <div className="flex flex-col items-center">
-              <Link href="/beratungstermin">
-                <Button size="sm">
-                  {t('header.consultation')}
-                </Button>
+              <Link href="/beratungstermin" className={buttonStyles({ size: 'sm' })}>
+                {t('header.consultation')}
               </Link>
-              <span className="text-xs text-gray-500 mt-1">
+              <span className="mt-1 text-xs text-ink-2">
                 {t('header.consultationMicro')}
               </span>
             </div>
@@ -120,46 +121,42 @@ export function Header({ currentPage = 'home' }: HeaderProps) {
         </div>
 
         {/* Mobile Navigation Links */}
-        <nav className="mt-4 flex flex-wrap gap-4 xl:hidden">
+        <nav className="mt-3 flex flex-wrap gap-x-5 gap-y-2 xl:hidden">
           <Link
             href="/"
-            className={`text-sm text-gray-600 hover:text-gray-900 transition-colors ${
-              currentPage === 'home' ? 'text-gray-900 font-medium' : ''
-            }`}
+            aria-current={currentPage === 'home' ? 'page' : undefined}
+            className={navLinkClass(currentPage === 'home', true)}
           >
             {t('header.home')}
           </Link>
           <Link
             href="/ki-system"
-            className={`text-sm text-gray-600 hover:text-gray-900 transition-colors ${
-              currentPage === 'ki-system' ? 'text-gray-900 font-medium' : ''
-            }`}
+            aria-current={currentPage === 'ki-system' ? 'page' : undefined}
+            className={navLinkClass(currentPage === 'ki-system', true)}
           >
             {t('header.personalSystem')}
           </Link>
           <Link
             href="/ki-system-fuer-unternehmen"
-            className={`text-sm text-gray-600 hover:text-gray-900 transition-colors ${
-              currentPage === 'ki-system-fuer-unternehmen' ? 'text-gray-900 font-medium' : ''
-            }`}
+            aria-current={currentPage === 'ki-system-fuer-unternehmen' ? 'page' : undefined}
+            className={navLinkClass(currentPage === 'ki-system-fuer-unternehmen', true)}
           >
             {t('header.businessSystem')}
           </Link>
           <Link
             href="/ki-workshop"
-            className={`text-sm text-gray-600 hover:text-gray-900 transition-colors ${
-              currentPage === 'ki-workshop' ? 'text-gray-900 font-medium' : ''
-            }`}
+            aria-current={currentPage === 'ki-workshop' ? 'page' : undefined}
+            className={navLinkClass(currentPage === 'ki-workshop', true)}
           >
             {t('header.kiWorkshop')}
           </Link>
           <button
             onClick={() => scrollToSection('about')}
-            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+            className={navLinkClass(false, true)}
           >
             {t('header.about')}
           </button>
-          <Link href="/beratungstermin" className="text-sm font-semibold text-[#0426CB] hover:underline">
+          <Link href="/beratungstermin" className="text-sm font-semibold text-brand-blue hover:underline">
             {t('header.consultation')}
           </Link>
         </nav>
