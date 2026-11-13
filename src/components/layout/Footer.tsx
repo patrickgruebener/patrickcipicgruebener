@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getTranslations } from '@/lib/i18n.server';
 import { buttonStyles } from '@/components/ui/Button';
+import { CookieSettingsLink } from '@/components/consent/cookie-settings-link';
 
 // Icons as inline SVG components
 function LinkedinIcon({ className }: { className?: string }) {
@@ -54,9 +55,12 @@ export async function Footer() {
               </div>
             </div>
 
-            <Link href="/impressum" className={`${linkClass} mt-8 text-sm`}>
-              {t('footer.impressum')}
-            </Link>
+            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+              <Link href="/impressum" className={linkClass}>
+                {t('footer.impressum')}
+              </Link>
+              <CookieSettingsLink label={t('footer.cookieSettings')} className={linkClass} />
+            </div>
           </div>
 
           {/* Right: contact links and button */}

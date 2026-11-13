@@ -6,9 +6,9 @@ import { buttonStyles } from '@/components/ui/Button';
 import { Leitlinie } from '@/components/ui/leitlinie';
 
 /** Legal block: heavy heading under a rule, content set as plain text. */
-function LegalBlock({ title, children }: { title: string; children: ReactNode }) {
+function LegalBlock({ title, id, children }: { title: string; id?: string; children: ReactNode }) {
   return (
-    <section className="border-t-2 border-ink pt-4">
+    <section id={id} className="scroll-mt-6 border-t-2 border-ink pt-4">
       <h2 className="mb-5 font-display text-[clamp(30px,6vw,40px)] leading-[0.95] font-[820] tracking-[-0.005em] text-ink">
         {title}
       </h2>
@@ -80,7 +80,7 @@ export default async function ImpressumPage() {
             </LegalItem>
           </LegalBlock>
 
-          <LegalBlock title={t('impressum.privacy.title')}>
+          <LegalBlock id="datenschutz" title={t('impressum.privacy.title')}>
             <LegalItem title={t('impressum.privacy.intro.title')}>
               <p>{t('impressum.privacy.intro.text')}</p>
               <p>{t('impressum.privacy.controller')}</p>
@@ -90,6 +90,13 @@ export default async function ImpressumPage() {
             </LegalItem>
             <LegalItem title={t('impressum.privacy.usage.title')}>
               <p>{t('impressum.privacy.usage.text')}</p>
+            </LegalItem>
+            <LegalItem title={t('impressum.privacy.cookies.title')}>
+              <p>{t('impressum.privacy.cookies.text')}</p>
+            </LegalItem>
+            <LegalItem title={t('impressum.privacy.analytics.title')}>
+              <p>{t('impressum.privacy.analytics.text')}</p>
+              <p>{t('impressum.privacy.analytics.retention')}</p>
             </LegalItem>
             <LegalItem title={t('impressum.privacy.rights.title')}>
               <p>{t('impressum.privacy.rights.text')}</p>

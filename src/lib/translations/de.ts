@@ -188,6 +188,7 @@ export const de = {
   'footer.cta': 'Beratungsgespräch vereinbaren',
   'footer.linkedin': 'LinkedIn',
   'footer.impressum': 'Impressum',
+  'footer.cookieSettings': 'Cookie-Einstellungen',
 
   // Beratungstermin Page
   'consultation.backToHome': 'Zurück zur Startseite',
@@ -240,6 +241,11 @@ export const de = {
   'impressum.privacy.collection.text': 'Beim Aufruf der Website werden technisch erforderliche Zugriffsdaten verarbeitet. Weitere personenbezogene Daten erhalten wir, wenn Sie uns per E-Mail oder über ein Kontaktformular schreiben.',
   'impressum.privacy.usage.title': 'Verwendung der Daten',
   'impressum.privacy.usage.text': 'Die von Ihnen mitgeteilten personenbezogenen Daten verwenden wir ausschließlich zur Bearbeitung Ihrer Anfragen und zur Abwicklung von Verträgen mit Ihnen. Ihre Daten werden nur so lange gespeichert, wie dies zur Erfüllung der genannten Zwecke erforderlich ist.',
+  'impressum.privacy.cookies.title': 'Cookies und Einwilligung',
+  'impressum.privacy.cookies.text': 'Diese Website speichert technisch notwendige Cookies, nämlich Ihre gewählte Sprache und Ihre Entscheidung zu Cookies. Ihre Entscheidung bleibt sechs Monate gespeichert. Cookies für Statistik setzen wir nur mit Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO sowie § 25 Abs. 1 TDDDG). Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft über den Link „Cookie-Einstellungen“ im Fußbereich jeder Seite widerrufen.',
+  'impressum.privacy.analytics.title': 'Google Analytics',
+  'impressum.privacy.analytics.text': 'Mit Ihrer Einwilligung nutzen wir Google Analytics 4, einen Webanalysedienst der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Google Analytics wertet aus, wie Besucher die Website nutzen, etwa aufgerufene Seiten, Verweildauer, ungefähre Region, Gerätetyp und Browser. IP-Adressen werden innerhalb der EU gekürzt und nicht gespeichert. Google Signals und personalisierte Werbung sind deaktiviert. Dabei können Daten an Google LLC in den USA übermittelt werden; Google LLC ist nach dem EU-US Data Privacy Framework zertifiziert. Ohne Ihre Einwilligung wird Google Analytics nicht geladen.',
+  'impressum.privacy.analytics.retention': 'Die Cookies von Google Analytics (_ga, _ga_*) bleiben bis zu zwei Jahre gespeichert, sofern Sie Ihre Einwilligung nicht vorher widerrufen. Die Analysedaten werden nach 14 Monaten gelöscht. Weitere Informationen: policies.google.com/privacy',
   'impressum.privacy.rights.title': 'Auskunftsrecht',
   'impressum.privacy.rights.text': 'Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung sowie ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten.',
   'impressum.privacy.contact.title': 'Kontakt bei Datenschutzfragen',
@@ -582,6 +588,13 @@ export const de = {
   'workshop.cta.button': 'Jetzt Workshop anfragen',
   'workshop.cta.microcopy': 'Kostenloses Vorgespräch. 15 Minuten. Unverbindlich.',
   'workshop.cta.upsell': "Der Workshop ergänzt euren Quick Win oder euer KI-System und unterstützt dein Team bei der täglichen Anwendung. Weitere Abläufe können wir anschließend gemeinsam umsetzen.",
+
+  // Cookie consent banner
+  'consent.title': 'Darf ich messen, wie die Seite genutzt wird?',
+  'consent.text': 'Mit deiner Zustimmung nutze ich Google Analytics, um zu sehen, welche Inhalte wirklich helfen. Dabei werden Cookies gesetzt und Nutzungsdaten an Google übermittelt, auch in die USA. Ohne Zustimmung funktioniert die Seite genauso. Deine Entscheidung kannst du jederzeit unter „Cookie-Einstellungen“ ganz unten ändern.',
+  'consent.accept': 'Zustimmen',
+  'consent.decline': 'Ablehnen',
+  'consent.privacyLink': 'Mehr zum Datenschutz',
 } as const;
 
 export type TranslationKey = keyof typeof de;

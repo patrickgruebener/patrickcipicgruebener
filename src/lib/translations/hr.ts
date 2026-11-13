@@ -188,6 +188,7 @@ export const hr = {
   'footer.cta': 'Zakaži savjetovanje',
   'footer.linkedin': 'LinkedIn',
   'footer.impressum': 'Impressum',
+  'footer.cookieSettings': 'Postavke kolačića',
 
   // Beratungstermin Page
   'consultation.backToHome': 'Natrag na početnu',
@@ -240,6 +241,11 @@ export const hr = {
   'impressum.privacy.collection.text': 'Pri posjetu web-stranici obrađuju se tehnički nužni podaci o pristupu. Dodatne osobne podatke primamo kada nam pišete e-poštom ili putem kontaktnog obrasca.',
   'impressum.privacy.usage.title': 'Korištenje podataka',
   'impressum.privacy.usage.text': 'Osobne podatke koje pošaljete koristimo isključivo za obradu vaših upita i rješavanje ugovora s vama. Vaši podaci će biti pohranjeni samo u mjeri i dokle god je to potrebno za ispunjenje navedenih svrha.',
+  'impressum.privacy.cookies.title': 'Kolačići i privola',
+  'impressum.privacy.cookies.text': 'Ova web-stranica pohranjuje tehnički nužne kolačiće, odnosno odabrani jezik i vašu odluku o kolačićima. Vaša odluka pohranjuje se šest mjeseci. Kolačiće za statistiku postavljamo samo uz vašu privolu (čl. 6. st. 1. t. a) GDPR-a i članak 100. Zakona o elektroničkim komunikacijama). Privolu možete u bilo kojem trenutku povući s učinkom za budućnost putem poveznice „Postavke kolačića“ u podnožju svake stranice.',
+  'impressum.privacy.analytics.title': 'Google Analytics',
+  'impressum.privacy.analytics.text': 'Uz vašu privolu koristimo Google Analytics 4, uslugu web-analitike tvrtke Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irska. Google Analytics analizira kako posjetitelji koriste web-stranicu, primjerice posjećene stranice, vrijeme zadržavanja, približnu regiju, vrstu uređaja i preglednik. IP adrese skraćuju se unutar EU-a i ne pohranjuju se. Google Signals i personalizirano oglašavanje su isključeni. Podaci se mogu prenijeti tvrtki Google LLC u SAD; Google LLC certificiran je prema okviru EU-US Data Privacy Framework. Bez vaše privole Google Analytics se ne učitava.',
+  'impressum.privacy.analytics.retention': 'Kolačići Google Analyticsa (_ga, _ga_*) pohranjuju se do dvije godine, osim ako ranije ne povučete privolu. Analitički podaci brišu se nakon 14 mjeseci. Više informacija: policies.google.com/privacy',
   'impressum.privacy.rights.title': 'Pravo na informacije',
   'impressum.privacy.rights.text': 'U svakom trenutku imate pravo na besplatne informacije o vašim pohranjenim osobnim podacima, njihovom podrijetlu i primateljima te svrsi obrade podataka, kao i pravo na ispravak, blokiranje ili brisanje tih podataka.',
   'impressum.privacy.contact.title': 'Kontakt za pitanja privatnosti',
@@ -567,4 +573,11 @@ export const hr = {
   'workshop.cta.button': 'Jetzt Workshop anfragen',
   'workshop.cta.microcopy': 'Kostenloses Vorgespräch. 15 Minuten. Unverbindlich.',
   'workshop.cta.upsell': "Der Workshop ergänzt euren Quick Win oder euer KI-System und unterstützt dein Team bei der täglichen Anwendung. Weitere Abläufe können wir anschließend gemeinsam umsetzen.",
+
+  // Cookie consent banner
+  'consent.title': 'Smijem li mjeriti kako se stranica koristi?',
+  'consent.text': 'Uz tvoj pristanak koristim Google Analytics kako bih vidio koji sadržaji stvarno pomažu. Pritom se postavljaju kolačići, a podaci o korištenju prenose se Googleu, uključujući i u SAD. Bez pristanka stranica radi jednako. Odluku možeš u svakom trenutku promijeniti pod „Postavke kolačića“ na dnu stranice.',
+  'consent.accept': 'Prihvati',
+  'consent.decline': 'Odbij',
+  'consent.privacyLink': 'Više o privatnosti',
 } as const;

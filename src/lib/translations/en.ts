@@ -188,6 +188,7 @@ export const en = {
   'footer.cta': 'Book a Consultation',
   'footer.linkedin': 'LinkedIn',
   'footer.impressum': 'Impressum',
+  'footer.cookieSettings': 'Cookie settings',
 
   // Beratungstermin Page
   'consultation.backToHome': 'Back to Home',
@@ -240,6 +241,11 @@ export const en = {
   'impressum.privacy.collection.text': 'Technically necessary access data is processed when you visit this website. We receive further personal data when you contact us by email or through a contact form.',
   'impressum.privacy.usage.title': 'Use of data',
   'impressum.privacy.usage.text': 'We use the personal data you provide exclusively to process your inquiries and to handle contracts with you. Your data will only be stored to the extent and for as long as this is necessary to fulfill the stated purposes.',
+  'impressum.privacy.cookies.title': 'Cookies and consent',
+  'impressum.privacy.cookies.text': 'This website stores technically necessary cookies, namely your selected language and your cookie choice. Your choice is stored for six months. We only set statistics cookies with your consent (Art. 6(1)(a) GDPR and the applicable ePrivacy rules). You can withdraw your consent at any time with effect for the future via the “Cookie settings” link in the footer of every page.',
+  'impressum.privacy.analytics.title': 'Google Analytics',
+  'impressum.privacy.analytics.text': 'With your consent we use Google Analytics 4, a web analytics service of Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland. Google Analytics evaluates how visitors use the website, such as pages viewed, time on site, approximate region, device type and browser. IP addresses are truncated within the EU and not stored. Google Signals and ad personalisation are disabled. Data may be transferred to Google LLC in the USA; Google LLC is certified under the EU-US Data Privacy Framework. Without your consent Google Analytics is not loaded.',
+  'impressum.privacy.analytics.retention': 'Google Analytics cookies (_ga, _ga_*) are stored for up to two years unless you withdraw your consent earlier. Analytics data is deleted after 14 months. More information: policies.google.com/privacy',
   'impressum.privacy.rights.title': 'Right to information',
   'impressum.privacy.rights.text': 'You have the right at any time to free information about your stored personal data, their origin and recipients and the purpose of data processing as well as a right to correction, blocking or deletion of this data.',
   'impressum.privacy.contact.title': 'Contact for privacy questions',
@@ -583,4 +589,11 @@ export const en = {
   'workshop.cta.button': 'Request Workshop Now',
   'workshop.cta.microcopy': 'Free pre-call. 15 minutes. No obligation.',
   'workshop.cta.upsell': "The workshop builds on your quick-win project or AI system and helps your team use it in daily work. We can develop additional workflows together afterwards.",
+
+  // Cookie consent banner
+  'consent.title': 'May I measure how this site is used?',
+  'consent.text': 'With your consent I use Google Analytics to see which content actually helps. This sets cookies and sends usage data to Google, including to the USA. Without consent the site works exactly the same. You can change your choice at any time under “Cookie settings” at the bottom of the page.',
+  'consent.accept': 'Accept',
+  'consent.decline': 'Decline',
+  'consent.privacyLink': 'More on privacy',
 } as const;
