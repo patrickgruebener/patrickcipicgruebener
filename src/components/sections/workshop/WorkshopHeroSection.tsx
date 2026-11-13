@@ -1,37 +1,35 @@
 import Link from 'next/link';
 import { getTranslations } from '@/lib/i18n.server';
-import { Button } from '@/components/ui/Button';
+import { buttonStyles } from '@/components/ui/Button';
+import { Leitlinie } from '@/components/ui/leitlinie';
 
+/** First screen: light/heavy headline left, price statement as a ruled fact block right, guide line below. */
 export async function WorkshopHeroSection() {
   const { t } = await getTranslations();
 
   return (
-    <section className="py-20 md:py-28 px-6 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
-      <div className="max-w-4xl mx-auto text-center">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-          {t('workshop.hero.headline')}{' '}
-          <span className="bg-gradient-to-r from-[#65C87A] to-[#0426CB] bg-clip-text text-transparent">
-            {t('workshop.hero.headlineHighlight')}
-          </span>
-        </h1>
-
-        <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-          {t('workshop.hero.subheadline')}
-        </p>
-
-        <div className="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 mb-10">
-          <span className="text-xl md:text-2xl font-bold text-white">{t('workshop.hero.priceBadge')}</span>
-          <span className="text-gray-300">{t('workshop.hero.priceNote')}</span>
+    <section className="bg-paper">
+      <div className="mx-auto grid max-w-[1180px] grid-cols-1 items-end gap-x-14 gap-y-8 px-4 pt-9 pb-8 min-[900px]:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] min-[900px]:pt-[72px] min-[900px]:pb-16">
+        <div>
+          <h1 className="mb-5 font-display text-[52px] leading-[0.9] tracking-[-0.005em] text-balance text-ink sm:mb-[30px] sm:text-[72px] lg:text-[88px]">
+            <span className="font-light">{t('workshop.hero.headline')}</span>{' '}
+            <span className="block font-[820] text-brand-blue">{t('workshop.hero.headlineHighlight')}</span>
+          </h1>
+          <p className="max-w-[34em] text-[17px] leading-[1.5] text-ink sm:text-xl">
+            {t('workshop.hero.subheadline')}
+          </p>
         </div>
-
-        <div className="block">
-          <Link href="/beratungstermin">
-            <Button size="lg">
-              {t('workshop.hero.cta')}
-            </Button>
+        <div className="grid gap-6">
+          <div className="border-t-2 border-ink pt-3.5">
+            <p className="font-display text-[36px] leading-none font-[820] text-ink">{t('workshop.hero.priceBadge')}</p>
+            <p className="mt-2 text-ink-2">{t('workshop.hero.priceNote')}</p>
+          </div>
+          <Link href="/beratungstermin" className={buttonStyles({ className: 'w-full sm:w-auto sm:justify-self-start' })}>
+            {t('workshop.hero.cta')}
           </Link>
         </div>
       </div>
+      <Leitlinie />
     </section>
   );
 }

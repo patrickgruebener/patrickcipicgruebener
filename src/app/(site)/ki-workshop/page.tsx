@@ -27,7 +27,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function KiWorkshopPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-paper">
       <Header currentPage="ki-workshop" />
       <main>
         <WorkshopHeroSection />

@@ -2,8 +2,14 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { Button } from '@/components/ui/Button';
-import { getTranslations, getLanguage } from '@/lib/i18n.server';
+import { buttonStyles } from '@/components/ui/Button';
+import { Card, CardPrice } from '@/components/ui/Card';
+import { FlowSketch } from '@/components/ui/flow-sketch';
+import { Leitlinie } from '@/components/ui/leitlinie';
+import { ClosingCta } from '@/components/sections/closing-cta';
+import { Section, SectionHead } from '@/components/sections/section-shell';
+import { getTranslations } from '@/lib/i18n.server';
+import type { TranslationKey } from '@/lib/translations/de';
 
 export async function generateMetadata(): Promise<Metadata> {
   const { t } = await getTranslations();
@@ -13,249 +19,142 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
+const PACKAGES = [
+  { key: '1', deliverableCount: 6, bonusCount: 2 },
+  { key: '2', deliverableCount: 4, bonusCount: 2, recommended: true },
+  { key: '3', deliverableCount: 6, bonusCount: 1 },
+] as const;
+
+const TRUST_STEPS = ['step1', 'step2', 'step3', 'step4'] as const;
+const PRICE_ARGS = ['arg1', 'arg2', 'arg3'] as const;
+
 export default async function AngebotePage() {
   const { t } = await getTranslations();
-
-  const packages = [
-    {
-      key: '1' as const,
-      gradient: 'from-blue-500 to-cyan-500',
-      accentBg: 'bg-blue-50',
-      accentText: 'text-blue-700',
-      deliverableCount: 6,
-      bonusCount: 2,
-    },
-    {
-      key: '2' as const,
-      gradient: 'from-cyan-500 to-teal-500',
-      accentBg: 'bg-teal-50',
-      accentText: 'text-teal-700',
-      deliverableCount: 4,
-      bonusCount: 2,
-      popular: true,
-    },
-    {
-      key: '3' as const,
-      gradient: 'from-teal-500 to-emerald-500',
-      accentBg: 'bg-emerald-50',
-      accentText: 'text-emerald-700',
-      deliverableCount: 6,
-      bonusCount: 1,
-    },
-  ];
-
-  const trustSteps = [
-    { key: 'step1', number: '1', gradient: 'from-blue-500 to-cyan-500' },
-    { key: 'step2', number: '2', gradient: 'from-cyan-500 to-teal-500' },
-    { key: 'step3', number: '3', gradient: 'from-teal-500 to-emerald-500' },
-    { key: 'step4', number: '4', gradient: 'from-emerald-500 to-green-500' },
-  ];
+  const flowSteps = TRUST_STEPS.map((key) => t(`angebote.trustPath.${key}`));
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-paper">
       <Header currentPage="angebote" />
 
       <main>
-        {/* Hero Section */}
-        <section className="py-20 md:py-28 px-6 bg-gradient-to-br from-gray-50 to-blue-50">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-              {t('angebote.hero.headline')}{' '}
-              <span className="bg-gradient-to-r from-[#0426CB] to-[#65C87A] bg-clip-text text-transparent">
-                {t('angebote.hero.headlineHighlight')}
-              </span>
+        <section className="bg-paper">
+          <div className="mx-auto max-w-[1180px] px-4 pt-9 pb-8 min-[900px]:pt-[72px] min-[900px]:pb-16">
+            <h1 className="mb-5 font-display text-[52px] leading-[0.9] tracking-[-0.005em] text-balance text-ink sm:mb-[30px] sm:text-[72px] lg:text-[88px]">
+              <span className="font-light">{t('angebote.hero.headline')}</span>{' '}
+              <span className="block font-[820] text-brand-blue">{t('angebote.hero.headlineHighlight')}</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="max-w-[34em] text-[17px] leading-[1.5] text-ink sm:text-xl">
               {t('angebote.hero.description')}
             </p>
           </div>
+          <Leitlinie />
         </section>
 
-        {/* Trust Path / Upsell Pyramid */}
-        <section className="py-20 px-6 bg-white">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                {t('angebote.trustPath.title')}
-              </h2>
-              <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-                {t('angebote.trustPath.subtitle')}
-              </p>
-            </div>
-
-            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0">
-              {trustSteps.map(({ key, number, gradient }, index) => (
-                <div key={key} className="flex items-center">
-                  <div className="flex flex-col items-center">
-                    <div
-                      className={`w-14 h-14 rounded-full bg-gradient-to-br ${gradient} flex items-center justify-center text-white text-xl font-bold shadow-lg`}
-                    >
-                      {number}
-                    </div>
-                    <p className="mt-3 text-sm font-medium text-gray-700 text-center max-w-[120px]">
-                      {t(`angebote.trustPath.${key}` as any)}
-                    </p>
-                  </div>
-                  {index < trustSteps.length - 1 && (
-                    <div className="hidden md:block w-16 lg:w-24 h-0.5 bg-gradient-to-r from-gray-300 to-gray-200 mx-4 mt-[-20px]" />
-                  )}
-                </div>
-              ))}
-            </div>
+        <Section id="weg">
+          <SectionHead heavy={t('angebote.trustPath.title')} intro={<p>{t('angebote.trustPath.subtitle')}</p>} />
+          <div className="bg-sheet px-7 py-6">
+            <FlowSketch steps={flowSteps} label={flowSteps.join(', ')} className="max-w-[520px]" />
           </div>
-        </section>
+        </Section>
 
-        {/* Package Cards */}
-        <section id="pakete" className="py-20 px-6 bg-gradient-to-br from-gray-50 to-blue-50">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-8">
-              {packages.map(({ key, gradient, accentBg, accentText, deliverableCount, bonusCount, popular }) => (
-                <div
-                  key={key}
-                  className={`bg-white rounded-2xl shadow-lg border ${
-                    popular ? 'border-teal-300 ring-2 ring-teal-100' : 'border-gray-100'
-                  } overflow-hidden flex flex-col hover:shadow-xl transition-shadow duration-300`}
-                >
-                  {/* Package Header */}
-                  <div className={`bg-gradient-to-r ${gradient} p-6 text-white`}>
-                    <h3 className="text-2xl font-bold mb-1">
-                      {t(`angebote.pkg${key}.name` as any)}
-                    </h3>
-                    <p className="text-white/80 text-sm">
-                      {t(`angebote.pkg${key}.duration` as any)}
-                    </p>
-                  </div>
-
-                  <div className="p-6 flex flex-col flex-1">
-                    {/* Price */}
-                    <div className="mb-6">
-                      <span className="text-3xl font-bold text-gray-900">
-                        {t(`angebote.pkg${key}.price` as any)}
-                      </span>
-                      <span className="text-sm text-gray-500 ml-2">
-                        {t(`angebote.pkg${key}.priceNote` as any)}
-                      </span>
+        <Section id="pakete" label={t('angebote.trustPath.title')}>
+          <div className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-3">
+            {PACKAGES.map((pkg) => {
+              const { key, deliverableCount, bonusCount } = pkg;
+              return (
+                <Card key={key} highlighted={'recommended' in pkg} className="flex flex-col">
+                  <div className="flex flex-1 flex-col gap-5 p-6">
+                    <div>
+                      <h3 className="font-display text-[34px] leading-none font-[820] text-ink">
+                        {t(`angebote.pkg${key}.name`)}
+                      </h3>
+                      <p className="mt-2 text-[15px] text-ink-2">{t(`angebote.pkg${key}.duration`)}</p>
                     </div>
 
-                    {/* Promise */}
-                    <p className="text-gray-900 font-medium text-lg mb-4 leading-snug">
-                      &ldquo;{t(`angebote.pkg${key}.promise` as any)}&rdquo;
-                    </p>
+                    <CardPrice unit={t(`angebote.pkg${key}.priceNote`)} className="text-[48px]">
+                      {t(`angebote.pkg${key}.price`)}
+                    </CardPrice>
 
-                    {/* For whom */}
-                    <p className="text-gray-500 text-sm mb-6">
-                      {t(`angebote.pkg${key}.for` as any)}
+                    <p className="text-[19px] leading-snug font-semibold text-ink">
+                      &ldquo;{t(`angebote.pkg${key}.promise`)}&rdquo;
                     </p>
+                    <p className="text-[15px] text-ink-2">{t(`angebote.pkg${key}.for`)}</p>
 
-                    {/* Deliverables */}
-                    <div className="mb-6">
-                      <h4 className="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-3">
-                        {t(`angebote.pkg${key}.deliverables.title` as any)}
+                    <div className="border-t-2 border-ink pt-3">
+                      <h4 className="mb-2 text-[15px] font-bold text-ink">
+                        {t(`angebote.pkg${key}.deliverables.title`)}
                       </h4>
-                      <ul className="space-y-2">
+                      <ul className="m-0 grid list-disc gap-1.5 pl-5 text-[15px] text-ink marker:text-brand-blue">
                         {Array.from({ length: deliverableCount }, (_, i) => (
-                          <li key={i} className="flex items-start gap-2 text-gray-600 text-sm">
-                            <svg className="w-4 h-4 text-green-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                            </svg>
-                            {t(`angebote.pkg${key}.deliverables.${i + 1}` as any)}
-                          </li>
+                          <li key={i}>{t(`angebote.pkg${key}.deliverables.${i + 1}` as TranslationKey)}</li>
                         ))}
                       </ul>
                     </div>
 
-                    {/* Bonuses */}
-                    <div className={`${accentBg} rounded-xl p-4 mb-6`}>
-                      <h4 className={`text-sm font-semibold ${accentText} uppercase tracking-wide mb-2`}>
-                        {t(`angebote.pkg${key}.bonus.title` as any)}
-                      </h4>
-                      <ul className="space-y-2">
+                    <div className="bg-sheet p-4">
+                      <h4 className="mb-2 text-[15px] font-bold text-ink">{t(`angebote.pkg${key}.bonus.title`)}</h4>
+                      <ul className="m-0 grid list-disc gap-1.5 pl-5 text-[15px] text-ink marker:text-brand-blue">
                         {Array.from({ length: bonusCount }, (_, i) => (
-                          <li key={i} className={`flex items-start gap-2 ${accentText} text-sm`}>
-                            <svg className="w-4 h-4 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                            </svg>
-                            {t(`angebote.pkg${key}.bonus.${i + 1}` as any)}
-                          </li>
+                          <li key={i}>{t(`angebote.pkg${key}.bonus.${i + 1}` as TranslationKey)}</li>
                         ))}
                       </ul>
                     </div>
 
-                    {/* CTA */}
-                    <div className="mt-auto">
-                      <Link href="/beratungstermin" className="block">
-                        <Button size="md" className="w-full">
-                          {t(`angebote.pkg${key}.cta` as any)}
-                        </Button>
-                      </Link>
-                    </div>
+                    <Link
+                      href="/beratungstermin"
+                      className={buttonStyles({ variant: 'secondary', className: 'mt-auto justify-self-start' })}
+                    >
+                      {t(`angebote.pkg${key}.cta`)}
+                    </Link>
                   </div>
-                </div>
-              ))}
-            </div>
+                </Card>
+              );
+            })}
           </div>
-        </section>
+        </Section>
 
-        {/* Retainer Section */}
-        <section className="py-20 px-6 bg-white">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="bg-gradient-to-br from-gray-50 to-emerald-50 rounded-2xl p-8 md:p-12 border border-gray-100">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-                {t('angebote.retainer.title')}
-              </h2>
-              <p className="text-lg text-gray-700 font-medium mb-4">
-                {t('angebote.retainer.subtitle')}
-              </p>
-              <p className="text-gray-600 mb-8 max-w-xl mx-auto">
-                {t('angebote.retainer.description')}
-              </p>
-              <Link href="/beratungstermin">
-                <Button variant="secondary" size="md">
+        <Section id="retainer">
+          <SectionHead
+            heavy={t('angebote.retainer.title')}
+            intro={
+              <>
+                <p className="font-semibold text-ink">{t('angebote.retainer.subtitle')}</p>
+                <p>{t('angebote.retainer.description')}</p>
+                <Link
+                  href="/beratungstermin"
+                  className={buttonStyles({ variant: 'secondary', className: 'justify-self-start' })}
+                >
                   {t('angebote.retainer.cta')}
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </section>
+                </Link>
+              </>
+            }
+          />
+        </Section>
 
-        {/* Price Anchor Section */}
-        <section className="py-20 px-6 bg-gradient-to-br from-gray-900 to-gray-800">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-12">
-              {t('angebote.priceAnchor.title')}
-            </h2>
-            <div className="space-y-6 mb-12">
-              {(['arg1', 'arg2', 'arg3'] as const).map((arg) => (
-                <p key={arg} className="text-lg md:text-xl text-gray-300 italic">
-                  {t(`angebote.priceAnchor.${arg}` as any)}
-                </p>
-              ))}
-            </div>
-            <p className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#65C87A] to-[#0426CB] bg-clip-text text-transparent">
-              {t('angebote.priceAnchor.conclusion')}
-            </p>
-          </div>
-        </section>
-
-        {/* Final CTA Section */}
-        <section className="py-24 px-6 bg-white">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              {t('angebote.finalCta.title')}
-            </h2>
-            <p className="text-gray-600 text-lg mb-10 max-w-xl mx-auto">
-              {t('angebote.finalCta.description')}
-            </p>
-            <div className="flex flex-col items-center gap-3">
-              <Link href="/beratungstermin">
-                <Button size="lg">
-                  {t('angebote.finalCta.button')}
-                </Button>
-              </Link>
-              <p className="text-sm text-gray-500">
-                {t('angebote.finalCta.microcopy')}
+        <Section id="preisanker">
+          <SectionHead heavy={t('angebote.priceAnchor.title')} />
+          <div className="max-w-[820px] border-t-2 border-ink">
+            {PRICE_ARGS.map((arg) => (
+              <p key={arg} className="border-b border-line py-4 text-[19px] leading-snug text-ink">
+                {t(`angebote.priceAnchor.${arg}`)}
               </p>
-            </div>
+            ))}
+          </div>
+          <p className="mt-8 max-w-[820px] font-display text-[clamp(32px,7vw,44px)] leading-[0.95] font-[820] tracking-[-0.005em] text-balance text-brand-blue">
+            {t('angebote.priceAnchor.conclusion')}
+          </p>
+        </Section>
+
+        <section className="bg-paper pb-[72px]">
+          <div className="mx-auto max-w-[1180px] px-4">
+            <ClosingCta
+              headlineHeavy={t('angebote.finalCta.title')}
+              text={t('angebote.finalCta.description')}
+              buttonLabel={t('angebote.finalCta.button')}
+              href="/beratungstermin"
+              note={t('angebote.finalCta.microcopy')}
+              guideLine={false}
+            />
           </div>
         </section>
       </main>

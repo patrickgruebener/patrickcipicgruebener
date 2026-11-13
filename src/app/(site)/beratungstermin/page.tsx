@@ -1,62 +1,55 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { getTranslations } from '@/lib/i18n.server';
 import { ContactForm } from '@/components/ContactForm';
+import { buttonStyles } from '@/components/ui/Button';
+import { Leitlinie } from '@/components/ui/leitlinie';
 
 export default async function BeratungsterminPage({ searchParams }: { searchParams: Promise<{ anliegen?: string }> }) {
   const { t, language } = await getTranslations();
   const purchaseInquiry = (await searchParams).anliegen === 'ki-system-kauf';
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="border-b border-gray-200 py-6 px-6">
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <h1 className="text-xl font-bold text-gray-900">
-            Patrick Cipic Grübener
-          </h1>
-          <a
+    <div className="min-h-screen bg-paper">
+      {/* Slim header without navigation, keeps the focus on the form */}
+      <header className="bg-paper">
+        <div className="mx-auto flex max-w-[1180px] items-center justify-between gap-6 px-4 py-5">
+          <p className="m-0 font-display text-[26px] leading-none font-[820] text-ink">Patrick Čipić Grübener</p>
+          <Link
             href={purchaseInquiry ? '/ki-system' : '/'}
-            className="text-gray-600 hover:text-blue-600 transition-colors"
+            className={buttonStyles({ variant: 'ghost', size: 'sm' })}
           >
             {t('consultation.backToHome')}
-          </a>
+          </Link>
         </div>
+        <Leitlinie />
       </header>
 
-      {/* Main Content */}
-      <main className="py-16 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-start">
-            {/* Left Column - Text and Profile */}
-            <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
-                {t(purchaseInquiry ? 'consultation.purchaseHeadline' : 'consultation.headline')}
-              </h2>
+      <main className="py-12 min-[900px]:py-[72px]">
+        <div className="mx-auto grid max-w-[1180px] grid-cols-1 items-start gap-x-14 gap-y-10 px-4 min-[900px]:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+          <div className="grid gap-8">
+            <h1 className="m-0 font-display text-[clamp(40px,9.4vw,57px)] leading-[0.9] font-[820] tracking-[-0.005em] text-balance text-ink">
+              {t(purchaseInquiry ? 'consultation.purchaseHeadline' : 'consultation.headline')}
+            </h1>
 
-              {/* Profile */}
-              <div className="flex items-center gap-4 pt-8">
-                <Image
-                  src="/images/patrickcipicgruebener_portrait.webp"
-                  alt="Patrick Cipic Grübener"
-                  width={96}
-                  height={96}
-                  sizes="(max-width: 768px) 80px, 96px"
-                  className="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover shadow-lg ring-4 ring-white"
-                />
-                <div>
-                  <h3 className="font-bold text-gray-900">
-                    {t('footer.name')}
-                  </h3>
-                  <p className="text-sm text-gray-600">
-                    {t('footer.role')}
-                  </p>
-                </div>
+            <div className="grid grid-cols-[96px_minmax(0,1fr)] items-center gap-4">
+              <Image
+                src="/images/patrickcipicgruebener_portrait.webp"
+                alt="Patrick Čipić Grübener"
+                width={96}
+                height={96}
+                sizes="96px"
+                priority
+                className="h-24 w-24 object-cover"
+              />
+              <div>
+                <p className="m-0 font-bold text-ink">{t('footer.name')}</p>
+                <p className="m-0 text-[15px] text-ink-2">{t('footer.role')}</p>
               </div>
             </div>
-
-            {/* Right Column - Form */}
-            <ContactForm language={language} purchaseInquiry={purchaseInquiry} />
           </div>
+
+          <ContactForm language={language} purchaseInquiry={purchaseInquiry} />
         </div>
       </main>
     </div>

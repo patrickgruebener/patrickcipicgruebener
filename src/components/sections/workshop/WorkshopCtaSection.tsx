@@ -1,34 +1,22 @@
-import Link from 'next/link';
 import { getTranslations } from '@/lib/i18n.server';
-import { Button } from '@/components/ui/Button';
+import { ClosingCta } from '@/components/sections/closing-cta';
 
+/** The single closing call to action; the upsell sentence follows as plain text. */
 export async function WorkshopCtaSection() {
   const { t } = await getTranslations();
 
   return (
-    <section className="py-24 px-6 bg-gradient-to-r from-[#0426CB] to-[#65C87A]">
-      <div className="max-w-4xl mx-auto">
-        <div className="bg-white rounded-3xl p-12 md:p-16 shadow-2xl text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3">
-            {t('workshop.cta.headline')}
-          </h2>
-          <p className="text-lg md:text-xl text-gray-600 mb-10">
-            {t('workshop.cta.subline')}
-          </p>
-          <div className="flex flex-col items-center gap-3 mb-8">
-            <Link href="/beratungstermin">
-              <Button size="lg">
-                {t('workshop.cta.button')}
-              </Button>
-            </Link>
-            <p className="text-sm text-gray-500">
-              {t('workshop.cta.microcopy')}
-            </p>
-          </div>
-          <p className="text-sm text-gray-400 max-w-lg mx-auto leading-relaxed border-t border-gray-100 pt-6">
-            {t('workshop.cta.upsell')}
-          </p>
-        </div>
+    <section className="bg-paper pb-[72px]">
+      <div className="mx-auto max-w-[1180px] px-4">
+        <ClosingCta
+          headlineHeavy={t('workshop.cta.headline')}
+          text={t('workshop.cta.subline')}
+          buttonLabel={t('workshop.cta.button')}
+          href="/beratungstermin"
+          note={t('workshop.cta.microcopy')}
+          guideLine={false}
+        />
+        <p className="mt-6 max-w-[64ch] text-[15px] text-ink-2">{t('workshop.cta.upsell')}</p>
       </div>
     </section>
   );

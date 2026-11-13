@@ -1,39 +1,28 @@
 import { getTranslations } from '@/lib/i18n.server';
+import { Section, SectionHead } from '@/components/sections/section-shell';
 
-const testimonials = ['1', '2', '3'] as const;
+const TESTIMONIALS = ['1', '2', '3'] as const;
 
+/** Quotes as plain text blocks under a rule, no card, no quote glyph. */
 export async function WorkshopTestimonialsSection() {
   const { t } = await getTranslations();
 
   return (
-    <section className="py-24 px-6 bg-gradient-to-br from-gray-50 to-blue-50">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-16">
-          {t('workshop.testimonials.title')}
-        </h2>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((key) => (
-            <div
-              key={key}
-              className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 flex flex-col"
-            >
-              <div className="text-2xl text-gray-200 mb-4">&ldquo;</div>
-              <p className="text-gray-600 leading-relaxed flex-1 mb-6">
-                {t(`workshop.testimonials.${key}.text` as any)}
-              </p>
-              <div>
-                <p className="font-semibold text-gray-900">
-                  {t(`workshop.testimonials.${key}.name` as any)}
-                </p>
-                <p className="text-sm text-gray-500">
-                  {t(`workshop.testimonials.${key}.role` as any)}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
+    <Section id="stimmen">
+      <SectionHead heavy={t('workshop.testimonials.title')} />
+      <div className="grid grid-cols-1 items-start gap-x-10 gap-y-10 md:grid-cols-3">
+        {TESTIMONIALS.map((key) => (
+          <figure key={key} className="m-0 border-t-2 border-ink pt-5">
+            <blockquote className="m-0 text-[17px] leading-[1.6] text-ink">
+              {t(`workshop.testimonials.${key}.text`)}
+            </blockquote>
+            <figcaption className="mt-5 text-[15px]">
+              <b className="block text-ink">{t(`workshop.testimonials.${key}.name`)}</b>
+              <span className="text-ink-2">{t(`workshop.testimonials.${key}.role`)}</span>
+            </figcaption>
+          </figure>
+        ))}
       </div>
-    </section>
+    </Section>
   );
 }
