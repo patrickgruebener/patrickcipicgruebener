@@ -22,13 +22,18 @@ export function isValidAccessKey(candidate: unknown) {
   return timingSafeEqual(suppliedHash, configuredHash)
 }
 
-export function hasSession(request: NextRequest) {
+/** Checks a raw cookie value; the server page has no NextRequest. */
+export function isValidSessionCookie(cookieValue: string | undefined) {
   const secret = configuredKey()
   if (!secret) return false
-  const value = request.cookies.get(ACCESS_COOKIE)?.value ?? ''
+  const value = cookieValue ?? ''
   const expected = sessionSignature(secret)
   if (value.length !== expected.length) return false
   return timingSafeEqual(Buffer.from(value), Buffer.from(expected))
+}
+
+export function hasSession(request: NextRequest) {
+  return isValidSessionCookie(request.cookies.get(ACCESS_COOKIE)?.value)
 }
 
 export function hasBearerKey(request: NextRequest) {

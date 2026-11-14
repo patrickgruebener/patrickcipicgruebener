@@ -1,0 +1,16 @@
+{
+  "name": "Karteikarten",
+  "short_name": "Karteikarten",
+  "description": "Kroatisch lernen mit Spaced Repetition",
+  "lang": "de",
+  "start_url": "/karteikarten",
+  "scope": "/karteikarten",
+  "display": "standalone",
+  "background_color": "#f4f6fb",
+  "theme_color": "#f4f6fb",
+  "icons": [
+    { "src": "/karteikarten/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/karteikarten/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/karteikarten/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
