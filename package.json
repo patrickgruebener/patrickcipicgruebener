@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test:lernchat": "node --experimental-strip-types --test src/lib/lernchat-budget.test.mjs",
+    "test:karteikarten": "node --experimental-strip-types --test src/lib/karteikarten-srs.test.mjs src/lib/karteikarten-store.test.mjs",
     "test:bausteine": "node --experimental-strip-types --test src/lib/file-tree.test.mjs",
     "test:consent": "node --experimental-strip-types --test src/lib/consent.test.mjs"
   },

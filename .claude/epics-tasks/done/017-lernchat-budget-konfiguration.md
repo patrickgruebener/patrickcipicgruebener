@@ -2,7 +2,7 @@
 
 **Task:** 017
 **Epic:** EPIC-015-018
-**Status:** Implementiert und in Dokploy konfiguriert
+**Status:** Abgelöst durch EPIC-019-022
 **Erstellt:** 2026-10-04
 **Priorität:** High
 **Größe:** M

@@ -50,3 +50,6 @@ next-env.d.ts
 !AGENTS.md
 !.brokk/style.md
 !.brokk/project.properties
+
+# local data (flashcards)
+/.data/

@@ -1,7 +1,7 @@
 # Epic: Privater Lern- und Übersetzungschat
 
 **Epic:** EPIC-015-018
-**Status:** Code und Dokploy-Variablen vorbereitet; Deploy-Prüfung ausstehend
+**Status:** Abgelöst durch EPIC-019-022
 **Erstellt:** 2026-10-04
 **Priorität:** High
 **Größe:** L

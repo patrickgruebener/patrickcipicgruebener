@@ -2,7 +2,7 @@
 
 **Task:** 015
 **Epic:** EPIC-015-018
-**Status:** Implementiert; Deploy- und Browserprüfung ausstehend
+**Status:** Abgelöst durch EPIC-019-022
 **Erstellt:** 2026-10-04
 **Priorität:** High
 **Größe:** M

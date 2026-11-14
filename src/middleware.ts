@@ -3,7 +3,7 @@ import type { NextRequest } from 'next/server'
 
 export function middleware(request: NextRequest) {
   const response = NextResponse.next()
-  if (request.nextUrl.pathname === '/lernraum') {
+  if (request.nextUrl.pathname === '/karteikarten' || request.nextUrl.pathname.startsWith('/karteikarten/')) {
     response.headers.set('X-Robots-Tag', 'noindex, nofollow, noarchive')
     response.headers.set('Cache-Control', 'private, no-store, max-age=0')
   }

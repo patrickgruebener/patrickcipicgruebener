@@ -15,6 +15,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/lernraum",
+        destination: "/karteikarten",
+        permanent: true,
+      },
+      {
         source: "/aios",
         destination: "/ki-system-fuer-unternehmen",
         permanent: true,
