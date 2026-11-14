@@ -1,7 +1,7 @@
 # Epic: Kroatisch-Karteikarten unter /karteikarten
 
 **Epic:** EPIC-019-022
-**Status:** Open
+**Status:** Done (2026-11-14)
 **Erstellt:** 2026-11-14
 **Priorität:** High
 **Größe:** L

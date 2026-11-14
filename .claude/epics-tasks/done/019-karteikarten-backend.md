@@ -1,7 +1,7 @@
 # Task 019: Backend – Lernraum-Rückbau, Speicher, SRS, API
 
 **Epic:** EPIC-019-022 (zuerst `EPIC-019-022-karteikarten.md` lesen, dort stehen API-Vertrag und Lernlogik)
-**Status:** Open
+**Status:** Done (2026-11-14)
 **Größe:** M
 
 ## Vorgehen

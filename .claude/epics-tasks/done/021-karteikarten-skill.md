@@ -1,7 +1,7 @@
 # Task 021: Skill `/karteikarten` im Memory-Repo
 
 **Epic:** EPIC-019-022 (API-Vertrag lesen)
-**Status:** Open
+**Status:** Done (2026-11-14)
 **Größe:** S
 **Repo:** `~/Documents/memory` (Skills liegen in `skills/`, Index `skills/INDEX.md`). Website-Repo nicht anfassen.
 

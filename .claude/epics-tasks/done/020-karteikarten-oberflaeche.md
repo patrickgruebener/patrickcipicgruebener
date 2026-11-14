@@ -1,7 +1,7 @@
 # Task 020: Oberfläche – Lernen, Kartenliste, Zugang, Manifest
 
 **Epic:** EPIC-019-022 (zuerst lesen)
-**Status:** Open
+**Status:** Done (2026-11-14)
 **Größe:** M
 **Voraussetzung:** Task 019 auf `feature/karteikarten` committet
 

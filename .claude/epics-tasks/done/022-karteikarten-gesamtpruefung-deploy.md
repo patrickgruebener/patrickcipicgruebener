@@ -1,7 +1,7 @@
 # Task 022: Gesamtprüfung, Merge, Deploy, Erstimport
 
 **Epic:** EPIC-019-022 (zuerst lesen)
-**Status:** Open
+**Status:** Done (2026-11-14)
 **Größe:** S
 **Voraussetzung:** 019 und 020 auf `feature/karteikarten`, 021 im Memory-Repo committet
 
