@@ -5,6 +5,7 @@ import {
   bewerte,
   neuerFortschritt,
   normalisiere,
+  trenneGeschwister,
   validiereBewertung,
   validiereImport,
   validierePatch,
@@ -80,9 +81,26 @@ test('baueRunde: due first (oldest first), then new, future excluded', () => {
   const { karten: runde, stats } = baueRunde(karten, NOW)
   assert.deepEqual(
     runde.map((x) => `${x.kartenId}:${x.richtung}`),
-    ['b:hr-de', 'a:hr-de', 'b:de-hr', 'c:hr-de', 'c:de-hr'],
+    ['b:hr-de', 'a:hr-de', 'c:hr-de', 'b:de-hr', 'c:de-hr'],
   )
   assert.deepEqual(stats, { faellig: 2, neu: 3, gesamt: 3 })
+})
+
+test('baueRunde: new cards never show both sides back to back', () => {
+  const neuK = (id, tag) => karte(id, id, `2026-11-0${tag}T00:00:00Z`, neuerFortschritt(NOW), neuerFortschritt(NOW))
+  const runde = baueRunde([neuK('a', 1), neuK('b', 2), neuK('c', 3)], NOW).karten
+  assert.deepEqual(
+    runde.map((x) => `${x.kartenId}:${x.richtung}`),
+    ['a:hr-de', 'b:hr-de', 'c:hr-de', 'a:de-hr', 'b:de-hr', 'c:de-hr'],
+  )
+})
+
+test('trenneGeschwister: separates adjacent siblings, keeps order otherwise', () => {
+  const q = (ids) => ids.map((kartenId) => ({ kartenId }))
+  const ids = (list) => list.map((x) => x.kartenId).join('')
+  assert.equal(ids(trenneGeschwister(q(['a', 'a', 'b', 'c']))), 'abac')
+  assert.equal(ids(trenneGeschwister(q(['a', 'b', 'c']))), 'abc')
+  assert.equal(ids(trenneGeschwister(q(['b', 'a', 'a']))), 'baa')
 })
 
 test('baueRunde: sides depend on direction, hinweis only when present', () => {

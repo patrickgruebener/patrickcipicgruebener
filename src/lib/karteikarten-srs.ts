@@ -78,6 +78,22 @@ function abfrage(karte: Karte, richtung: Richtung): Abfrage {
 }
 
 /** Due reviews first (oldest due first), then new cards in creation order. */
+/**
+ * Reorders a queue so the two directions of the same card are never adjacent
+ * (otherwise the next front is the back just seen). Keeps order where possible.
+ */
+export function trenneGeschwister<T extends { kartenId: string }>(queue: T[]): T[] {
+  const result = [...queue]
+  for (let i = 1; i < result.length; i += 1) {
+    if (result[i].kartenId !== result[i - 1].kartenId) continue
+    const j = result.findIndex((x, idx) => idx > i && x.kartenId !== result[i - 1].kartenId)
+    if (j === -1) break
+    const [moved] = result.splice(j, 1)
+    result.splice(i, 0, moved)
+  }
+  return result
+}
+
 export function baueRunde(karten: Karte[], jetzt: Date) {
   const faellig: { due: number; item: Abfrage }[] = []
   const neu: { erstellt: string; item: Abfrage }[] = []
@@ -92,9 +108,14 @@ export function baueRunde(karten: Karte[], jetzt: Date) {
     }
   }
   faellig.sort((a, b) => a.due - b.due)
-  neu.sort((a, b) => (a.erstellt < b.erstellt ? -1 : a.erstellt > b.erstellt ? 1 : 0))
+  // New cards: all hr-de first, then de-hr, so both sides of one card never follow each other.
+  neu.sort(
+    (a, b) =>
+      RICHTUNGEN.indexOf(a.item.richtung) - RICHTUNGEN.indexOf(b.item.richtung) ||
+      (a.erstellt < b.erstellt ? -1 : a.erstellt > b.erstellt ? 1 : 0),
+  )
   return {
-    karten: [...faellig.map((x) => x.item), ...neu.map((x) => x.item)],
+    karten: trenneGeschwister([...faellig.map((x) => x.item), ...neu.map((x) => x.item)]),
     stats: {
       faellig: faellig.length,
       neu: neu.length,

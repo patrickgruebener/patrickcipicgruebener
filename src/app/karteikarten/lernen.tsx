@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from 'react'
 import type { Abfrage, Bewertung, Karte } from '@/lib/karteikarten-types'
+import { trenneGeschwister } from '@/lib/karteikarten-srs'
 import { api } from './api-client'
 
 type Runde = { karten: Abfrage[]; stats: { faellig: number; neu: number; gesamt: number } }
@@ -88,7 +89,7 @@ export function Lernen({ onError }: { onError: (error: unknown) => void }) {
         // `nochmal` goes to the end of the current round and is no longer new.
         setQueue((q) => {
           const rest = (q ?? []).slice(1)
-          return bewertung === 'nochmal' ? [...rest, { ...current, neu: false }] : rest
+          return bewertung === 'nochmal' ? trenneGeschwister([...rest, { ...current, neu: false }]) : rest
         })
         setFlipped(false)
       } catch (e) {
