@@ -5,6 +5,7 @@ import type {
   ImportFehler,
   ImportKarte,
   Karte,
+  Lernmodus,
   Richtung,
 } from './karteikarten-types.ts'
 import { BEWERTUNGEN, RICHTUNGEN } from './karteikarten-types.ts'
@@ -92,6 +93,12 @@ export function trenneGeschwister<T extends { kartenId: string }>(queue: T[]): T
     result.splice(i, 0, moved)
   }
   return result
+}
+
+/** Keeps only the queue items the chosen study mode asks for. */
+export function filtereModus<T extends { richtung: Richtung }>(queue: T[], modus: Lernmodus): T[] {
+  if (modus === 'beide') return queue
+  return queue.filter((item) => item.richtung === modus)
 }
 
 export function baueRunde(karten: Karte[], jetzt: Date) {

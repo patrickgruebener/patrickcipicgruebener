@@ -3,6 +3,7 @@ import test from 'node:test'
 import {
   baueRunde,
   bewerte,
+  filtereModus,
   neuerFortschritt,
   normalisiere,
   trenneGeschwister,
@@ -164,4 +165,16 @@ test('validiereBewertung and validierePatch', () => {
   assert.deepEqual(validierePatch({ hinweis: '' }), { hinweis: null })
   assert.equal(validierePatch({}), null)
   assert.equal(validierePatch({ de: '   ' }), null)
+})
+
+test('filtereModus: keeps one direction or both', () => {
+  const q = [
+    { kartenId: 'a', richtung: 'hr-de' },
+    { kartenId: 'a', richtung: 'de-hr' },
+    { kartenId: 'b', richtung: 'de-hr' },
+  ]
+  const ids = (list) => list.map((x) => `${x.kartenId}:${x.richtung}`).join(' ')
+  assert.equal(ids(filtereModus(q, 'de-hr')), 'a:de-hr b:de-hr')
+  assert.equal(ids(filtereModus(q, 'hr-de')), 'a:hr-de')
+  assert.equal(filtereModus(q, 'beide'), q)
 })

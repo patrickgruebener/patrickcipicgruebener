@@ -1,4 +1,6 @@
 export type Richtung = 'hr-de' | 'de-hr'
+/** Which directions a study round shows. */
+export type Lernmodus = Richtung | 'beide'
 export type Bewertung = 'nochmal' | 'gut' | 'leicht'
 
 export type Fortschritt = {
@@ -33,3 +35,4 @@ export type ImportFehler = { index: number; grund: string }
 
 export const RICHTUNGEN: Richtung[] = ['hr-de', 'de-hr']
 export const BEWERTUNGEN: Bewertung[] = ['nochmal', 'gut', 'leicht']
+export const LERNMODI: Lernmodus[] = ['de-hr', 'hr-de', 'beide']
