@@ -3,7 +3,9 @@ import type { NextRequest } from 'next/server'
 
 export function middleware(request: NextRequest) {
   const response = NextResponse.next()
-  if (request.nextUrl.pathname === '/karteikarten' || request.nextUrl.pathname.startsWith('/karteikarten/')) {
+  const { pathname } = request.nextUrl
+  // Private pages: flashcards and unlisted pages under /t/<secret>
+  if (pathname === '/karteikarten' || pathname.startsWith('/karteikarten/') || pathname.startsWith('/t/')) {
     response.headers.set('X-Robots-Tag', 'noindex, nofollow, noarchive')
     response.headers.set('Cache-Control', 'private, no-store, max-age=0')
   }

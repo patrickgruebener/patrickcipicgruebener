@@ -9,7 +9,8 @@
     "lint": "eslint",
     "test:karteikarten": "node --experimental-strip-types --test src/lib/karteikarten-srs.test.mjs src/lib/karteikarten-store.test.mjs",
     "test:bausteine": "node --experimental-strip-types --test src/lib/file-tree.test.mjs",
-    "test:consent": "node --experimental-strip-types --test src/lib/consent.test.mjs"
+    "test:consent": "node --experimental-strip-types --test src/lib/consent.test.mjs",
+    "test:trails": "node --experimental-strip-types --test src/lib/trails-store.test.mjs"
   },
   "dependencies": {
     "next": "16.1.4",
